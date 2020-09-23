@@ -1,0 +1,47 @@
+h1 {
+  font-size: 34px;
+}
+h3 {
+  text-align: left;
+  color: #333;
+  padding: 10px 0px;
+  font: 14px bold Verdana, sans-serif;
+  font-weight: bold;
+    margin-top: 14px;
+}
+.main-container {
+    max-width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+img {
+  max-width:90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.card {
+  margin-bottom: 20px;
+}
+.navbar-custom {
+  background-color: #0071bc;
+  color: #ededed;
+}
+.jumbotron {
+  background-color: #1486c9;
+  color: #ffffff;
+  padding: 20px;
+  margin-bottom: 0px;
+}
+.dropdown-toggle {
+  color: #ffffff;
+}
+.navbar-link {
+  color: #ffffff;
+}
+nav.navbar {
+  background: #0071bc;
+}
+.row1 {
+  margin-top: 20px;
+}
