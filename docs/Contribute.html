@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html>
+
+<!--HEAD -->
+<head>
+
+  <!--Head: created by RMarkdown (mostly) -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>R Econ Visual Library</title>
+
+  <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" href="site_libs/bootstrap-3.3.5/css/cerulean.min.css">
+  <link rel="stylesheet" href="site_libs/custom-css.css">
+
+  <script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"
+    onload="loaded=true; console.log(loaded)">
+  </script>
+
+  <script type="text/javascript">
+    jQuery(document).ready(function(){
+        jQuery("#contain").load("https://raw.githubusercontent.com/worldbank/stata-visual-library/master/docs/header.html");
+    });
+  </script>
+
+
+  <script type="text/javascript">
+  if (window.hljs) {
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+    if (document.readyState && document.readyState === "complete") {
+      window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+    }
+  }
+  </script>
+
+  <style>
+    h4 {
+      padding-top: 10px;
+      padding-bottom: 5px;
+    }
+    .main-container {
+      padding-bottom: 40px;
+    }
+  </style>
+
+</head>
+
+<!-- BODY -->
+<body>
+
+  <!-- Upper row -->
+  <div id="contain"></div>
+
+  <!-- Content -->
+  <div class="container-fluid main-container">
+    <h1>How to contribute</h1>
+
+    <h4>Bug reports and feature requests</h4>
+      <p>
+        If you have suggestions of plots you would like to see in this library
+        and are not currently here, you can open an
+        <a href="https://github.com/worldbank/r-econ-visual-library/issues">issue</a>
+        describing your suggestion.
+
+        No previous knowledge of GitHub is needed to do this.
+
+        Please read already existing issues to check whether someone else has
+        made the same suggestion or reported the same error before creating a new issue.
+      </p>
+
+    <h4>Contributing through GitHub</h4>
+
+    If you have graphs you would like to add to this library and are comfortable using GitHub,
+    fork the repository and submit a pull request to the develop branch with
+    any additions you want to make.
+
+    Please read the guidelines below about on code, branching and folder structure
+    conventions before opening a pull request.
+
+    <h4>Contributing via e-mail</h4>
+    <p>
+      If you have graphs you would like to add to this library but you are not comfortable using GitHub,
+      you can send an e-mail to dimeanalytics@worldbank.org.
+
+      Use the subject "Contribution to R Econ Visual Library" and attach a zipped folder
+      containing (1) the de-identified data used to create the plot,
+      and (2) the code that creates the plots from such data.
+    </p>
+
+    <p>
+      Please read the guidelines below on code conventions before
+      sending your contribution.
+
+      We also recommend that you create a GitHub account and include your GitHub
+      handle in the e-mail so you can receive credit for your contribution.
+    </p>
+
+    <h1>Contribution guidelines</h1>
+
+    <h4>Code conventions</h4>
+      <ul>
+        <li>
+          We recommend following the
+          <a href = "https://style.tidyverse.org/index.html">tidyverse style guide</a>
+          for all styling relevant to the code submitted.
+        </li>
+        <li>
+          <a href = "https://rmarkdown.rstudio.com/">R Markdown</a>
+          files are the preferred format for code contributions.
+          You can use
+          <a href = "https://github.com/worldbank/stata-visual-library/blob/master/contribution-template.Rmd">
+            our template Markdown file
+          </a>
+          for guidelines on how to organize your script.
+        </li>
+        <li>
+          If you have a visualization code in R and are not comfortable using R Markdown
+          or the template file,
+          you can share a common .R script for the visualization.
+        </li>
+      </ul>
+
+    <h4>GitHub conventions</h4>
+
+      <h5>Branches</h5>
+
+        <ul>
+          <li>
+            Make pull requests to the master branch only if you wish to contribute to README,
+            LICENSE or similar meta data files.
+          </li>
+          <li>
+            To contribute with R code files, create a fork from the
+            <a href = "https://github.com/worldbank/stata-visual-library/tree/develop">
+              develop branch
+            </a>
+            and point your pull request back to the same branch.
+          </li>
+          <li>
+            If your pull request is related to an
+            <a href = "https://github.com/worldbank/stata-visual-library/issues">
+              open issue
+            </a>,
+            reference the issue in your PR message.
+            If the contribution solves the issue, add the message
+            "Solves issue #X".
+          </li>
+        </ul>
+
+        <h5>Folder structure</h5>
+          <ul>
+            <li>R Markdown files should be saved in the <em>Library</em> folder</li>
+            <li>Data files should be saved in <em>Library/Data</em></li>
+            <li>Output figures should be saved in <em>docs/figure</em></li>
+            <li>Rendered HTML files should be saved in <em>docs</em>.</li>
+          </ul>
+          <p>
+            If your are using
+            <a href = "https://github.com/worldbank/stata-visual-library/blob/master/contribution-template.Rmd">
+              our template Markdown file
+            </a>,
+            the HTML file and the figures will be automatically saved in the correct folder,
+            as long as the Markdown file is saved in the <em>Library</em> folder.
+            The only adjustment to the template needed for this to use the same name
+            for the Markdown file and for
+            <a href= "https://github.com/worldbank/stata-visual-library/blob/303ff6d6312835193465c27cbd37947bed3462e7/contribution-template.Rmd#L16">
+              the second code chunk in it
+            </a>.
+          </p>
+  </div>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script
+  src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+  crossorigin="anonymous">
+</script>
+<script
+  src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+  integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+  crossorigin="anonymous">
+</script>
+
+</body>
+</html>
