@@ -9,28 +9,48 @@
 	file open  		`webpage' using "`htmlfile'", text write replace
 	file write  	`webpage' ///
 		`"<!DOCTYPE html>"' _n ///
-		`"<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">"' _n ///
+		`""' _n ///
+		`"<html>"' _n ///
+		`""' _n ///
+		`"<!--HEAD -->"' _n ///
 		`"<head>"' _n ///
 		`""' _n ///
+		`"  <meta charset="utf-8" />"' _n ///
+		`"  <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />"' _n ///
+		`"  <meta name="viewport" content="width=device-width, initial-scale=1" />"' _n ///
+		`""' _n ///
+		`"  <title>Stata Visual Library</title>"' _n ///
+		`""' _n ///
 		`"  <link rel="stylesheet""' _n ///
-		`"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css""' _n ///
-		`"  integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z""' _n ///
-		`"  crossorigin="anonymous">"' _n ///
+		`"    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css""' _n ///
+		`"    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z""' _n ///
+		`"    crossorigin="anonymous">"' _n ///
 		`""' _n ///
-		`"<link rel="stylesheet" href="site_libs/bootstrap-3.3.5/css/cerulean.min.css">"' _n ///
-		`"<link rel="stylesheet" href="site_libs/custom-css.css">"' _n ///
+		`"  <link rel="stylesheet" href="site_libs/bootstrap-3.3.5/css/cerulean.min.css">"' _n ///
+		`"  <link rel="stylesheet" href="site_libs/custom-css.css">"' _n ///
 		`""' _n ///
-		`"<script"' _n ///
-		`"  src="https://code.jquery.com/jquery-3.5.1.min.js""' _n ///
-		`"  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=""' _n ///
-		`"  crossorigin="anonymous""' _n ///
-		`"  onload="loaded=true; console.log(loaded)">"' _n ///
-		`"</script>"' _n ///
+		`"  <script"' _n ///
+		`"    src="https://code.jquery.com/jquery-3.5.1.min.js""' _n ///
+		`"    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=""' _n ///
+		`"    crossorigin="anonymous""' _n ///
+		`"    onload="loaded=true; console.log(loaded)">"' _n ///
+		`"  </script>"' _n ///
 		`""' _n ///
-		`"<script type="text/javascript">"' _n ///
-		`"  jQuery(document).ready(function() \{"' _n ///
-		`"	  jQuery("#contain").load("https://raw.githubusercontent.com/worldbank/stata-visual-library/master/docs/header.html");"' _n ///
-		`"  \});"' _n ///
+		`"  <script type="text/javascript">"' _n ///
+		`"    jQuery(document).ready(function()\{"' _n ///
+		`"        jQuery("#contain").load("https://raw.githubusercontent.com/worldbank/stata-visual-library/develop-layout/docs/header.html");"' _n ///
+		`"    \});"' _n ///
+		`"  </script>"' _n ///
+		`""' _n ///
+		`""' _n ///
+		`"  <script type="text/javascript">"' _n ///
+		`"  if (window.hljs) \{"' _n ///
+		`"    hljs.configure(\{languages: []\});"' _n ///
+		`"    hljs.initHighlightingOnLoad();"' _n ///
+		`"    if (document.readyState && document.readyState === "complete") \{"' _n ///
+		`"	  window.setTimeout(function() { hljs.initHighlighting(); }, 0);"' _n ///
+		`"	\}"' _n ///
+		`"  \}"' _n ///
 		`"</script>"' _n ///
 		`""' _n ///
 		`"<script type="text/javascript">"' _n ///
@@ -60,7 +80,6 @@
 		`"pre code { color:black; background-color:white}"' _n ///
 		`"</style>"' _n ///
 		`""' _n ///
-		`"  <meta charset="utf-8" />"' _n ///
 		`"  <title>`1'</title>"' _n ///
 		`"  <style>"' _n ///
 		`"	  code{white-space: pre-wrap;}"' _n ///
@@ -72,21 +91,22 @@
 		`"	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>"' _n ///
 		`"  <![endif]-->"' _n ///
 		`"</head>"' _n ///
+		`""' _n ///
+		`"<!-- BODY -->"' _n ///
 		`"<body>"' _n ///
 		`""' _n ///
-		`" <!-- Upper row -->"' _n ///
-		`" <div id="contain"></div>"' _n ///
+		`"  <!-- Upper row -->"' _n ///
+		`"  <div id="contain"></div>"' _n ///
 		`""' _n ///
-		`" <!-- Content -->"' _n ///
-		`" <div class="container-fluid main-container">"' _n ///
+		`"  <!-- Content -->"' _n ///
+		`"  <div class="container-fluid main-container">"' _n ///
 		`""' _n ///
-		`"  <pre class="stata"> "' _n ///
-		`"	<div id="stata"></div>"' _n ///
-		`"  </pre>"' _n ///
+		`"    <pre class="stata"> "' _n ///
+		`"      <div id="stata"></div>"' _n ///
+		`"    </pre>"' _n ///
 		`"  </div> "' _n ///
 		`""' _n ///
 		`" </div>"' _n ///
-		`"</div>"' _n ///
 		`"<!-- dynamically load mathjax for compatibility with self-contained -->"' _n ///
 		`"<script"' _n ///
 		`"  src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js""' _n ///

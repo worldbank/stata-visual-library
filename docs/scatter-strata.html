@@ -38,11 +38,48 @@
     hljs.configure({languages: []});
     hljs.initHighlightingOnLoad();
     if (document.readyState && document.readyState === "complete") {
-      window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-    }
+        window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+      }
   }
-  </script>
+</script>
 
+<script type="text/javascript">
+  jQuery(document).ready(function(){
+        jQuery("#stata").load("https://raw.githubusercontent.com/worldbank/stata-visual-library/develop-layout/Library/scatter-strata.html");
+  });
+</script>
+
+
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+      window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+<style>
+
+.em {font-weight:bold;}
+pre, code {font-family: "lucida console", monospace;}
+pre.stata {font-size:13px; line-height:13px;}
+pre {padding:8px; border:1px solid #c0c0c0; border-radius:8px; background-color:#fdfdfd;}
+code {color:#3366cc; background-color:#fafafa;}
+pre code { color:black; background-color:white}
+</style>
+
+  <title>scatter-strata</title>
+  <style>
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        span.underline{text-decoration: underline;}
+        div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 
 <!-- BODY -->
@@ -54,8 +91,12 @@
   <!-- Content -->
   <div class="container-fluid main-container">
 
+    <pre class="stata"> 
+      <div id="stata"></div>
+    </pre>
+  </div> 
 
-  </div>
+ </div>
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script
   src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
