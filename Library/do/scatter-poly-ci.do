@@ -47,6 +47,5 @@
             imargin(0 0 0 0) graphregion(margin(t=0 b=0)) ///
             position(6) fysize(75) fxsize(150) ///
             graphregion(color(white)) plotregion(color(white))
-            graph export "figure.png", as(png) replace
-
+            
 * Have a lovely day!
