@@ -51,5 +51,3 @@
 		marker(2, m(O) mlcolor(black)) ///
 		marker(3, m(O) mlcolor(black)) ///
 		marker(4, m(O) mlcolor(black))
-
-	graph export "figure/scatter-strata.png" , width(400) replace
