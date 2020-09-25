@@ -24,11 +24,11 @@ img {
   margin-bottom: 20px;
 }
 .navbar-custom {
-  background-color: #0071bc;
+  background-color: #008080;
   color: #ededed;
 }
 .jumbotron {
-  background-color: #1486c9;
+  background-color: #009a9a;
   color: #ffffff;
   padding: 20px;
   margin-bottom: 0px;
@@ -40,7 +40,7 @@ img {
   color: #ffffff;
 }
 nav.navbar {
-  background: #0071bc;
+  background: #008080;
 }
 .row1 {
   margin-top: 20px;
