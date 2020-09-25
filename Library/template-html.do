@@ -105,6 +105,7 @@
 		`"      <div id="stata"></div>"' _n ///
 		`"    </pre>"' _n ///
 		`"  </div> "' _n ///
+		`"<img src="figure/`1'.png">"' _n ///
 		`""' _n ///
 		`" </div>"' _n ///
 		`"<!-- dynamically load mathjax for compatibility with self-contained -->"' _n ///
