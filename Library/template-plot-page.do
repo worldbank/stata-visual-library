@@ -28,6 +28,7 @@
 		`""' _n ///
 		`"  <link rel="stylesheet" href="site_libs/bootstrap-3.3.5/css/cerulean.min.css">"' _n ///
 		`"  <link rel="stylesheet" href="site_libs/custom-css.css">"' _n ///
+		"  if (document.readyState && document.readyState === " `""complete""' ") {" _n ///
 		`""' _n ///
 		`"  <script"' _n ///
 		`"    src="https://code.jquery.com/jquery-3.5.1.min.js""' _n ///
@@ -37,37 +38,35 @@
 		`"  </script>"' _n ///
 		`""' _n ///
 		`"  <script type="text/javascript">"' _n ///
-		`"    jQuery(document).ready(function()\{"' _n ///
+		"    jQuery(document).ready(function(){" _n ///
 		`"        jQuery("#contain").load("https://raw.githubusercontent.com/worldbank/stata-visual-library/develop-layout/docs/header.html");"' _n ///
-		`"    \});"' _n ///
+		"    });" _n ///
 		`"  </script>"' _n ///
 		`""' _n ///
 		`""' _n ///
 		`"  <script type="text/javascript">"' _n ///
-		`"  if (window.hljs) \{"' _n ///
-		`"    hljs.configure(\{languages: []\});"' _n ///
+		"  if (window.hljs) {"_n ///
+		"    hljs.configure({languages: []});" _n ///
 		`"    hljs.initHighlightingOnLoad();"' _n ///
-		`"    if (document.readyState && document.readyState === "complete") \{"' _n ///
+		"    if (document.readyState && document.readyState ===" `"complete"' ") {" _n ///
 		`"	  window.setTimeout(function() { hljs.initHighlighting(); }, 0);"' _n ///
-		`"	\}"' _n ///
-		`"  \}"' _n ///
+		"	}" _n ///
+		"  }" _n ///
 		`"</script>"' _n ///
 		`""' _n ///
 		`"<script type="text/javascript">"' _n ///
-		`"  jQuery(document).ready(function()\{"' _n ///
+		"  jQuery(document).ready(function(){" _n ///
 		`"	  jQuery("#stata").load("https://raw.githubusercontent.com/worldbank/stata-visual-library/develop-layout/Library/`1'.html");"' _n ///
-		`"  \});"' _n ///
+		"  });" _n ///
 		`"</script>"' _n ///
 		`""' _n ///
 		`""' _n ///
 		`"<script type="text/javascript">"' _n ///
-		`"if (window.hljs) \{"' _n ///
+		"if (window.hljs) {" _n ///
 		`"  hljs.configure({languages: []});"' _n ///
-		`"  hljs.initHighlightingOnLoad();"' _n ///
-		`"  if (document.readyState && document.readyState === "complete") \{"' _n ///
-		`"	window.setTimeout(function() { hljs.initHighlighting(); }, 0);"' _n ///
-		`"  \}"' _n ///
-		`"\}"' _n ///
+		`"  hljs.initHighlightingOnLoad();"' _n ///`"	window.setTimeout(function() { hljs.initHighlighting(); }, 0);"' _n ///
+		"  }" _n ///
+		"}" _n ///
 		`"</script>"' _n ///
 		`""' _n ///
 		`"<style>"' _n ///
@@ -125,4 +124,4 @@
 
 	file close 		`webpage'
 	
-copy "`htmlfile'" "${GH}/docs/`1'.html", replace
+	copy "`htmlfile'" "${GH}/docs/codes/`1'.html", replace
