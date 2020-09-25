@@ -43,7 +43,7 @@
 		`""' _n ///
 		`"  <script type="text/javascript">"' _n ///
 		"    jQuery(document).ready(function(){" _n ///
-		`"        jQuery("#contain").load("https://raw.githubusercontent.com/worldbank/stata-visual-library/develop-layout/docs/header.html");"' _n ///
+		`"        jQuery("#contain").load("https://raw.githubusercontent.com/worldbank/stata-visual-library/master/docs/header.html");"' _n ///
 		"    });" _n ///
 		`"  </script>"' _n ///
 		`""' _n ///
@@ -80,7 +80,7 @@
 		"       for(var i = 0; i < plots.length; i++) {" _n ///
 		"         document.write('<div class=" `""col-sm-6""' ">');" _n ///
 		"         document.write('<div class=" `""card""' "data-toggle=" `""tooltip""' "data-placement=" `""bottom""' "title=" `""Click on image to see the code""' ">');" _n ///
-		"         document.write('<a href=" `"""' "codes/' + plots[i] + '.html" `"""' "class=" `""stretched-link""' "></a>');" _n ///
+		"         document.write('<a href=" `"""' "' + plots[i] + '.html" `"""' "class=" `""stretched-link""' "></a>');" _n ///
 		"         document.write('<div class=" `""card-body""' ">');" _n ///
 		"         document.write('<img class=" `""card-img""' "src=" `""figure/"' "' + plots[i] +'.png" `"""' ">');" _n ///
 		"         document.write('</div></div></div>');" _n ///

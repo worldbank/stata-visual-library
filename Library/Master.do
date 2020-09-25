@@ -26,7 +26,7 @@
 	global BoxPlots			`""boxplot-pctile""'
 	global LinePlots		`""line-fit-text""'
 	global DensityPlots		`""density-av", "density-data", "density-shaded""'
-	global RegressionCoef	`""reg-models", "reg-chartable", "reg-panels""'
+	global RegressionCoef	`""reg-models", "reg-panels", "reg-chartable""'
 	
 	foreach category in ScatterPlots BoxPlots LinePlots DensityPlots RegressionCoef {
 		
