@@ -59,12 +59,20 @@
 	* Copy the Stata style to the same folder as the markdown file to compile in PDF
 	//copy https://www.stata-journal.com/production/sjlatex/stata.sty 	stata.sty
 	
-	do 			"${GH}/Library/do/scatter-strata.do"
-	gr export 	"${GH}/docs/figure/scatter-strata.png", width(600) replace
-	copy 		"${GH}/Library/scatter-strata.do" "${GH}/Library/scatter-strata.html"
-	do 			"${GH}/Library/template-html.do" "scatter-strata"
-	filefilter  "${GH}/docs/scatter-strata.html" "${GH}/docs/delete_me.html"	 , from("\BS{") to ("{") replace
-	filefilter  "${GH}/docs/delete_me.html" 	 "${GH}/docs/scatter-strata.html", from("\BS}") to ("}") replace
-	erase		"${GH}/docs/delete_me.html"
+	local scatter	`""scatter-fl" "scatter-fl-ci" "scatter-poly-ci" "scatter-strata""'
+	
+	foreach graph in `scatter' {
+		
+		di `"`graph' "'
+	
+		gr drop _all
+		do 			"${GH}/Library/do/`graph'.do"
+		gr export 	"${GH}/docs/figure/`graph'.png", width(600) replace
+		copy 		"${GH}/Library/do/`graph'.do" 	 "${GH}/Library/`graph'.html", replace
+		do 			"${GH}/Library/template-html.do" "`graph'"
+		filefilter  "${GH}/docs/`graph'.html" 		 "${GH}/docs/delete_me.html", from("\BS{") to ("{") replace
+		filefilter  "${GH}/docs/delete_me.html" 	 "${GH}/docs/`graph'.html"	, from("\BS}") to ("}") replace
+		erase		"${GH}/docs/delete_me.html"
+	}
 	
 *============================== THE END =======================================*
