@@ -28,9 +28,9 @@
 	global LinePlots		`""line-fit-text""'
 	global DensityPlots		`""density-av", "density-data", "density-shaded""'
 	global RegressionCoef	`""reg-models", "reg-chartable""'
-	global Map				`""map-world""'
+	global Maps				`""map-world""'
 	
-	foreach category in BarPlots ScatterPlots BoxPlots LinePlots DensityPlots Map RegressionCoef {
+	foreach category in BarPlots ScatterPlots BoxPlots LinePlots DensityPlots Maps RegressionCoef {
 		
 		do 		  "${GH}/Library/template-category-page.do" "`category'"
 		tokenize `"${`category'}"'
