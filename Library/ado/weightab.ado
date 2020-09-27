@@ -5,7 +5,7 @@ prog def weightab
 
 	syntax ///
 		anything 					/// Variables list
-		[using] 					///	Output file for xlsx table
+		[using/] 					///	Output file for xlsx table
 		[if] [in] 					/// As usual
 		[pweight]					///	Weighting of observations
 		, ///
@@ -15,6 +15,7 @@ prog def weightab
 			[se] 					/// Includes 95% CI
 			[dropzero] 				/// Removes zeroes from graph
 			[barlook(string asis)] 	/// Sets look-of-bar options
+			[barlab]				/// Labels bars with percentages
 			[*] 					/// All remaining twoway options
 		
 		
@@ -139,7 +140,7 @@ qui {
 		
 	* Write
 			
-		if `"`using'"' != "" export excel label stat stat_temp* `using' , first(varl) replace
+		if "`using'" != "" export excel label stat stat_temp* using `"`using'"' , first(varl) replace
 		
 * Bar graph
 if "`graph'" != "" {
@@ -217,12 +218,20 @@ if "`graph'" != "" {
 			
 			}
 			
+	* Labels
+	
+		if "`barlab'" != "" {
+			local blabplot (scatter pos b, mlabel(b_label) msymbol(none) mlabc(black) mlabs(1.8) mlabp(3))
+			}
+			
 	* Graph
 		
 		use `final', clear
+		
+		gen b_label = string(round(b*100,1)) + "%"
 				
 		tw ///
-			`plots' ///
+			`plots' `blabplot' ///
 		, 	ylab(`theYlabels', angle(0) notick) ytit("") xtit("") ///
 			legend(order(`legendorder')) `options'
 			
