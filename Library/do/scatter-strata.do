@@ -34,8 +34,8 @@
 
 *  Create graph *******************************************************************************
 
-    graph dot var_value	///
-        ,	///
+    graph dot var_value    ///
+        ,    ///
         asy over(sp_case) over(var_label, sort(order)) ///
         linegap(20) ///
         graphregion(color(white)) ///

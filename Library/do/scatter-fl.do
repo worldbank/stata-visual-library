@@ -3,7 +3,7 @@
     * Load data
     * ---------
     use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/scatter-fl.dta", clear
-	
+    
     * Plot
     * ----
     twoway  (scatter revenue area_cult if post == 0, msize(vsmall) mcolor(gs14)) ///
@@ -15,6 +15,6 @@
             xtitle(Cultivated area) ///
             legend(order(2 "Pre-treatment" 4 "Post-treatment")) ///
             bgcolor (white) graphregion(color(white))
-			
+            
 * Have a lovely day!
-			
+            

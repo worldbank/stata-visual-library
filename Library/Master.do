@@ -24,11 +24,13 @@
 		
 	global ScatterPlots		`""scatter-fl", "scatter-fl-ci", "scatter-poly-ci", "scatter-strata""'
 	global BoxPlots			`""boxplot-pctile""'
+	global BarPlots			`""bar-better", "bar-betterbar", "bar-better-ci", "bar-over", "bar-stack-by", "bar-stack-cat", "bar-two-axes", "bar-weightab""'
 	global LinePlots		`""line-fit-text""'
 	global DensityPlots		`""density-av", "density-data", "density-shaded""'
-	global RegressionCoef	`""reg-models", "reg-panels", "reg-chartable""'
+	global RegressionCoef	`""reg-models", "reg-chartable""'
+	global Map				`""map-world""'
 	
-	foreach category in ScatterPlots BoxPlots LinePlots DensityPlots RegressionCoef {
+	foreach category in BarPlots ScatterPlots BoxPlots LinePlots DensityPlots Map RegressionCoef {
 		
 		do 		  "${GH}/Library/template-category-page.do" "`category'"
 		tokenize `"${`category'}"'
@@ -39,7 +41,9 @@
 		
 		noi di "``graph''"
 		
+			mat drop _all
 			gr drop _all
+	
 			do 			"${GH}/Library/do/``graph''.do"
 			gr export 	"${GH}/docs/figure/``graph''.png", width(600) replace
 			copy 		"${GH}/Library/do/``graph''.do" 	 "${GH}/Library/``graph''.html", replace

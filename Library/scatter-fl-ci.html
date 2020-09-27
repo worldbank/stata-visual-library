@@ -2,7 +2,7 @@
 
     * Load data
     use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/scatter-fl-ci.dta", clear
-	
+    
     * Graph
     twoway ///
         (lfitci jobs_scarce_code avg_growth ) ///
@@ -13,7 +13,7 @@
         (scatter jobs_scarce_code avg_growth if continent == "Oceania", mcolor(navy) m(D) ) ///
         (scatter jobs_scarce_code avg_growth if continent == "South America", mcolor(red) m(T)) ///
       ,  ///
-        xlabel(-5(5)15) 		///
+        xlabel(-5(5)15)         ///
         xtitle("Average Annual GDP per Capita Growth Rate (%)", axis(1)) ///
         ylabel(0(0.2)1) ///
         ytitle("Gender Value Indicator" ) ///
@@ -23,5 +23,5 @@
         title("Gender Value Indicator and GDP per Capita Growth" "Correlation")  ///
         note("Source: World Values Survey (2014 or last available year) and World Bank") /// 
         graphregion(color(white)) bgcolor(white) 
-			
+            
 * Have a lovely day!

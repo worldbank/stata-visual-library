@@ -1,7 +1,7 @@
 * Figure: Scatter plot with polynomial smoothing and confidence interval
 
 **************************************
-***				Notes			   ***
+***                Notes               ***
 **************************************
 /* 
 *requires user written command grc1leg
@@ -21,9 +21,9 @@
             (lpolyci cons_pae_sd_sine cons_pae_m_sine if cons_pae_m_sine < `r(p99)') ///
          , ///
             legend(off) /// 
-            xtitle(" " "`=ustrunescape("\u006D\u0302")'", size(large)) /// 	m-hat
-            ytitle("`=ustrunescape("\u0073\u0302")'" " ", size(large)) /// 	s-hat 
-            xlabel(50 "50" 100 "100" 150 "150" 200 "200") ///	
+            xtitle(" " "`=ustrunescape("\u006D\u0302")'", size(large)) ///     m-hat
+            ytitle("`=ustrunescape("\u0073\u0302")'" " ", size(large)) ///     s-hat 
+            xlabel(50 "50" 100 "100" 150 "150" 200 "200") ///    
             graphregion(color(white)) bgcolor(white) ///
             name(s_by_mhat)
 
@@ -32,10 +32,10 @@
     sum cons_pae_m_sine, det
 
     twoway  (scatter cv cons_pae_m_sine if cons_pae_m_sine<`r(p99)' & cons_pae_m_sine>`r(p1)') ///
-	        (lpolyci cv cons_pae_m_sine if cons_pae_m_sine<`r(p99)' & cons_pae_m_sine>`r(p1)') ///
+            (lpolyci cv cons_pae_m_sine if cons_pae_m_sine<`r(p99)' & cons_pae_m_sine>`r(p1)') ///
          , ///
             ytitle("`=ustrunescape("\u0073\u0302/\u006D\u0302")'" " ", size(large)) ///  s-hat/m-hat
-            xtitle(" " "`=ustrunescape("\u006D\u0302")'", size(large)) ///	m-hat
+            xtitle(" " "`=ustrunescape("\u006D\u0302")'", size(large)) ///    m-hat
             legend(order(2 3) label(3 "Local Poly.") label(2 "95% CI")) ///
             graphregion(color(white)) bgcolor(white) ///
             name(cv_by_mhat)

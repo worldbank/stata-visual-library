@@ -13,38 +13,38 @@
         local theLabel : var label `var'
         local theLabels `"`theLabels' `x' "`theLabel'""'
         local x = `x' - 2
-	
+    
         reg `var' facility_private i.case_code 
-		
+        
         mat a = r(table)
         
-		local b = a[1,1]
+        local b = a[1,1]
         local ll = a[5,1]
         local ul = a[6,1]
         mat a = [`b',`ll',`ul',1]
         mat rownames a = "`var'"
-		
+        
         logit `var' facility_private i.case_code 
         margins , dydx(facility_private)
-		
+        
         mat b = r(table)
         
-		local b = b[1,1]
+        local b = b[1,1]
         local ll = b[5,1]
         local ul = b[6,1]
         mat b = [`b',`ll',`ul',2]
         mat rownames b = "`var'"
         
         mat theResults = nullmat(theResults) \ a \ b 
-		
-		}
-		
+        
+        }
+        
     mat colnames theResults = "b" "ll" "ul" "type"
     matlist theResults
 
     clear
     svmat theResults , names(col)
-	
+    
     gen n = _n
     replace n = 17-n
     tw ///
