@@ -13,7 +13,7 @@
               by(provider_cadre country)
 
     reshape long p, i(provider_cadre country)
-	
+    
     replace country = "Kenya (N = 372)" if regexm(country,"Kenya")
     replace country = "Madagascar (N = 588)" if regexm(country,"Madagascar")
     replace country = "Nigeria (N = 1,579)" if regexm(country,"Nigeria")
