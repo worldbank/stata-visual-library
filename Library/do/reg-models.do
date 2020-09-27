@@ -2,7 +2,7 @@
 
     global graph_opts title(, justification(left) color(black) span pos(11)) graphregion(color(white)) ylab(,angle(0) nogrid) xtit(,placement(left) justification(left)) yscale(noline) xscale(noline) legend(region(lc(none) fc(none)))
 
-    use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/reg-models.dta" , clear
+    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/reg-models.dta" , clear
 
     cap mat drop theResults
     local theLabels ""

@@ -3,7 +3,7 @@
     global  graph_opts1 bgcolor(white) graphregion(color(white)) legend(region(lc(none) fc(none))) ///
             ylab(,angle(0) nogrid) title(, justification(left) color(black) span pos(11)) subtitle(, justification(left) color(black))
 
-    use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/boxplot-pctile.dta" , clear
+    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/boxplot-pctile.dta" , clear
 
     * Graph (10-25-50-75-90 pctiles)
 

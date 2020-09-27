@@ -70,7 +70,7 @@
       <p>
         If you have suggestions of plots you would like to see in this library
         and are not currently here, you can open an
-        <a href="https://github.com/worldbank/r-econ-visual-library/issues">issue</a>
+        <a href="https://github.com/worldbank/stata-visual-library/issues">issue</a>
         describing your suggestion.
 
         No previous knowledge of GitHub is needed to do this.
@@ -93,9 +93,10 @@
       If you have graphs you would like to add to this library but you are not comfortable using GitHub,
       you can send an e-mail to dimeanalytics@worldbank.org.
 
-      Use the subject "Contribution to R Econ Visual Library" and attach a zipped folder
+      Use the subject "Contribution to Stata Visual Library" and attach a zipped folder
       containing (1) the de-identified data used to create the plot,
-      and (2) the code that creates the plots from such data.
+      (2) the code that creates the plot from such data, and 
+      (3) the ado-file for any user-written command not published in SSC.
     </p>
 
     <p>
@@ -111,23 +112,10 @@
     <h4>Code conventions</h4>
       <ul>
         <li>
-          We recommend following the
-          <a href = "https://style.tidyverse.org/index.html">tidyverse style guide</a>
+          We recommend following the DIME Analytics Stata style guide,
+          available on the appendix of our 
+          <a href = "https://worldbank.github.io/dime-data-handbook/">data handbook</a>
           for all styling relevant to the code submitted.
-        </li>
-        <li>
-          <a href = "https://rmarkdown.rstudio.com/">R Markdown</a>
-          files are the preferred format for code contributions.
-          You can use
-          <a href = "https://github.com/worldbank/stata-visual-library/blob/master/contribution-template.Rmd">
-            our template Markdown file
-          </a>
-          for guidelines on how to organize your script.
-        </li>
-        <li>
-          If you have a visualization code in R and are not comfortable using R Markdown
-          or the template file,
-          you can share a common .R script for the visualization.
         </li>
       </ul>
 
@@ -141,7 +129,7 @@
             LICENSE or similar meta data files.
           </li>
           <li>
-            To contribute with R code files, create a fork from the
+            To contribute with Stata code files, create a fork from the
             <a href = "https://github.com/worldbank/stata-visual-library/tree/develop">
               develop branch
             </a>
@@ -154,30 +142,17 @@
             </a>,
             reference the issue in your PR message.
             If the contribution solves the issue, add the message
-            "Solves issue #X".
+            "Resolves issue #X".
           </li>
         </ul>
 
         <h5>Folder structure</h5>
           <ul>
-            <li>R Markdown files should be saved in the <em>Library</em> folder</li>
-            <li>Data files should be saved in <em>Library/Data</em></li>
+            <li>do-files should be saved in the <em>Library/do</em> folder</li>
+            <li>User-written commands not published in SSC should be saved in the <em>Library/ado</em> folder</li>
+            <li>Data files should be saved in <em>Library/data</em></li>
             <li>Output figures should be saved in <em>docs/figure</em></li>
-            <li>Rendered HTML files should be saved in <em>docs</em>.</li>
           </ul>
-          <p>
-            If your are using
-            <a href = "https://github.com/worldbank/stata-visual-library/blob/master/contribution-template.Rmd">
-              our template Markdown file
-            </a>,
-            the HTML file and the figures will be automatically saved in the correct folder,
-            as long as the Markdown file is saved in the <em>Library</em> folder.
-            The only adjustment to the template needed for this to use the same name
-            for the Markdown file and for
-            <a href= "https://github.com/worldbank/stata-visual-library/blob/303ff6d6312835193465c27cbd37947bed3462e7/contribution-template.Rmd#L16">
-              the second code chunk in it
-            </a>.
-          </p>
   </div>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->

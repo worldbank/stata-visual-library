@@ -11,7 +11,7 @@
 */
 
 *** Load Data
-    use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/scatter-poly-ci.dta", clear
+    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/scatter-poly-ci.dta", clear
 
 
 *** Create First Graph

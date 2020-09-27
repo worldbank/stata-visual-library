@@ -4,7 +4,7 @@
     ssc install akdensity
 
     * Load data 
-    use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/density-shaded.dta", replace
+    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/density-shaded.dta", replace
     
     * Create variable used for graph
     sort beta_

@@ -6,7 +6,7 @@
     * These files are created by the authors for the purposes of this study and are not publicly available for general use.
     * These files are not guaranteed to produce appropriate statistics other than those contained in this replication file.
 
-    qui do "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/ado/chartablesheet.ado"
+    qui do "https://github.com/worldbank/stata-visual-library/raw/master/Library/ado/chartablesheet.ado"
     
     * In addition, this dofile relies on two other publicly available STATA extensions: 
         * firthlogit, in package firthlogit from http://fmwww.bc.edu/RePEc/bocode/f
@@ -19,7 +19,7 @@
     
 * Figure 2. Impact of provider qualifications on main standardized patient outcomes
 
-    use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/reg-chartable.dta", clear
+    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/reg-chartable.dta", clear
     
     * Sample Restriction Logic
     global cxr "& sp_case <3"

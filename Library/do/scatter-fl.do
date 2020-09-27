@@ -2,19 +2,23 @@
 
     * Load data
     * ---------
-    use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/scatter-fl.dta", clear
+   sysuse auto, clear
+ 
+    * Set graph options
+    * ----
+   local col_domestic 	midblue
+   local col_foreign  	red
+   local transparency   %30
+   local point_width	0
+   local point_size		small
     
     * Plot
     * ----
-    twoway  (scatter revenue area_cult if post == 0, msize(vsmall) mcolor(gs14)) ///
-            (lfit revenue area_cult if post == 0, color(gs12)) ///
-            (scatter revenue area_cult if post == 1, msize(vsmall) mcolor(stone)) ///
-            (lfit revenue area_cult if post == 1, color(sand)) ///
+    twoway  (scatter price mpg if foreign == 0, mfcolor(`col_domestic'`transparency') msize(`point_size') mlwidth(`point_width')) ///
+            (lfit price mpg if foreign == 0, color(`col_domestic')) ///
+            (scatter price mpg if foreign == 1, mfcolor(`col_foreign'`transparency') msize(`point_size')  mlwidth(`point_width')) ///
+            (lfit price mpg if foreign == 1, color(`col_foreign')) ///
          , ///
-            ytitle(Agriculture revenue (BRL thousands)) ///
-            xtitle(Cultivated area) ///
-            legend(order(2 "Pre-treatment" 4 "Post-treatment")) ///
-            bgcolor (white) graphregion(color(white))
-            
-* Have a lovely day!
+            graphregion(color(white)) ///
+			legend(order(2 "Domestic" 4 "Foreign"))
             

@@ -8,7 +8,7 @@
            title(, justification(left) color(black) span pos(11)) ///
            subtitle(, justification(left) color(black))
 
-    use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/bar-over.dta" , clear
+    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-over.dta" , clear
 
     graph bar treat_correct ///
         , ///
