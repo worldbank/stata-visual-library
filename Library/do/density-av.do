@@ -1,4 +1,6 @@
-* Figure: Density plots with averages
+/**********************************************************************************
+               FIGURE: kernel density graph with mean marker
+**********************************************************************************/
 
     * Load data
     * ---------
@@ -7,13 +9,13 @@
     * Calculate means
     * ---------------
     sum     revenue if post == 0
-    local     pre_mean = r(mean)
-    sum        revenue if post == 1
-    local     post_mean = r(mean)
+    local   pre_mean = r(mean)
+    sum     revenue if post == 1
+    local   post_mean = r(mean)
     
     * Plot
     * ----
-    twoway     (kdensity revenue if post == 0, color(gs10)) ///
+    twoway  (kdensity revenue if post == 0, color(gs10)) ///
             (kdensity revenue if post == 1, color(emerald)) ///
          , ///
             xline(`pre_mean', lcolor(gs12) lpattern(dash)) ///
