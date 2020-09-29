@@ -7,7 +7,7 @@
     global hist_opts ylab(, angle(0) axis(2)) yscale(noline alt axis(2)) ///
         ytit(, axis(2)) ytit(, axis(1)) yscale(off axis(2)) yscale(alt)
 
-    use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/density-data.dta"  , clear
+    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/density-data.dta"  , clear
 
     qui su theta_mle
 

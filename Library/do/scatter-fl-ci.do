@@ -1,7 +1,7 @@
 *Figure: Scatter plot with fitted line and confidence interval
 
     * Load data
-    use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/scatter-fl-ci.dta", clear
+    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/scatter-fl-ci.dta", clear
     
     * Graph
     twoway ///

@@ -2,7 +2,7 @@
 
     * Load data
     * ---------
-    use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/bar-two-axes.dta", clear
+    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-two-axes.dta", clear
     
     * Adjust variable for bar position
     gen x = int1mo+.5

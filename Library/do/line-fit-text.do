@@ -1,7 +1,7 @@
 *Figure: Line plots witthed line with confidence interval
 
     * Load data set
-    use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/line-fit-text.dta", clear
+    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/line-fit-text.dta", clear
     
     * Treament effect
     reg     y_var x_var post x_var_post control

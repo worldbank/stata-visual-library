@@ -2,7 +2,7 @@
 
     * Load data
     * ---------
-    use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/density-av.dta", clear
+    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/density-av.dta", clear
     
     * Calculate means
     * ---------------

@@ -9,7 +9,7 @@
     global graph_opts1 bgcolor(white) graphregion(color(white)) legend(region(lc(none) fc(none))) ylab(,angle(0) nogrid) subtitle(, justification(left) color(black) span pos(11)) title(, color(black) span)
     global pct `" 0 "0%" .25 "25%" .5 "50%" .75 "75%" 1 "100%" "'
 
-    use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/bar-stack-by.dta", clear
+    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-stack-by.dta", clear
 
     graph bar med_b2_antister_cat?? ///
         if dr_3 == 1 ///

@@ -22,15 +22,16 @@
 	* Copy the Stata style to the same folder as the markdown file to compile in PDF
 	//copy https://www.stata-journal.com/production/sjlatex/stata.sty 	stata.sty
 		
-	global ScatterPlots		`""scatter-fl", "scatter-fl-ci", "scatter-poly-ci", "scatter-strata""'
+	global ScatterPlots		`""scatter-fl", "scatter-fl-ci", "scatter-poly-ci", "scatter-strata", "scatter-transparent""'
 	global BoxPlots			`""boxplot-pctile""'
 	global BarPlots			`""bar-better", "bar-betterbar", "bar-better-ci", "bar-over", "bar-stack-by", "bar-stack-cat", "bar-two-axes", "bar-weightab""'
 	global LinePlots		`""line-fit-text""'
 	global DensityPlots		`""density-av", "density-data", "density-shaded""'
-	global RegressionCoef	`""reg-models", "reg-chartable""'
+	global RegressionCoef	`""reg-models", "reg-chartable", "reg-het", "reg-predicted", "reg-margin""'
 	global Map				`""map-world""'
+	global EventStudy		`""eventstudy-prepost""'
 	
-	foreach category in BarPlots ScatterPlots BoxPlots LinePlots DensityPlots Map RegressionCoef {
+	foreach category in EventStudy BarPlots ScatterPlots BoxPlots LinePlots DensityPlots Map RegressionCoef {
 		
 		do 		  "${GH}/Library/template-category-page.do" "`category'"
 		tokenize `"${`category'}"'

@@ -8,7 +8,7 @@
 
     global pct `" 0 "0%" .25 "25%" .5 "50%" .75 "75%" 1 "100%" "'
 
-    use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/bar-stack-cat.dta" , clear
+    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-stack-cat.dta" , clear
 
     local x = 0
     qui foreach var of varlist ///

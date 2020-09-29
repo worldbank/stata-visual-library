@@ -38,7 +38,7 @@
 		`""' _n ///
 		`"  <script type="text/javascript">"' _n ///
 		"    jQuery(document).ready(function(){" _n ///
-		`"        jQuery("#contain").load("https://raw.githubusercontent.com/worldbank/stata-visual-library/develop-layout/docs/header.html");"' _n ///
+		`"        jQuery("#contain").load("https://raw.githubusercontent.com/worldbank/stata-visual-library/master/docs/header.html");"' _n ///
 		"    });" _n ///
 		`"  </script>"' _n ///
 		`""' _n ///
@@ -55,7 +55,7 @@
 		`""' _n ///
 		`"<script type="text/javascript">"' _n ///
 		"  jQuery(document).ready(function(){" _n ///
-		`"	  jQuery("#stata").load("https://raw.githubusercontent.com/worldbank/stata-visual-library/develop-layout/Library/`1'.html");"' _n ///
+		`"	  jQuery("#stata").load("https://raw.githubusercontent.com/worldbank/stata-visual-library/master/Library/`1'.html");"' _n ///
 		"  });" _n ///
 		`"</script>"' _n ///
 		`""' _n ///
