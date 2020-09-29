@@ -45,3 +45,6 @@ nav.navbar {
 .row1 {
   margin-top: 20px;
 }
+.navbar .navbar-nav>li {
+  font-size: 16px;
+}
