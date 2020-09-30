@@ -1,9 +1,6 @@
 /*==============================================================================
-
-							  Virtual RT2
-						   September 23, 2020
 							 
-					STATA MARKDOWN MASTER DO FILE
+					STATA VISUAL LIBRARY MASTER DO FILE
 							 
 ==============================================================================*/
 	
@@ -25,13 +22,13 @@
 	global ScatterPlots		`""scatter-fl", "scatter-fl-ci", "scatter-poly-ci", "scatter-strata", "scatter-transparent""'
 	global BoxPlots			`""boxplot-pctile""'
 	global BarPlots			`""bar-better", "bar-betterbar", "bar-better-ci", "bar-over", "bar-stack-by", "bar-stack-cat", "bar-two-axes", "bar-weightab""'
-	global LinePlots		`""line-fit-text""'
+	global LinePlots		`""line-fit-text", "line-plottig", "line-uncluttered""'
 	global DensityPlots		`""density-av", "density-data", "density-shaded""'
-	global RegressionCoef	`""reg-models", "reg-chartable", "reg-het", "reg-predicted", "reg-margin""'
+	global RegressionCoef	`""reg-models", "reg-chartable", "reg-het", "reg-predicted""'
 	global Map				`""map-world""'
 	global EventStudy		`""eventstudy-prepost""'
 	
-	foreach category in EventStudy BarPlots ScatterPlots BoxPlots LinePlots DensityPlots Map RegressionCoef {
+	foreach category in EventStudy ScatterPlots BoxPlots LinePlots DensityPlots Map RegressionCoef BarPlots {
 		
 		do 		  "${GH}/Library/template-category-page.do" "`category'"
 		tokenize `"${`category'}"'
@@ -44,13 +41,18 @@
 		
 			mat drop _all
 			gr drop _all
+			
+			set scheme s2color
 	
 			do 			"${GH}/Library/do/``graph''.do"
-			gr export 	"${GH}/docs/figure/``graph''.png", width(600) replace
+			gr export 	"${GH}/docs/figure/``graph''.png", height(600) replace
 			copy 		"${GH}/Library/do/``graph''.do" 	 "${GH}/Library/``graph''.html", replace
 			do 			"${GH}/Library/template-plot-page.do" "``graph''"
 		
 		}
 	}	
 	
+	foreach file in "map-world.prj" "map-world.dbf" "map-world.shx" "map-world.shp" "world_shape.dta" "world_shape_coord.dta" {
+		erase "${GH}/Library/`file'"
+	}
 *============================== THE END =======================================*
