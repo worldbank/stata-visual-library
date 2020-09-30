@@ -63,19 +63,21 @@
 
   <!-- Content -->
   <div class="container-fluid main-container">
+  <div class="card-columns">
     <script type="text/javascript">
 
       var plots = ["scatter-fl", "scatter-fl-ci", "scatter-poly-ci", "scatter-strata", "scatter-transparent"];
 
        for(var i = 0; i < plots.length; i++) {
-         document.write('<div class="col-sm-6">');
-         document.write('<div class="card"data-toggle="tooltip"data-placement="bottom"title="Click on image to see the code">');
+         document.write('<div class="col-sm-12">');
+         document.write('<div class="card" data-toggle="tooltip" data-placement="bottom" title="Click on image to see the code">');
          document.write('<a href="' + plots[i] + '.html"class="stretched-link"></a>');
          document.write('<div class="card-body">');
          document.write('<img class="card-img"src="figure/' + plots[i] +'.png">');
          document.write('</div></div></div>');
        }
     </script>
+  </div>
   </div>
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script
