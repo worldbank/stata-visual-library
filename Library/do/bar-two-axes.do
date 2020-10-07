@@ -18,6 +18,7 @@
         if "`foodGroup'" == "starch"            local graphTitle Starchy Foods
         if "`foodGroup'" == "processed_sugar"    local graphTitle Processed/Sugar
 
+		*Create a two way bar graph with a line for expenditures per specified foodGroup
         twoway     bar number_group x if food_group=="`foodGroup'", ///
                 yaxis(1) ytitle("Avg. Number of Foods from" "Group Consumed Last Month", axis(1)) ///
                 barwidth(.9) fintensity(inten0) lcolor(black) /// 

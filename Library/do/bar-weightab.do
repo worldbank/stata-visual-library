@@ -9,7 +9,8 @@
     local opts lw(thin) lc(white) la(center)
 
     label def case 1 "Case 1" 2 "Case 2" 3 "Case 3" 4 "Case 4" , modify
-
+	
+	*Uses weighttab.ado -- details of which can be found in ado folder (including help file)
     qui do "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/ado/weightab.ado"
 
     use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/bar-weightab.dta" , clear

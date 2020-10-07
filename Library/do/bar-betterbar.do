@@ -5,6 +5,8 @@
 * Use of standardised patients to assess antibiotic dispensing for tuberculosis by pharmacies in urban India: 
 * A cross-sectional study. 
 * The Lancet Infectious Diseases. 2016 Nov 30;16(11):1261-8.
+
+//Set global for graph options
     
     global  graph_opts ///
             note(, justification(left) color(black) span pos(7)) ///
@@ -17,6 +19,7 @@
             yscale(noline) xscale(noline) xsize(7) ///
             legend(region(lc(none) fc(none)))
         
+	//Relies of betterbar.ado and labelcollapse.ado. Documentation in ado folder. 
     qui do "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/ado/betterbar.ado"
     qui do "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/ado/labelcollapse.ado"
 
@@ -25,6 +28,8 @@
     
     local title_5 = "Classic case of presumed TB"
     local title_6 = "TB case with positive sputum report"
+	
+	//for loop from i = 5 to 6 (increment by 1)
 
     qui forvalues i = 5/6 {
     
