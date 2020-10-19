@@ -18,7 +18,7 @@
     sum cons_pae_m_sine, det
 
     twoway  (scatter cons_pae_sd_sine cons_pae_m_sine if cons_pae_m_sine < `r(p99)') ///
-            (lpolyci cons_pae_sd_sine cons_pae_m_sine if cons_pae_m_sine < `r(p99)') ///
+            (lpolyci cons_pae_sd_sine cons_pae_m_sine if cons_pae_m_sine < `r(p99)') /// cut out extreme outliers (<1st percentile | >99th)
          , ///
             legend(off) /// 
             xtitle(" " "`=ustrunescape("\u006D\u0302")'", size(large)) ///     m-hat
@@ -28,11 +28,11 @@
             name(s_by_mhat)
 
 
-***C reate Second Graph
+***Create Second Graph
     sum cons_pae_m_sine, det
 
     twoway  (scatter cv cons_pae_m_sine if cons_pae_m_sine<`r(p99)' & cons_pae_m_sine>`r(p1)') ///
-            (lpolyci cv cons_pae_m_sine if cons_pae_m_sine<`r(p99)' & cons_pae_m_sine>`r(p1)') ///
+            (lpolyci cv cons_pae_m_sine if cons_pae_m_sine<`r(p99)' & cons_pae_m_sine>`r(p1)') ///cut out extreme outliers (<1st percentile | >99th)
          , ///
             ytitle("`=ustrunescape("\u0073\u0302/\u006D\u0302")'" " ", size(large)) ///  s-hat/m-hat
             xtitle(" " "`=ustrunescape("\u006D\u0302")'", size(large)) ///    m-hat

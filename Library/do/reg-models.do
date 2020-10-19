@@ -1,6 +1,6 @@
 * Figure: Comparison of marginal effects from linear and logistic specifications
 
-    global graph_opts title(, justification(left) color(black) span pos(11)) graphregion(color(white)) ylab(,angle(0) nogrid) xtit(,placement(left) justification(left)) yscale(noline) xscale(noline) legend(region(lc(none) fc(none)))
+    global graph_opts title(, justification(left) color(black) span pos(11)) graphregion(color(white)) ylab(,angle(0) nogrid) xtit(,placement(left) justification(left)) yscale(noline) xscale(noline) legend(region(lc(none) fc(none))) //global with all graph options
 
     use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/reg-models.dta" , clear
 
@@ -16,15 +16,16 @@
     
         reg `var' facility_private i.case_code 
         
-        mat a = r(table)
+        mat a = r(table) //store results of regression in matrix
         
-        local b = a[1,1]
-        local ll = a[5,1]
+        local b = a[1,1] //store betahat facility_private
+        local ll = a[5,1] //store lower bound of 95% CI
+        mat rownames a = "`var'" //create matrix of xvar names
+        
+		//repeat above steps, but this time with a logit model
+        logit `var' facility_private i.case_code 
         local ul = a[6,1]
         mat a = [`b',`ll',`ul',1]
-        mat rownames a = "`var'"
-        
-        logit `var' facility_private i.case_code 
         margins , dydx(facility_private)
         
         mat b = r(table)
