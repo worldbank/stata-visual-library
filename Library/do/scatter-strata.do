@@ -37,7 +37,7 @@
     graph dot var_value    ///
         ,    ///
         asy over(sp_case) over(var_label, sort(order)) /// create a scatter with case number and var_label as Ys
-        linegap(20) ///
+        linegap(20) /// then add all graph customizations
         graphregion(color(white)) ///
         xsize(7) ///
         legend(region(lc(none) fc(none))) ///

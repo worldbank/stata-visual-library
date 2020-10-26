@@ -42,7 +42,8 @@
         label val med_class_typ med_k
                 
         keep if case == `i'
-            
+        
+		*collapse but preserve labels. More can be read in the labelcollapse.ado help file*
         labelcollapse  (firstnm) n med_class_typ med_generic_encoded sp_location, ///
                         by(med_generic facilitycode) ///
                         vallab(med_class_typ med_generic_encoded sp_location)
@@ -55,7 +56,7 @@
                 
         foreach var of varlist n?* {
             
-            local theLabel : var label `var'
+            local theLabel : var label `var' //macro
             local theLabel = regexr("`theLabel'","med_generic_encoded == ","")
                     
             cap su n if med_generic == "`theLabel'"
@@ -73,7 +74,8 @@
         }
                 
         drop if med_generic == "Sodium Chloride" // not an active ingredient
-            
+        
+		*Uses betterbar.ado. More can be found in the betterbar.ado help file.*
         betterbar (n?*) , ///
                 stat(sum) over(med_class_typ) by(med_class_typ) nobylabel nobycolor d(1)  ///
                 legend(span c(1) pos(3) ring(1) symxsize(small) symysize(small) size(small))  ///

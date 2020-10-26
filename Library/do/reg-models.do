@@ -40,14 +40,15 @@
         
         }
         
-    mat colnames theResults = "b" "ll" "ul" "type"
-    matlist theResults
+    mat colnames theResults = "b" "ll" "ul" "type" 
+    matlist theResults //list results 
 
     clear
-    svmat theResults , names(col)
+    svmat theResults , names(col)//create variables from matrix
     
     gen n = _n
     replace n = 17-n
+	*graph results with capped lines and scatter*
     tw ///
         (rcap ll ul n if type == 1 , hor lc(navy)) ///
         (scatter n b if type == 1 , mc(black)) ///

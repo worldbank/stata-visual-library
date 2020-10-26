@@ -15,17 +15,19 @@
         correct treat_cxr re_3 re_4 treat_refer ///
         med_any med_l_any_1 med_l_any_2 med_l_any_3 med_k_any_9 {
 
-        mean `var' [pweight = weight_city]
-        mat a = e(b)
-        local mean = a[1,1]
+        mean `var' [pweight = weight_city] //calculate variable mean with probability weight
+        mat a = e(b) //store returned result in matrix
+        local mean = a[1,1] //store value of mean in local
         local mean = string(round(100*`mean',0))
         local mean = substr("`mean'",1,strpos("`mean'",".")+1)
 
         local ++x
-        local theLabel : var label `var'
+        local theLabel : var label `var' //macro
         local theLabels `" `theLabels' `x' "`theLabel'" "' // [`mean'%]
 
-        cap mat drop theResult
+        cap mat drop theResult //checks to see if variable exists
+		
+		//regress each variable on the independent variables, one by one, to record the variance explained by each
         reg `var' i.city [pweight = weight_city]
         local theR21 = `e(r2)'
         mat theResult = nullmat(theResult) , [`theR21']
@@ -46,13 +48,13 @@
         local theR25 = `e(r2)' - `theR21' - `theR22' - `theR23' - `theR24'
         mat theResult = nullmat(theResult) , [`theR25']
 
-        mean `var' [pweight = weight_city]
+        mean `var' [pweight = weight_city] //mean estmiate again
         mat a = e(b)
         local mean = a[1,1]
         mat theResult = nullmat(theResult) , [`mean']
 
         mat theResults = nullmat(theResults) \ theResult
-        matlist theResults
+        matlist theResults //list of results
 
     }
 
@@ -62,6 +64,7 @@
     label def n `theLabels'
     label val n n
 
+	*Graph the results we have gotten using a horizontal stacked bar*
     graph bar (sum) theResults1 theResults2 theResults3 theResults4 theResults5  ///
         , ///
         ylab($pct) ///

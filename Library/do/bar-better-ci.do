@@ -7,7 +7,7 @@
 * The Lancet Infectious Diseases. 2016 Nov 30;16(11):1261-8.
 	
 
-    global pct `" 0 "0%" .25 "25%" .5 "50%" .75 "75%" 1 "100%" "'
+    global pct `" 0 "0%" .25 "25%" .5 "50%" .75 "75%" 1 "100%" "' //horizontal axis labels global
 	
 	*Uses betterbar.ado; help file is in ado folder (and the ado file)
 
