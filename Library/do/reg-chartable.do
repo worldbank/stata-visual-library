@@ -27,11 +27,12 @@
     global sp_drugs_tb "& sp_case >2"
         
     * Output
+	//chartable command generates a chart of primary regression results; more in ado folder (chartable)
     chartable correct cxr sputum s5_referral sp_drugs_tb sp_drugs_antibio sp_drugs_quin ///
         using "results.xlsx" ///
         , ///
-        c(xi: firthlogit) ///
-        rhs(q_mbbs pro_age pro_male patients_waiting_in i.sp_id) or p globalif
+        c(xi: firthlogit) ///indicates estimation command
+        rhs(q_mbbs pro_age pro_male patients_waiting_in i.sp_id) or p globalif//specify rhs vars
             
             
 * Have a lovely day!

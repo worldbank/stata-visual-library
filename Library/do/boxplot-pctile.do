@@ -1,6 +1,6 @@
 * Figure: 10-25-50-75-90 percentile box plot
 
-    global  graph_opts1 bgcolor(white) graphregion(color(white)) legend(region(lc(none) fc(none))) ///
+    global  graph_opts1 bgcolor(white) graphregion(color(white)) legend(region(lc(none) fc(none))) ///set all our graph options in a global variable
             ylab(,angle(0) nogrid) title(, justification(left) color(black) span pos(11)) subtitle(, justification(left) color(black))
 
     use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/boxplot-pctile.dta" , clear
@@ -10,9 +10,11 @@
     collapse (p10) p10=competence_mle (p25) p25=competence_mle (p50) p50=competence_mle ///
              (p75) p75=competence_mle (p90) p90=competence_mle ///
             , ///
-              by(provider_cadre country)
+              by(provider_cadre country) //store the different calculated percentiles of the variable by country and provider type
 
-    reshape long p, i(provider_cadre country)
+    reshape long p, i(provider_cadre country) //reshape the data so percentiles are well organized
+	
+	*Replace country names with labels we want to show up in graph*
     
     replace country = "Kenya (N = 372)" if regexm(country,"Kenya")
     replace country = "Madagascar (N = 588)" if regexm(country,"Madagascar")
@@ -20,9 +22,9 @@
     replace country = "Tanzania (N = 224)" if regexm(country,"Tanzania")
     replace country = "Uganda (N = 432)" if regexm(country,"Uganda")
 
-    graph   box p ///
+    graph   box p ///box plot
             ,  ///
-            hor over(provider_cadre) over(country ) ///
+            hor over(provider_cadre) over(country) ///plot over country and provider type
             legend(order(0 "Professional Cadre:" 1 "Medical Officer" 2 "Nurse") r(1) symxsize(small) symysize(small)  pos(6) ring(1)) ///
             asy $graph_opts1 ylab(-1 "-1 SD" 0 "SDI Mean" .553483 "Median" 1 "+1 SD" 2 "+2 SD" 3 "+3 SD", labsize(vsmall)) ytit("") note("") ///
             lintensity(.5) yline(.553483 , lc(black) lp(dash)) ///
