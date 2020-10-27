@@ -1,9 +1,11 @@
 * Figure: 10-25-50-75-90 Percentile box plot with averages
 		
-	* Load data
-	cd	  "C:\Users\Diksha\Desktop\stata-visual-library\Library\data"	
-	use	  "boxplot-averages"	   				  		              , clear
-		
+	* Load data	
+	use	  "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/boxplot-averages.dta"	, clear
+	
+	* Drop missing values 
+	drop if yield == . 
+	
 	* Generate average, median, and percentiles
 	egen 	average =   mean(yield) 		  	  , by(crop)
 	format  average   %9.3f

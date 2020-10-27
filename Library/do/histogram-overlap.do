@@ -1,9 +1,8 @@
 * Figure: Overlapping histograms
 		
-	* Load data
-	cd	    	 "C:\Users\Diksha\Desktop\stata-visual-library\Library\data"	
-	use	    	 "histogram-overlap.dta"	 , clear
-	append using "histogram-overlap2.dta" , gen(group)
+	* Load data	
+	use	    	  "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/histogram-overlap.dta"	  , clear
+	append using  "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/histogram-overlap2.dta"  , gen(group)
 	
 	* Set general options
 	local histOptions "start(0) width(20) percent gap(5)"		 
