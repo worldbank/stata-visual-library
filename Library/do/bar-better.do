@@ -1,6 +1,6 @@
 * Figure: Horizontal bar with multiple variables
 
-//Set a global with all graph options and global for horizontal axis labels
+// Set a global with all graph options and global for horizontal axis labels
     global  graph_opts ///
             title(, justification(left) ///
             color(black) span pos(11)) ///
