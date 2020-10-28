@@ -15,7 +15,7 @@
     gen bach = roster_6a8 > 4 //indicator for >4 years of college
 
     tw ///
-        (kdensity score if bach == 0 , lp(dash) lc(maroon) yaxis(2)) ///kernel density for <=4 years
+        (kdensity score if bach == 0 , lp(dash) lc(maroon) yaxis(2)) /// kernel density for <= 4 years
         (kdensity score if bach == 1 , lp(dash) lc(navy) yaxis(2)) /// kernel density for > 4 years
         (histogram score if bach == 0 , freq w(.1) recast(scatter) msize(small) mc(maroon)) /// histogram w/ frequency weights, but recast as a scatter plot for up to 4y
         (histogram score if bach == 1 , freq w(.1) recast(scatter) msize(small) mc(navy)) /// scattered histogram from more than 4y
