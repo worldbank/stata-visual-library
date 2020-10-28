@@ -20,7 +20,7 @@
     use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/scatter-strata.dta", clear
 
     * Collapse and reshape data
-    labelcollapse    essential correct cxr sputum dstgx s5_referral sp_drugs_tb sp_drugs_antibio sp_drugs_quin, by(sp_case) //calculates means by sp_case
+    labelcollapse    essential correct cxr sputum dstgx s5_referral sp_drugs_tb sp_drugs_antibio sp_drugs_quin, by(sp_case) // calculates means by sp_case while maintaining labels
     freeshape        essential correct cxr sputum dstgx s5_referral sp_drugs_tb sp_drugs_antibio sp_drugs_quin, i(sp_case) j(var)
 
     * Assign ordered number
@@ -37,7 +37,7 @@
     graph dot var_value    ///
         ,    ///
         asy over(sp_case) over(var_label, sort(order)) /// create a scatter with case number and var_label as Ys
-        linegap(20) /// then add all graph customizations
+        linegap(20) /// all lines from now on are layout adjustments
         graphregion(color(white)) ///
         xsize(7) ///
         legend(region(lc(none) fc(none))) ///

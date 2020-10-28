@@ -15,10 +15,10 @@
 
 
 *** Create First Graph
-    sum cons_pae_m_sine, det
+    sum cons_pae_m_sine, det // summarize with detail to store percentile cutoffs
 
     twoway  (scatter cons_pae_sd_sine cons_pae_m_sine if cons_pae_m_sine < `r(p99)') ///
-            (lpolyci cons_pae_sd_sine cons_pae_m_sine if cons_pae_m_sine < `r(p99)') /// cut out extreme outliers (<1st percentile | >99th)
+            (lpolyci cons_pae_sd_sine cons_pae_m_sine if cons_pae_m_sine < `r(p99)') /// cut out top outliers (above 99th percentile)
          , ///
             legend(off) /// 
             xtitle(" " "`=ustrunescape("\u006D\u0302")'", size(large)) ///     m-hat
@@ -29,10 +29,10 @@
 
 
 ***Create Second Graph
-    sum cons_pae_m_sine, det
+    sum cons_pae_m_sine, det // summarize with details to store percentile cutoffs
 
     twoway  (scatter cv cons_pae_m_sine if cons_pae_m_sine<`r(p99)' & cons_pae_m_sine>`r(p1)') ///
-            (lpolyci cv cons_pae_m_sine if cons_pae_m_sine<`r(p99)' & cons_pae_m_sine>`r(p1)') ///cut out extreme outliers (<1st percentile | >99th)
+            (lpolyci cv cons_pae_m_sine if cons_pae_m_sine<`r(p99)' & cons_pae_m_sine>`r(p1)') ///cut out bottom outliers (below 1st percentile)
          , ///
             ytitle("`=ustrunescape("\u0073\u0302/\u006D\u0302")'" " ", size(large)) ///  s-hat/m-hat
             xtitle(" " "`=ustrunescape("\u006D\u0302")'", size(large)) ///    m-hat

@@ -26,13 +26,15 @@
     global sputum "& sp_case <3"
     global sp_drugs_tb "& sp_case >2"
         
-    * Output
-	//chartable command generates a chart of primary regression results; more in ado folder (chartable)
+    /* Output
+	chartable command generates a chart of primary regression results. more documentation on the command is
+	available at https://github.com/worldbank/stata-visual-library/tree/master/Library/ado
+    */
     chartable correct cxr sputum s5_referral sp_drugs_tb sp_drugs_antibio sp_drugs_quin ///
         using "results.xlsx" ///
         , ///
-        c(xi: firthlogit) ///indicates estimation command
-        rhs(q_mbbs pro_age pro_male patients_waiting_in i.sp_id) or p globalif//specify rhs vars
+        c(xi: firthlogit) /// indicates estimation command
+        rhs(q_mbbs pro_age pro_male patients_waiting_in i.sp_id) or p globalif // specify right hand side vars
             
             
 * Have a lovely day!

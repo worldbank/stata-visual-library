@@ -10,14 +10,16 @@
 
     label def case 1 "Case 1" 2 "Case 2" 3 "Case 3" 4 "Case 4" , modify
 	
-	/*Uses weighttab.ado -- details of which can be found in ado folder (including help file)
+	/*Uses weighttab.ado
+	Command documentation, including, help file, can be found at 
+	https://github.com/worldbank/stata-visual-library/tree/master/Library/ado
 	weightab produces xlsx sheets and/or bar graphs with weighted cross-group comparisons.*/
 
     qui do "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/ado/weightab.ado"
 
     use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/bar-weightab.dta" , clear
 
-	*create both graphs*
+	* Create graphs
     weightab ///
         correct treat_cxr re_3 re_4 treat_refer t_12 ///
         med_any med_l_any_1 med_l_any_2 med_l_any_3  med_k_any_9   ///
@@ -51,7 +53,7 @@
         name(Fig_1_2)
 		
 
-		*combine them*
+	* Combine graphs in a single figure
     graph combine Fig_1_1 Fig_1_2 ///
         , ///
         ${comb_opts} ///

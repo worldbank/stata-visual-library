@@ -1,18 +1,18 @@
 * Figure: Density graph with data points
 
-    global graph_opts title(, justification(left) color(black) span pos(11)) /// graph options global, legend details, line details, etc.
+    global graph_opts title(, justification(left) color(black) span pos(11)) /// graph options global to be referred to in multiple graphs if needed
         graphregion(color(white)) ylab(,angle(0) nogrid notick) xscale(noline) yscale(noline) yline(0 , lc(black)) ///
         xtit(,placement(left) justification(left)) legend(region(lc(none) fc(none)))
 
-    global hist_opts ylab(, angle(0) axis(2)) yscale(noline alt axis(2)) ///histogram options
+    global hist_opts ylab(, angle(0) axis(2)) yscale(noline alt axis(2)) /// histogram options
         ytit(, axis(2)) ytit(, axis(1)) yscale(off axis(2)) yscale(alt)
 
     use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/density-data.dta"  , clear
 
-    qui su theta_mle //summarize theta_mle
+    qui su theta_mle // summarize theta_mle to have the minimum value in memory
 
-    gen score = theta_mle - `r(min)' //subtract the returned minimum to set knowledge score
-    gen bach = roster_6a8 > 4 //indicator for >4 years of college
+    gen score = theta_mle - `r(min)' // subtract the returned minimum to set knowledge score
+    gen bach = roster_6a8 > 4 // indicator for >4 years of college
 
     tw ///
         (kdensity score if bach == 0 , lp(dash) lc(maroon) yaxis(2)) /// kernel density for <= 4 years

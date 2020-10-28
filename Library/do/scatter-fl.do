@@ -17,8 +17,8 @@
          , ///
             ytitle(Agriculture revenue (BRL thousands)) /// Y-label
             xtitle(Cultivated area) /// X-label
-            legend(order(2 "Pre-treatment" 4 "Post-treatment")) /// legend
-            bgcolor (white) graphregion(color(white)) //more customization of background and graph color
+            legend(order(2 "Pre-treatment" 4 "Post-treatment")) /// show legend only for the 2nd and 4th plots added (lfit)
+            bgcolor (white) graphregion(color(white)) // change background color
             
 * Have a lovely day!
             
