@@ -24,7 +24,7 @@
         ${graph_opts} /// graph options global
         over(facility_type) /// bottom level grouping by facility_type 
         xlab(${pct}) /// horizontal axis label
-        barlab(mean) /// bar label option (label is the mean)
+        barlab(mean) /// display the mean as bar label
         legend(r(1) symxsize(small) symysize(small))
 				
 * Have a lovely day!
