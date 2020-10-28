@@ -19,7 +19,7 @@
     use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/bar-better.dta" , clear
 
     betterbar /// 
-        ??_correct  checklist  refer med_any  med_class_any_6 med_class_any_16 /// varlist
+        ??_correct  checklist  refer med_any  med_class_any_6 med_class_any_16 /// variables to plot
         , ///
         ${graph_opts} /// graph options global
         over(facility_type) /// bottom level grouping by facility_type 
