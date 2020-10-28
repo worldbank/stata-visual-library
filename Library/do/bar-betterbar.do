@@ -19,7 +19,7 @@
             yscale(noline) xscale(noline) xsize(7) ///
             legend(region(lc(none) fc(none)))
         
-	//Relies of betterbar.ado and labelcollapse.ado. Documentation in ado folder. 
+	// Relies of betterbar.ado and labelcollapse.ado. Documentation in ado folder. 
     qui do "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/ado/betterbar.ado"
     qui do "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/ado/labelcollapse.ado"
 
