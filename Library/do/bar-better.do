@@ -12,7 +12,7 @@
 			
     global  pct `" 0 "0%" .25 "25%" .5 "50%" .75 "75%" 1 "100%" "'
 	
-	*utilizes betterbar.ado, which can be in the ado folder (along w/ documentation)
+// Utilizes betterbar.ado, which can be found in the ado folder (along w/ documentation)
     
     qui do "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/ado/betterbar.ado"	
 
