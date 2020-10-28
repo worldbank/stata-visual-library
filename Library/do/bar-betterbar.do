@@ -6,7 +6,7 @@
 * A cross-sectional study. 
 * The Lancet Infectious Diseases. 2016 Nov 30;16(11):1261-8.
 
-//Set global for graph options
+// Set global for graph options
     
     global  graph_opts ///
             note(, justification(left) color(black) span pos(7)) ///
