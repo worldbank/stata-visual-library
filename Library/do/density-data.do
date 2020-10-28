@@ -22,7 +22,7 @@
         , ///
         legend(symxsize(small) ///
                order(0 "" 0 "" 0 "{bf: Degree:}" ///
-                     3 "Intermediate, Undergrad, or Bachelors (N=575)" /// label the graph as needed
+                     3 "Intermediate, Undergrad, or Bachelors (N=575)" /// show only the scattered histogram symbols in the legend
                      4 "Specialist or Masters (N=431)") ///
                c(1) pos(11) ring(0)) ///
         ${graph_opts} ${hist_opts} /// use the globals set earlier 
