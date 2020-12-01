@@ -17,7 +17,7 @@
             yscale(noline) xscale(noline) xsize(7) ///
             legend(region(lc(none) fc(none)))
         
-    // qui do "https://github.com/worldbank/stata-visual-library/raw/master/Library/ado/custombar.ado"
+    qui do "https://github.com/worldbank/stata-visual-library/raw/master/Library/ado/custombar.ado"
     qui do "https://github.com/worldbank/stata-visual-library/raw/master/Library/ado/labelcollapse.ado"
 
     local n_5 = 599
@@ -30,7 +30,7 @@
     
         local case = `i' - 4
 
-        use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-betterbar.dta" , clear
+        use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-custombar.dta" , clear
             
         gen n = 1
         bys med_generic: egen med_class_typ = mode(med_class), minmode // Label with most typical medicine code
