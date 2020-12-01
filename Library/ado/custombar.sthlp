@@ -1,16 +1,16 @@
 {smcl}
 {* Apr 1th 2015}
 {hline}
-Help for {hi:betterbar}
+Help for {hi:custombar}
 {hline}
 
 {title:Description}
 
-{p}{cmd:betterbar} produces bar graphs with grouping of variables, standard error bars, and cross-group comparisons.
+{p}{cmd:custombar} produces bar graphs with grouping of variables, standard error bars, and cross-group comparisons.
 
 {title:Syntax}
 
-{p 2 4}{cmd:betterbar} {help varlist} [{help if}] [{help in}] [{help using}], [{it:options}] [{help twoway_options}]
+{p 2 4}{cmd:custombar} {help varlist} [{help if}] [{help in}] [{help using}], [{it:options}] [{help twoway_options}]
 
 {synoptset 16 tabbed}{...}
 {marker Options}{...}

@@ -17,7 +17,7 @@
             yscale(noline) xscale(noline) xsize(7) ///
             legend(region(lc(none) fc(none)))
         
-    qui do "https://github.com/worldbank/stata-visual-library/raw/master/Library/ado/betterbar.ado"
+    // qui do "https://github.com/worldbank/stata-visual-library/raw/master/Library/ado/custombar.ado"
     qui do "https://github.com/worldbank/stata-visual-library/raw/master/Library/ado/labelcollapse.ado"
 
     local n_5 = 599
@@ -69,7 +69,7 @@
                 
         drop if med_generic == "Sodium Chloride" // not an active ingredient
             
-        betterbar (n?*) , ///
+        custombar (n?*) , ///
                 stat(sum) over(med_class_typ) by(med_class_typ) nobylabel nobycolor d(1)  ///
                 legend(span c(1) pos(3) ring(1) symxsize(small) symysize(small) size(small))  ///
                 dropzero ///
