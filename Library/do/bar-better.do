@@ -1,5 +1,6 @@
 * Figure: Horizontal bar with multiple variables
 
+// Set a global with all graph options and global for horizontal axis labels
     global  graph_opts ///
             title(, justification(left) ///
             color(black) span pos(11)) ///
@@ -10,18 +11,20 @@
             legend(region(lc(none) fc(none)))
 			
     global  pct `" 0 "0%" .25 "25%" .5 "50%" .75 "75%" 1 "100%" "'
+	
+// Utilizes betterbar.ado, which can be found in the ado folder (along w/ documentation)
     
     qui do "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/ado/betterbar.ado"	
 
     use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/bar-better.dta" , clear
 
-    betterbar ///
-        ??_correct  checklist  refer med_any  med_class_any_6 med_class_any_16 ///
+    betterbar /// 
+        ??_correct  checklist  refer med_any  med_class_any_6 med_class_any_16 /// variables to plot
         , ///
-        ${graph_opts} ///
-        over(facility_type) ///
-        xlab(${pct}) ///
-        barlab(mean) ///
+        ${graph_opts} /// graph options global
+        over(facility_type) /// bottom level grouping by facility_type 
+        xlab(${pct}) /// horizontal axis label
+        barlab(mean) /// display the mean as bar label
         legend(r(1) symxsize(small) symysize(small))
 				
 * Have a lovely day!

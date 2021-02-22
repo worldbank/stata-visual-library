@@ -5,6 +5,8 @@
 * Use of standardised patients to assess antibiotic dispensing for tuberculosis by pharmacies in urban India: 
 * A cross-sectional study. 
 * The Lancet Infectious Diseases. 2016 Nov 30;16(11):1261-8.
+
+// Set global for graph options
     
     global  graph_opts ///
             note(, justification(left) color(black) span pos(7)) ///
@@ -17,6 +19,7 @@
             yscale(noline) xscale(noline) xsize(7) ///
             legend(region(lc(none) fc(none)))
         
+	// Relies of betterbar.ado and labelcollapse.ado. Documentation in ado folder. 
     qui do "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/ado/betterbar.ado"
     qui do "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/ado/labelcollapse.ado"
 
@@ -25,6 +28,8 @@
     
     local title_5 = "Classic case of presumed TB"
     local title_6 = "TB case with positive sputum report"
+	
+	//for loop from i = 5 to 6 (increment by 1)
 
     qui forvalues i = 5/6 {
     
@@ -37,7 +42,8 @@
         label val med_class_typ med_k
                 
         keep if case == `i'
-            
+        
+		*collapse but preserve labels. More can be read in the labelcollapse.ado help file*
         labelcollapse  (firstnm) n med_class_typ med_generic_encoded sp_location, ///
                         by(med_generic facilitycode) ///
                         vallab(med_class_typ med_generic_encoded sp_location)
@@ -50,7 +56,7 @@
                 
         foreach var of varlist n?* {
             
-            local theLabel : var label `var'
+            local theLabel : var label `var' //macro
             local theLabel = regexr("`theLabel'","med_generic_encoded == ","")
                     
             cap su n if med_generic == "`theLabel'"
@@ -68,7 +74,8 @@
         }
                 
         drop if med_generic == "Sodium Chloride" // not an active ingredient
-            
+        
+		*Uses betterbar.ado. More can be found in the betterbar.ado help file.*
         betterbar (n?*) , ///
                 stat(sum) over(med_class_typ) by(med_class_typ) nobylabel nobycolor d(1)  ///
                 legend(span c(1) pos(3) ring(1) symxsize(small) symysize(small) size(small))  ///

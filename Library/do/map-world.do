@@ -1,4 +1,6 @@
 * Maps displaying levels of a variable
+/*This do-file utilizes spmap and requires shape files. Please read the helpfiles on spmap for more info.
+ at https://fmwww.bc.edu/repec/bocode/s/spmap.html */
 
 * ------------------------------------------------------------------------------
 *    Packages

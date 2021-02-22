@@ -1,6 +1,6 @@
 * Figure: Comparison of marginal effects from linear and logistic specifications
 
-    global graph_opts title(, justification(left) color(black) span pos(11)) graphregion(color(white)) ylab(,angle(0) nogrid) xtit(,placement(left) justification(left)) yscale(noline) xscale(noline) legend(region(lc(none) fc(none)))
+    global graph_opts title(, justification(left) color(black) span pos(11)) graphregion(color(white)) ylab(,angle(0) nogrid) xtit(,placement(left) justification(left)) yscale(noline) xscale(noline) legend(region(lc(none) fc(none))) // create a global with all graph options so they can be used in different graphs
 
     use "https://github.com/worldbank/stata-visual-library/raw/develop-layout/Library/data/reg-models.dta" , clear
 
@@ -16,15 +16,16 @@
     
         reg `var' facility_private i.case_code 
         
-        mat a = r(table)
+        mat a = r(table) // store results of regression in matrix
         
-        local b = a[1,1]
-        local ll = a[5,1]
+        local b = a[1,1] // store betahat facility_private
+        local ll = a[5,1] // store lower bound of 95% CI
+        mat rownames a = "`var'" // create matrix of xvar names
+        
+	* repeat above steps, but this time with a logit model
+        logit `var' facility_private i.case_code 
         local ul = a[6,1]
         mat a = [`b',`ll',`ul',1]
-        mat rownames a = "`var'"
-        
-        logit `var' facility_private i.case_code 
         margins , dydx(facility_private)
         
         mat b = r(table)
@@ -39,14 +40,15 @@
         
         }
         
-    mat colnames theResults = "b" "ll" "ul" "type"
-    matlist theResults
+    mat colnames theResults = "b" "ll" "ul" "type" 
+    matlist theResults // eye check results
 
     clear
-    svmat theResults , names(col)
+    svmat theResults , names(col)// load matrix as the dataset
     
     gen n = _n
     replace n = 17-n
+	* graph results with capped lines and scatter
     tw ///
         (rcap ll ul n if type == 1 , hor lc(navy)) ///
         (scatter n b if type == 1 , mc(black)) ///
