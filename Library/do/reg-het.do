@@ -1,39 +1,31 @@
-/*******************************************************************************
+* Figure: Marginal effects by heterogeneity gorups
 			
-			FIGURE: Marginal effects by heterogeneity gorups
+/* 
+	Data Source:
+	--------------------------
+	Use built-in data: auto
+*/
 			
-********************************************************************************/
-
 	sysuse auto, clear
 
-/*--------------------------------------------------------------------------------
-       PART 1: Prepare options
--------------------------------------------------------------------------------*/
-	
+	/// prepare option
 	local label1 Foreign
 	local label0 Domestic
 	
-	* Supress y axis labels on graph to the right so it's only shown once on 
-	* combined graph
+	/// Supress y axis labels on graph to the right so it's only shown once on 
+	/// combined graph
 	local yopts1 ylab(, labcolor(white)) /// 
 				 ytitle("") ///
 				 yscale(noline)
 				 
 	gr drop _all
 		
-/*-------------------------------------------------------------------------------
-       PART 2: Create individual graphs
--------------------------------------------------------------------------------*/
-
-	* Loop over heterogeneity variables
+	/// create individual graph
+	/// Loop over heterogeneity variables
 	forvalues foreign = 0/1 {
+		reg price mpg headroom if foreign == `foreign'	 		/// Run regression to get margin effect		
 
-		* Run regression to get margin effect
-		* -----------------------------------
-		reg price mpg headroom if foreign == `foreign'			
-
-		* Plot marginal effect by group
-		* -----------------------------
+		/// Plot marginal effect by group
 		coefplot ///
 			   , ///
 			    drop(_cons) /// don't show constant 
@@ -54,13 +46,9 @@
 
 		
 	}
-	
-/*-------------------------------------------------------------------------------
-       PART 3: Combine graphs
--------------------------------------------------------------------------------*/
-				
+	/// Combine graph				
 	gr combine 	f0 f1, ///
 				ycommon ///
 				graphregion(color(white))
 	
-******************************** The end ***************************************
+* Have a lovely day!

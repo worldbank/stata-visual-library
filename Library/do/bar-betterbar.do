@@ -1,11 +1,26 @@
-* Figure: Side by side horizontal bar plot (Active ingredients in drugs given for each case) using betterbar
+* 	Figure: Side by side horizontal bar plot (Active ingredients in drugs given for each case) using betterbar
 
-* Replication file for:
-* Satyanarayana S, Kwan A, Daniels B, Subbaraman R, McDowell A, Bergkvist S, Das RK, Das V, Das J, Pai M. 
-* Use of standardised patients to assess antibiotic dispensing for tuberculosis by pharmacies in urban India: 
-* A cross-sectional study. 
-* The Lancet Infectious Diseases. 2016 Nov 30;16(11):1261-8.
-    
+/* 
+	Data Source:
+	---------------------
+	Data Replicated from
+
+	Satyanarayana S, Kwan A, Daniels B, Subbaraman R, McDowell A, Bergkvist S, Das RK, Das V, Das J, Pai M. 
+	Use of standardised patients to assess antibiotic dispensing for tuberculosis by pharmacies in urban India: 
+	A cross-sectional study.  The Lancet Infectious Diseases. 2016 Nov 30;16(11):1261-8.
+	
+	Install Packages (if needed)
+	-----------------------------
+	We need two packages to run this file: betterbar, and grc1leg
+	Please remove "*" from below lines if you have not installed them and would like to install.
+*/
+
+	* ssc install betterbar
+	* net from http://www.stata.com
+	* net cd users
+	* net cd vwiggins
+	* net install grc1leg
+   
     global  graph_opts ///
             note(, justification(left) color(black) span pos(7)) ///
             title(, justification(left) color(black) span pos(11)) ///

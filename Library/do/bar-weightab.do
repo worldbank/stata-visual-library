@@ -1,20 +1,32 @@
-* Figure:Side by side horizontal bar plot (Outcomes by City & Case) using weightab
+* 	Figure:	Side by side horizontal bar plot (Outcomes by City & Case) using weightab
 
-    global graph_opts ///
-        title(, justification(left) color(black) span pos(11)) ///
-        graphregion(color(white) lc(white) lw(med) la(center)) /// <- remove la(center) for Stata < 15
-        ylab(,angle(0) nogrid) xtit(,placement(left) justification(left)) ///
-        yscale(noline) xscale(noline) legend(region(lc(none) fc(none)))
 
-    local opts lw(thin) lc(white) la(center)
+/* 
+	Data Source:
+	---------------------
+	Replicated from:
 
-    label def case 1 "Case 1" 2 "Case 2" 3 "Case 3" 4 "Case 4" , modify
+	Kwan, Ada, Benjamin Daniels, Vaibhav Saria, Srinath Satyanarayana, Ramnath Subbaraman, Andrew McDowell, Sofi Bergkvist et al.
+	“Variations in the quality of tuberculosis care in urban India: a cross-sectional, 
+	standardized patient study in two cities.” PLoS medicine 15, no. 9 (2018): e1002653.
+*/
 
-    qui do "https://github.com/worldbank/stata-visual-library/raw/master/Library/ado/weightab.ado"
 
-    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-weightab.dta" , clear
+    global 	graph_opts ///
+			title(, justification(left) color(black) span pos(11)) ///
+			graphregion(color(white) lc(white) lw(med) la(center)) /// <- remove la(center) for Stata < 15
+			ylab(,angle(0) nogrid) xtit(,placement(left) justification(left)) ///
+			yscale(noline) xscale(noline) legend(region(lc(none) fc(none)))
 
-    weightab ///
+    local 	opts lw(thin) lc(white) la(center)
+
+    label 	def case 1 "Case 1" 2 "Case 2" 3 "Case 3" 4 "Case 4" , modify
+
+    qui do 	"https://github.com/worldbank/stata-visual-library/raw/master/Library/ado/weightab.ado"
+
+    use 	"https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-weightab.dta" , clear
+
+    weightab /// Create Figure 1
         correct treat_cxr re_3 re_4 treat_refer t_12 ///
         med_any med_l_any_1 med_l_any_2 med_l_any_3  med_k_any_9   ///
         if city == 2 ///
@@ -30,7 +42,7 @@
         xlab(${pct}) ///
         name(Fig_1_1)
 		
-    weightab ///
+    weightab /// Create Figure 2
         correct treat_cxr re_3 re_4 treat_refer t_12 ///
         med_any med_l_any_1 med_l_any_2 med_l_any_3  med_k_any_9  ///
         if city == 3 ///
@@ -46,7 +58,7 @@
         xlab(${pct}) ///
         name(Fig_1_2)
 		
-    graph combine Fig_1_1 Fig_1_2 ///
+    graph combine Fig_1_1 Fig_1_2 /// Combine FIgure 1 and 2
         , ///
         ${comb_opts} ///
         xsize(7) r(1)

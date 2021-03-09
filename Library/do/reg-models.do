@@ -1,12 +1,22 @@
-* Figure: Comparison of marginal effects from linear and logistic specifications
+* 	Figure: Comparison of marginal effects from linear and logistic specifications
 
-    global graph_opts title(, justification(left) color(black) span pos(11)) graphregion(color(white)) ylab(,angle(0) nogrid) xtit(,placement(left) justification(left)) yscale(noline) xscale(noline) legend(region(lc(none) fc(none)))
+/* 
+	Data Source:
+	--------------------------
+	Data replicated from:
 
-    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/reg-models.dta" , clear
+	Satyanarayana S, Kwan A, Daniels B, Subbaraman R, McDowell A, Bergkvist S, Das RK, Das V, Das J, Pai M. 
+	Use of standardised patients to assess antibiotic dispensing for tuberculosis by pharmacies in urban India: A cross-sectional study. 
+	The Lancet Infectious Diseases. 2016 Nov 30;16(11):1261-8.
+*/
+
+    global 	graph_opts title(, justification(left) color(black) span pos(11)) graphregion(color(white)) ylab(,angle(0) nogrid) xtit(,placement(left) justification(left)) yscale(noline) xscale(noline) legend(region(lc(none) fc(none)))
+
+    use 	"https://github.com/worldbank/stata-visual-library/raw/master/Library/data/reg-models.dta" , clear
 
     cap mat drop theResults
-    local theLabels ""
-    local x = 15.5
+    local 	theLabels ""
+    local 	x = 15.5
 
     qui foreach var of varlist ??_correct refer med_any med_class_any_6 med_class_any_16 {
 
@@ -18,21 +28,21 @@
         
         mat a = r(table)
         
-        local b = a[1,1]
-        local ll = a[5,1]
-        local ul = a[6,1]
-        mat a = [`b',`ll',`ul',1]
-        mat rownames a = "`var'"
+        local 	b 	= a[1,1]
+        local 	ll 	= a[5,1]
+		local 	ul	= a[6,1]
+		mat 	a 			= [`b',`ll',`ul',1]
+        mat 	rownames a 	= "`var'"
         
         logit `var' facility_private i.case_code 
         margins , dydx(facility_private)
         
-        mat b = r(table)
+        mat 	b	= r(table)
         
-        local b = b[1,1]
-        local ll = b[5,1]
-        local ul = b[6,1]
-        mat b = [`b',`ll',`ul',2]
+        local 	b 	= b[1,1]
+        local 	ll 	= b[5,1]
+        local 	ul 	= b[6,1]
+        mat 	b 	= [`b',`ll',`ul',2]
         mat rownames b = "`var'"
         
         mat theResults = nullmat(theResults) \ a \ b 

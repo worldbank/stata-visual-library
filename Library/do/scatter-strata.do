@@ -1,29 +1,37 @@
-* Install necessary commands ******************************************************************
+* Figure: Regression Coefficient plot
 
-    * Custom commands defined in ado files:
-    * freeshape: reshapes wide data into long without requiring variables names of 
-    *            the variables to be shaped numbered stub.
-    * labelcollapse: preserves variable labeling while performing collapse.
+/* 
+	Data Source:
+	--------------------------
+	Data replicated from:
+
+ 	Das, Jishnu, Liana Woskie, Ruma Rajbhandari, Kamran Abbasi, and Ashish Jha.
+ 	“Rethinking assumptions about delivery of healthcare: implications for universal health coverage.” Bmj 361 (2018).
+	
+	
+	Install Packages (if needed)
+	----------------------------
+	We need three packages to run this file: firthlogit, st0085_2 (estadd) , dm0037 (xml_tab)
+ 	Please remove "*" from below lines if you have not installed it and would like to install.
+*/
+
+	* ssc inst firthlogit
+	* net from http://www.stata-journal.com/software/sj14-2
+	* net install st0085_2
+	* net from  http://www.stata-journal.com/software/sj8-3
+	* net install dm0037 
 
     run "https://raw.githubusercontent.com/worldbank/stata-visual-library/master/Library/ado/freeshape.ado"
     run "https://raw.githubusercontent.com/worldbank/stata-visual-library/master/Library/ado/labelcollapse.ado"
-
-    * In addition, this dofile relies on two other publicly available STATA extensions:
-    * firthlogit, in package firthlogit from http://fmwww.bc.edu/RePEc/bocode/f
-    * estadd, in package st0085_2 from http://www.stata-journal.com/software/sj14-2
-    * xml_tab, in package dm0037 from http://www.stata-journal.com/software/sj8-3
-
-
-* Load and prepare data ***********************************************************************
-
-    * Load data from GitHub
+	
+	/// Load data
     use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/scatter-strata.dta", clear
 
-    * Collapse and reshape data
+    /// Collapse and reshape data
     labelcollapse    essential correct cxr sputum dstgx s5_referral sp_drugs_tb sp_drugs_antibio sp_drugs_quin, by(sp_case)
     freeshape        essential correct cxr sputum dstgx s5_referral sp_drugs_tb sp_drugs_antibio sp_drugs_quin, i(sp_case) j(var)
 
-    * Assign ordered number
+    /// Assign ordered number
     local x = 1
     gen order = 0
 
@@ -32,8 +40,7 @@
         local ++x
     }
 
-*  Create graph *******************************************************************************
-
+	/// Create graph
     graph dot var_value    ///
         ,    ///
         asy over(sp_case) over(var_label, sort(order)) ///
@@ -48,3 +55,5 @@
         marker(2, m(O) mlcolor(black)) ///
         marker(3, m(O) mlcolor(black)) ///
         marker(4, m(O) mlcolor(black))
+
+* Have a good day!

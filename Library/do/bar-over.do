@@ -1,4 +1,13 @@
-* Figures: bar plot of two variables
+* 	Figures: bar plot of two variables
+
+/* 
+	Data Source:
+	---------------------
+	Data Replicated from:
+
+	Das, Jishnu, Liana Woskie, Ruma Rajbhandari, Kamran Abbasi, and Ashish Jha.
+	“Rethinking assumptions about delivery of healthcare: implications for universal health coverage.” Bmj 361 (2018).
+*/
 
     global graph_opts1 ///
            bgcolor(white) ///
