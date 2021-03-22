@@ -43,6 +43,7 @@
             xtitle("Independent variable value") ///
             ytitle("Predicted value of dependent variable") ///
             legend(order (6 "Pre-treatment" 7 "Post-treatment" 3 "Pre-treatment 95%CI" 1 "Pre-treatment 95%CI")) ///
-            graphregion(color(white)) bgcolor(white)
+            graphregion(color(white)) bgcolor(white) ///
+			title("Line plots witthed line with confidence interval", justification(left) color(black) span pos(11))
     
 * Have a lovely day!

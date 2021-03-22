@@ -23,5 +23,6 @@
             (lfit price mpg if foreign == 1, color(`col_foreign')) ///
 			, ///
             graphregion(color(white)) ///
-			legend(order(2 "Domestic" 4 "Foreign"))
+			legend(order(2 "Domestic" 4 "Foreign")) ///
+			title("Scatter plot with fitted line", justification(center) color(black) span pos(17))
             

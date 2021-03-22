@@ -42,6 +42,8 @@
     }
 
     graph combine    starch animal fruit grain processed_sugar veg, ///
-                     graphregion(color(white)) plotregion(color(white)) 
+					 title("Combined Bar Plot with Dual Axes", justification(center) color(black) span pos(17)) ///
+                     graphregion( color(white)) plotregion(color(white)) 
+					
 
 * Have a lovely day!

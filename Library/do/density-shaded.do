@@ -42,6 +42,7 @@
             ytitle("Density" " ") ///
             xmlabel(`r(p50)' "Median=`median'" `r(mean)' "Mean=`mean'" , angle(45)) ///
             ylabel(none) ///
-            bgcolor(white) graphregion(color(white))
+            bgcolor(white) graphregion(color(white)) ///
+			title("Shaded k-density functions", justification(left) color(black) span pos(17))
 
 * Have a lovely day!

@@ -23,6 +23,7 @@
             legend(order(1 "Pre-treatment" 2 "Post-treatment")) ///
             xtitle(Agriculture revenue (BRL thousands)) ///
             ytitle(Density) ///
-            bgcolor (white) graphregion(color(white))
+            bgcolor (white) graphregion(color(white)) ///
+			title("Density Plot with Mean Maker", justification(center) color(black) span pos(17))
             
 * Have a lovely day!

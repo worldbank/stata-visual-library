@@ -58,8 +58,9 @@
         xlab(${pct}) ///
         name(Fig_1_2)
 		
-    graph combine Fig_1_1 Fig_1_2 /// Combine FIgure 1 and 2
+    graph combine Fig_1_1 Fig_1_2 /// Combine Figure 1 and 2
         , ///
+		title("Side by Side Horizontal Barplot using weightab", justification(left) color(black) span pos(17)) ///
         ${comb_opts} ///
         xsize(7) r(1)
 

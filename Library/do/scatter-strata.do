@@ -54,6 +54,7 @@
         marker(1, m(O) mlcolor(black)) ///
         marker(2, m(O) mlcolor(black)) ///
         marker(3, m(O) mlcolor(black)) ///
-        marker(4, m(O) mlcolor(black))
+        marker(4, m(O) mlcolor(black)) ///
+		title("Regression Coefficient plot", justification(center) color(black) span pos(17))
 
 * Have a good day!

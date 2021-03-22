@@ -10,8 +10,7 @@
 	Kenya: a pilot, cross-sectional study with international comparisons.” BMJ global health 2, no. 2 (2017): e000333.
 */
     global  graph_opts ///
-            title(, justification(left) ///
-            color(black) span pos(11)) ///
+            title(, justification(left) color(black) span pos(11)) ///
             graphregion(color(white)) ///
             ylab(,angle(0) nogrid) ///
             xtit(,placement(left) justification(left)) ///
@@ -31,6 +30,8 @@
         over(facility_type) ///
         xlab(${pct}) ///
         barlab(mean) ///
-        legend(r(1) symxsize(small) symysize(small))
+        legend(r(1) symxsize(small) symysize(small)) ///
+		title("Horizontal Cluster Bar Plot")
+		
 				
 * Have a lovely day!

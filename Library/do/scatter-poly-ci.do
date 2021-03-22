@@ -55,6 +55,7 @@
             row(1) legendfrom(cv_by_mhat) ///
             imargin(0 0 0 0) graphregion(margin(t=0 b=0)) ///
             position(6) fysize(75) fxsize(150) ///
-            graphregion(color(white)) plotregion(color(white))
+            graphregion(color(white)) plotregion(color(white)) ///
+			title("Scatter plot with polynomial smoothing" "and confidence interval", justification(center) color(black) span pos(17))
             
 * Have a lovely day!

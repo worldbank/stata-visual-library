@@ -23,7 +23,7 @@
    
     global  graph_opts ///
             note(, justification(left) color(black) span pos(7)) ///
-            title(, justification(left) color(black) span pos(11)) ///
+            title(, justification(center) color(black) span pos(17)) ///
             subtitle(, justification(left) color(black) span pos(11)) ///
             graphregion(color(white)) ///
             ylab(,angle(0) nogrid) ///
@@ -98,8 +98,9 @@
         
     grc1leg figure_4_1 figure_4_2 ///
             , ///
+			title("Side by Side Bar Plot", justification(center) color(black) span pos(17)) ///
             pos(3) ///
             graphregion(color(white)) ///
             xsize(7) 
-
+	
 * Have a lovely day!

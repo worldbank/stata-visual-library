@@ -38,7 +38,9 @@
 		using "results.xlsx" ///
         , ///
         c(xi: firthlogit) ///
-        rhs(q_mbbs pro_age pro_male patients_waiting_in i.sp_id) or p globalif
+        rhs(q_mbbs pro_age pro_male patients_waiting_in i.sp_id) or p globalif ///
+		title("Impact of provider qualifications on main standardized patient outcomes", justification(left) color(black) span pos(11))
+		
             
             
 * Have a lovely day!

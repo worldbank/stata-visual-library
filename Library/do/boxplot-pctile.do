@@ -11,7 +11,7 @@
 */
 
     global  graph_opts1 bgcolor(white) graphregion(color(white)) legend(region(lc(none) fc(none))) ///
-            ylab(,angle(0) nogrid) title(, justification(left) color(black) span pos(11)) subtitle(, justification(left) color(black))
+            ylab(,angle(0) nogrid) title(, justification(left) color(black) span pos(17)) subtitle(, justification(left) color(black))
 
     use 	"https://github.com/worldbank/stata-visual-library/raw/master/Library/data/boxplot-pctile.dta" , clear
 
@@ -35,6 +35,7 @@
             legend(order(0 "Professional Cadre:" 1 "Medical Officer" 2 "Nurse") r(1) symxsize(small) symysize(small)  pos(6) ring(1)) ///
             asy $graph_opts1 ylab(-1 "-1 SD" 0 "SDI Mean" .553483 "Median" 1 "+1 SD" 2 "+2 SD" 3 "+3 SD", labsize(vsmall)) ytit("") note("") ///
             lintensity(.5) yline(.553483 , lc(black) lp(dash)) ///
-            box(1 , fi(0) lc(maroon) lw(medthick)) box(2, fc(white) lc(navy) lw(medthick))
+            box(1 , fi(0) lc(maroon) lw(medthick)) box(2, fc(white) lc(navy) lw(medthick)) ///
+			title ("Percentile Box Plot")
 
 * Have a lovely day!

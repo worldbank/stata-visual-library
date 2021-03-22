@@ -1,4 +1,4 @@
-* Figure: Marginal effects by heterogeneity gorups
+* Figure: Marginal effects by heterogeneity groups
 			
 /* 
 	Data Source:
@@ -49,6 +49,8 @@
 	/// Combine graph				
 	gr combine 	f0 f1, ///
 				ycommon ///
-				graphregion(color(white))
+				graphregion(color(white)) ///
+				title("Marginal effects by heterogeneity groups", justification(left) color(black) span pos(11))
+		
 	
 * Have a lovely day!

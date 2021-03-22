@@ -21,7 +21,7 @@
 	* net cd vwiggins
 	* net install grc1leg
 
-    global graph_opts1 bgcolor(white) graphregion(color(white)) legend(region(lc(none) fc(none))) ylab(,angle(0) nogrid) subtitle(, justification(left) color(black) span pos(11)) title(, color(black) span)
+    global graph_opts1 bgcolor(white) graphregion(color(white)) legend(region(lc(none) fc(none))) ylab(,angle(0) nogrid) subtitle(, justification(left) color(black) span pos(11))  title(, justification(center) color(black) span pos(17))
     global pct `" 0 "0%" .25 "25%" .5 "50%" .75 "75%" 1 "100%" "'
 
     use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-stack-by.dta", clear
@@ -68,6 +68,7 @@
 
     grc1leg figure_2 figure_1 ///
         , ///
+		title ("Stack Bar Chart") ///
         pos(3) ///
         graphregion(color(white)) ///
         xsize(7) ///

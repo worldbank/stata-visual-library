@@ -25,7 +25,7 @@
 		plotopts(barwidth(0.5) bargap(10)) ///
 		ciopts(recast(rcap) color(gs10)) ///
 		ylabel(0(2000)8000) ///
-		title("Adjusted prediction of car price" "with 95% confidence interval") ///
+		title("Adjusted prediction of car price" "with 95% confidence interval", justification(center) color(black) span pos(17)) ///
 		xlabel(, noticks) ///
 		xtitle(Model origin) ///
 		graphregion(color(white)) ///

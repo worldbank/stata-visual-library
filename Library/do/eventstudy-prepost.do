@@ -54,7 +54,9 @@
 			legend(off) ///
 			xlabel(none) ///
 			xtitle(Time) ///
-			ytitle(Outcome variable) 
+			ytitle(Outcome variable) ///
+			title("Event Study Graph", justification(left) color(black) span pos(17))
+		)
 			
 * Have a lovely day!
 		
