@@ -4,14 +4,11 @@
 /* 
 	Data Source:
 	---------------------
-	Data Replicated from:
-
+	Mock data and code based on
 	Christian,Paul J.; Kondylis,Florence; Mueller,Valerie Martina; Zwager,Astrid Maria Theresia; Siegfried,Tobias.2018.
 	Water when it counts : reducing scarcity through irrigation monitoring in Central Mozambique (English). 
 	Policy Research working paper;no. WPS 8345;Impact Evaluation series Washington, D.C. : World Bank Group.
 	http://documents.worldbank.org/curated/en/206391519136157728/Water-when-it-counts-reducing-scarcity-through-irrigation-monitoring-in-Central-Mozambique
-
-	with noises being added.
 */
 
     use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/line-fit-text.dta", clear
