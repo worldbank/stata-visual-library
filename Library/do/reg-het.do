@@ -20,6 +20,9 @@
 				 yscale(noline)
 				 
 	gr drop _all
+    
+    * install coefplot
+    ssc install coefplot, replace
 		
 /*-------------------------------------------------------------------------------
        PART 2: Create individual graphs

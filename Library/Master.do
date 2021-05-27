@@ -7,9 +7,15 @@
 /*******************************************************************************
 	PART 2: Set folder paths
 *******************************************************************************/
+    
+    if ("`c(username)'" == "ifyou") {
+        global	GH			"D:/Documents/RA Jobs/DIME/analytics/stata-visual-library"
+    }
 
-	global	GH					"C:\Users\wb501238\Documents\GitHub\stata-visual-library"
-	
+    if ("`c(username)'" == "") {
+        global GH
+    }
+    
 /*******************************************************************************
 	PART 3: Create document
 *******************************************************************************/
@@ -19,16 +25,16 @@
 	* Copy the Stata style to the same folder as the markdown file to compile in PDF
 	//copy https://www.stata-journal.com/production/sjlatex/stata.sty 	stata.sty
 		
-	global ScatterPlots		`""scatter-fl", "scatter-fl-ci", "scatter-poly-ci", "scatter-strata", "scatter-transparent""'
+	global ScatterPlots		`""binned-scatter","scatter-fl", "scatter-fl-ci", "scatter-poly-ci", "scatter-strata", "scatter-transparent", "dot-summary""'
 	global BoxPlots			`""boxplot-pctile""'
-	global BarPlots			`""bar-better", "bar-betterbar", "bar-better-ci", "bar-over", "bar-stack-by", "bar-stack-cat", "bar-two-axes", "bar-weightab""'
+	global BarPlots			`""bar-better", "bar-betterbar", "bar-better-ci", "bar-over", "bar-stack-by", "bar-stack-cat", "bar-two-axes", "confidence-intervals""'
 	global LinePlots		`""line-fit-text", "line-plottig", "line-uncluttered""'
 	global DensityPlots		`""density-av", "density-data", "density-shaded""'
 	global RegressionCoef	`""reg-models", "reg-chartable", "reg-het", "reg-predicted""'
 	global Map				`""map-world""'
 	global EventStudy		`""eventstudy-prepost""'
 	
-	foreach category in EventStudy ScatterPlots BoxPlots LinePlots DensityPlots Map RegressionCoef BarPlots {
+	foreach category in EventStudy ScatterPlots BoxPlots LinePlots DensityPlots RegressionCoef Map BarPlots {
 		
 		do 		  "${GH}/Library/template-category-page.do" "`category'"
 		tokenize `"${`category'}"'
@@ -55,4 +61,5 @@
 	foreach file in "map-world.prj" "map-world.dbf" "map-world.shx" "map-world.shp" "world_shape.dta" "world_shape_coord.dta" {
 		erase "${GH}/Library/`file'"
 	}
+
 *============================== THE END =======================================*

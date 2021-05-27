@@ -7,8 +7,12 @@
 	
     * Change scheme: scheme needs to be manually installed. Instruction on how
     * to this can be found in https://gray.kimbrough.info/uncluttered-stata-graphs/
-    set scheme uncluttered
-	
+    capture set scheme uncluttered
+    
+    if _rc == 11 {
+        display "Visit the https://github.com/graykimbrough/uncluttered-stata-graphs to install the schemes"
+    }
+
     * Create graph
     line le le_male le_female year       ///
         ,                                ///

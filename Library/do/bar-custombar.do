@@ -6,19 +6,20 @@
 * A cross-sectional study. 
 * The Lancet Infectious Diseases. 2016 Nov 30;16(11):1261-8.
     
-    global  graph_opts ///
-            note(, justification(left) color(black) span pos(7)) ///
-            title(, justification(left) color(black) span pos(11)) ///
+    global  graph_opts                                              ///
+            note(, justification(left) color(black) span pos(7))    ///
+            title(, justification(left) color(black) span pos(11))  ///
             subtitle(, justification(left) color(black) span pos(11)) ///
-            graphregion(color(white)) ///
-            ylab(,angle(0) nogrid) ///
-            ytit("") ///
-            xtit(,placement(left) justification(left)) ///
-            yscale(noline) xscale(noline) xsize(7) ///
+            graphregion(color(white))                               ///
+            ylab(,angle(0) nogrid)                                  ///
+            ytit("")                                                ///
+            xtit(,placement(left) justification(left))              ///
+            yscale(noline) xscale(noline) xsize(7)                  ///
             legend(region(lc(none) fc(none)))
         
     qui do "https://github.com/worldbank/stata-visual-library/raw/master/Library/ado/custombar.ado"
     qui do "https://github.com/worldbank/stata-visual-library/raw/master/Library/ado/labelcollapse.ado"
+    qui net install grc1leg,from( http://www.stata.com/users/vwiggins/) 
 
     local n_5 = 599
     local n_6 = 601
@@ -81,10 +82,9 @@
             
         }
         
-    grc1leg figure_4_1 figure_4_2 ///
-            , ///
-            pos(3) ///
-            graphregion(color(white)) ///
+    grc1leg figure_4_1 figure_4_2,      ///
+            pos(3)                      ///
+            graphregion(color(white))   ///
             xsize(7) 
 
 * Have a lovely day!
