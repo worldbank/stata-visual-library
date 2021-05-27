@@ -14,10 +14,7 @@
 */
 
 	* ssc install betterbar
-	* net from http://www.stata.com
-	* net cd users
-	* net cd vwiggins
-	* net install grc1leg
+	* net install grc1leg, from(http://www.stata.com/users/vwiggins)
    
     global  graph_opts ///
             note(, justification(left) color(black) span pos(7)) ///
