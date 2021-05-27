@@ -3,7 +3,6 @@
 /* 
 	Data Source:
 	--------------------------
-	Data replicated from:
 
 	Das, Jishnu, Liana Woskie, Ruma Rajbhandari, Kamran Abbasi, and Ashish Jha.
 	“Rethinking assumptions about delivery of healthcare: implications for universal health coverage.” Bmj 361 (2018).
