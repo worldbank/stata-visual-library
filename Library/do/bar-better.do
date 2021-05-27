@@ -3,8 +3,6 @@
 /* 
 	Data Source:
 	---------------------
-	Data Replicated from
-	
 	Daniels, Benjamin, Amy Dolinger, Guadalupe Bedoya, Khama Rogo, Ana Goicoechea, Jorge Coarasa, Francis Wafula,
 	Njeri Mwaura, Redemptar Kimeu, and Jishnu Das. “Use of standardised patients to assess quality of healthcare in Nairobi,
 	Kenya: a pilot, cross-sectional study with international comparisons.” BMJ global health 2, no. 2 (2017): e000333.
