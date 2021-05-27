@@ -9,7 +9,7 @@
 
     global pct `" 0 "0%" .25 "25%" .5 "50%" .75 "75%" 1 "100%" "'
 
-    qui do "https://github.com/worldbank/stata-visual-library/raw/master/Library/ado/betterbar.ado"
+    ssc install betterbar
 
     use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-better-ci.dta", clear
 
@@ -17,8 +17,8 @@
         (dr_3 correct_treatment)  ///
         (med_b2_any_antibiotic med_b2_any_steroid med_b2_any_antister med_l_any_2 med_b2_any_schedule_h med_b2_any_schedule_h1 med_b2_any_schedule_x med_l_any_1)   ///
         , ///
-        over(city) xlab($pct) se bin ///
-        legend(pos(5) ring(0) c(1) symxsize(small) symysize(small)) ///
-        ysize(7) n barlab(upper)
+        over(city) xlab($pct) ci pct ///
+        legend(on span pos(12) ring(1) r(1) symxsize(small) symysize(small) region(lc(none))) ///
+        ysize(6) n barlab scale(.8)
 		
 * Have a lovely day!

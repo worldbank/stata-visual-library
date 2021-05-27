@@ -17,7 +17,7 @@
             yscale(noline) xscale(noline) xsize(7)                  ///
             legend(region(lc(none) fc(none)))
         
-    qui do "https://github.com/worldbank/stata-visual-library/raw/master/Library/ado/betterbar.ado"
+    qui do "https://github.com/worldbank/stata-visual-library/raw/master/Library/ado/custombar.ado"
     qui do "https://github.com/worldbank/stata-visual-library/raw/master/Library/ado/labelcollapse.ado"
     qui net install grc1leg,from( http://www.stata.com/users/vwiggins/) 
 
@@ -31,7 +31,7 @@
     
         local case = `i' - 4
 
-        use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-betterbar.dta" , clear
+        use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-custombar.dta" , clear
             
         gen n = 1
         bys med_generic: egen med_class_typ = mode(med_class), minmode // Label with most typical medicine code
@@ -70,7 +70,7 @@
                 
         drop if med_generic == "Sodium Chloride" // not an active ingredient
             
-        betterbar (n?*) , ///
+        custombar (n?*) , ///
                 stat(sum) over(med_class_typ) by(med_class_typ) nobylabel nobycolor d(1)  ///
                 legend(span c(1) pos(3) ring(1) symxsize(small) symysize(small) size(small))  ///
                 dropzero ///
