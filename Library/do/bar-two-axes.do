@@ -1,7 +1,7 @@
 * 	Figure: combined bar plots with two axes
 
 /* 
-	Data Source:
+	Source:
 	---------------------
 	Data Replicated from
 
