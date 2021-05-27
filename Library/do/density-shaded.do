@@ -14,8 +14,7 @@
 */ 
    *  ssc install akdensity
 
-    *use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/density-shaded.dta", replace
-    use "/Users/disovankiri/Documents/GitHub/stata-visual-library/Library/data/density-shaded.dta.dta", replace
+    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/density-shaded.dta", replace
 	
     sort 	beta_
     gen 	rank 	= _n 
