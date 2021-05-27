@@ -3,7 +3,6 @@
 /* 
 	Source:
 	---------------------
-	Data Replicated from
         Mock data and code were based in 
 	Christian, Paul, and Brian Dillon. 2018. “Growing and Learning When Consumption Is Seasonal:
 	Long-Term Evidence From Tanzania.” Demography 55 (3): 1091–1118. doi:10.1007/s13524-018-0669-4.
