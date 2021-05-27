@@ -4,7 +4,6 @@
 /* 
 	Data Source:
 	---------------------
-	Replicated from:
 
 	Kwan, Ada, Benjamin Daniels, Vaibhav Saria, Srinath Satyanarayana, Ramnath Subbaraman, Andrew McDowell, Sofi Bergkvist et al.
 	“Variations in the quality of tuberculosis care in urban India: a cross-sectional, 
