@@ -1,7 +1,14 @@
 * Figure: horizontal stack bar plot
 
+/* 
+	Data Source:
+	---------------------
+	Kwan, Ada, Benjamin Daniels, Vaibhav Saria, Srinath Satyanarayana, Ramnath Subbaraman, Andrew McDowell, 
+	Sofi Bergkvist et al. “Variations in the quality of tuberculosis care in urban India: a cross-sectional, 
+	standardized patient study in two cities.” PLoS medicine 15, no. 9 (2018): e1002653.
+
+*/
     global graph_opts1 ///
-           title(, justification(left) color(black) span pos(11)) ///
            graphregion(color(white) lc(white) la(center)) /// <- remove la(center) for Stata < 15
            ylab(,angle(0) nogrid)  ///
            yscale(noline) legend(region(lc(none) fc(none)))
@@ -66,6 +73,7 @@
         , ///
         ylab($pct) ///
         ${graph_opts1} ///
+		title("Horizontal Stack Bar Chart", justification(left) color(black) span pos(17)) ///
         hor stack over(n) xsize(6) ///
         bar(1, lc(black) lw(thin)) ///
         bar(2, lc(black) lw(thin)) ///
