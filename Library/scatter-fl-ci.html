@@ -1,11 +1,11 @@
 *Figure: Scatter plot with fitted line and confidence interval
 
     * Load data
-    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/scatter-fl-ci.dta", clear
+    use "https://github.com/worldbank/stata-visual-library/blob/review-dos/Library/data/scatter-fl-ci.dta?raw=true", clear
     
     * Graph
     twoway ///
-        (lfitci jobs_scarce_code avg_growth ) ///
+        (lfitci jobs_scarce_code avg_growth) ///
         (scatter jobs_scarce_code avg_growth if continent == "Africa", mcolor(cranberry) m(O) )  ///
         (scatter jobs_scarce_code avg_growth if continent == "Asia",   mcolor(dkgreen) m(D) ) ///
         (scatter jobs_scarce_code avg_growth if continent == "Europe", mcolor(ebblue ) m(T) ) ///

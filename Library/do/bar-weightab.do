@@ -12,7 +12,7 @@
 
     qui do "https://github.com/worldbank/stata-visual-library/raw/master/Library/ado/weightab.ado"
 
-    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-weightab.dta" , clear
+    use "https://github.com/worldbank/stata-visual-library/blob/bbd-graphs/Library/data/bar-weightab.dta?raw=true" , clear
 
     weightab ///
         correct treat_cxr re_3 re_4 treat_refer t_12 ///
