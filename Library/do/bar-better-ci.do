@@ -3,7 +3,6 @@
 /* 
 	Data Source:
 	---------------------
-	Data Replicated from
 	
 	Satyanarayana S, Kwan A, Daniels B, Subbaraman R, McDowell A, Bergkvist S, Das RK, Das V, Das J, Pai M. 
 	Use of standardised patients to assess antibiotic dispensing for tuberculosis by pharmacies in urban India: A cross-sectional study. 
