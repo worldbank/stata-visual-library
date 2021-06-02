@@ -1,19 +1,27 @@
-/*******************************************************************************
-              FIGURE: Line graph with uncluttered scheme
-********************************************************************************/
+* 	Figure: Line graph with uncluttered scheme
 
-	* Load built-in data
-    sysuse uslifeexp
+/* 
+	Data Source:
+	---------------------
+	Stata built-in dataset: uslifeexp
 	
-    * Change scheme: scheme needs to be manually installed. Instruction on how
-    * to this can be found in https://gray.kimbrough.info/uncluttered-stata-graphs/
-    capture set scheme uncluttered
+	Install Scheme (if needed):
+	---------------------
+	Change scheme: scheme needs to be manually installed. Instruction on how
+    to this can be found in https://gray.kimbrough.info/uncluttered-stata-graphs/
+	Step 1: 	go to https://gray.kimbrough.info/uncluttered-stata-graphs/
+	Step 2: 	click on "scheme" or go https://github.com/graykimbrough/uncluttered-stata-graphs/tree/master/schemes
+	Step 3: 	Download two .scheme file in that github directionary
+	Step 4: 	Place the .scheme file(s) in your Stata PERSONAL directory (if you dont know where, run "sysdir" in STATA Command)
+	Step 5: 	run "set scheme uncluttered, permanent" in STATA Command
     
-    if _rc == 11 {
-        display "Visit the https://github.com/graykimbrough/uncluttered-stata-graphs to install the schemes"
-    }
 
-    * Create graph
+*/
+
+    sysuse uslifeexp
+
+	set scheme uncluttered
+	
     line le le_male le_female year       ///
         ,                                ///
          ytitle(Life expectancy (years)) ///
@@ -22,6 +30,7 @@
                       2 "Male"           ///
                       3 "Female")        ///
                 cols(3)                  /// Show all legends in one line (3 columns)
-                pos(12))                 //  Show legend on top of graph
+                pos(12))                 ///  Show legend on top of graph
+		title("Line graph with uncluttered scheme",  justification(left) color(black) span pos(11))
 				
-***************************** End of do-file ***********************************
+* Have a lovely Day!

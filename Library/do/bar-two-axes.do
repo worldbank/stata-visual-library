@@ -1,24 +1,28 @@
-* Figure: combined bar plots with two axes
+* 	Figure: combined bar plots with two axes
 
-    * Load data
-    * ---------
+/* 
+	Source:
+	---------------------
+        Mock data and code were based in 
+	Christian, Paul, and Brian Dillon. 2018. “Growing and Learning When Consumption Is Seasonal:
+	Long-Term Evidence From Tanzania.” Demography 55 (3): 1091–1118. doi:10.1007/s13524-018-0669-4.
+*/
+
+  
     use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-two-axes.dta", clear
     
-    * Adjust variable for bar position
-    gen x = int1mo+.5
+    gen x = int1mo+.5 /// Adjust variable for bar position
     
-    * Create individual graphs
-    * ------------------------
     foreach foodGroup in animal fruit grain veg starch processed_sugar {
-        
+        /// Create invidual graphs using a loop
         if "`foodGroup'" == "animal"            local graphTitle Animal Sourced
-        if "`foodGroup'" == "fruit"                local graphTitle Fruit
-        if "`foodGroup'" == "grain"                local graphTitle Grain
-        if "`foodGroup'" == "veg"                local graphTitle Vegetables
+        if "`foodGroup'" == "fruit"             local graphTitle Fruit
+        if "`foodGroup'" == "grain"             local graphTitle Grain
+        if "`foodGroup'" == "veg"               local graphTitle Vegetables
         if "`foodGroup'" == "starch"            local graphTitle Starchy Foods
-        if "`foodGroup'" == "processed_sugar"    local graphTitle Processed/Sugar
+        if "`foodGroup'" == "processed_sugar"   local graphTitle Processed/Sugar
 
-        twoway     bar number_group x if food_group=="`foodGroup'", ///
+        twoway  bar number_group x if food_group=="`foodGroup'", ///
                 yaxis(1) ytitle("Avg. Number of Foods from" "Group Consumed Last Month", axis(1)) ///
                 barwidth(.9) fintensity(inten0) lcolor(black) /// 
                 xlabel(0 "0" 3 "3" 6 "6" 9 "9" 12 "12") ///
@@ -34,9 +38,9 @@
                 
     }
 
-    * Combine graphs into one
-    * -----------------------
     graph combine    starch animal fruit grain processed_sugar veg, ///
-                     graphregion(color(white)) plotregion(color(white)) 
+					 title("Combined Bar Plot with Dual Axes", justification(center) color(black) span pos(17)) ///
+                     graphregion( color(white)) plotregion(color(white)) 
+					
 
 * Have a lovely day!

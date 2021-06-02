@@ -1,14 +1,24 @@
-* Figure: Side by side horizontal bar plot (Active ingredients in drugs given for each case) using betterbar
+* 	Figure: Side by side horizontal bar plot (Active ingredients in drugs given for each case) using betterbar
 
-* Replication file for:
-* Satyanarayana S, Kwan A, Daniels B, Subbaraman R, McDowell A, Bergkvist S, Das RK, Das V, Das J, Pai M. 
-* Use of standardised patients to assess antibiotic dispensing for tuberculosis by pharmacies in urban India: 
-* A cross-sectional study. 
-* The Lancet Infectious Diseases. 2016 Nov 30;16(11):1261-8.
-    
-    global  graph_opts                                              ///
-            note(, justification(left) color(black) span pos(7))    ///
-            title(, justification(left) color(black) span pos(11))  ///
+/* 
+	Data Source:
+	---------------------
+	Satyanarayana S, Kwan A, Daniels B, Subbaraman R, McDowell A, Bergkvist S, Das RK, Das V, Das J, Pai M. 
+	Use of standardised patients to assess antibiotic dispensing for tuberculosis by pharmacies in urban India: 
+	A cross-sectional study.  The Lancet Infectious Diseases. 2016 Nov 30;16(11):1261-8.
+	
+	Install Packages (if needed)
+	-----------------------------
+	We need two packages to run this file: betterbar, and grc1leg
+	Please remove "*" from below lines if you have not installed them and would like to install.
+*/
+
+	* ssc install betterbar
+	* net install grc1leg, from(http://www.stata.com/users/vwiggins)
+   
+    global  graph_opts ///
+            note(, justification(left) color(black) span pos(7)) ///
+            title(, justification(center) color(black) span pos(17)) ///
             subtitle(, justification(left) color(black) span pos(11)) ///
             graphregion(color(white))                               ///
             ylab(,angle(0) nogrid)                                  ///
@@ -82,9 +92,17 @@
             
         }
         
+<<<<<<< HEAD:Library/do/bar-custombar.do
     grc1leg figure_4_1 figure_4_2,      ///
             pos(3)                      ///
             graphregion(color(white))   ///
+=======
+    grc1leg figure_4_1 figure_4_2 ///
+            , ///
+			title("Side by Side Bar Plot", justification(center) color(black) span pos(17)) ///
+            pos(3) ///
+            graphregion(color(white)) ///
+>>>>>>> 3f7b018b8d6ed26b909dc3b61d2c609c534af9e7:Library/do/bar-betterbar.do
             xsize(7) 
-
+	
 * Have a lovely day!
