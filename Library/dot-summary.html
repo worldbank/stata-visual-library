@@ -1,11 +1,15 @@
-* Reproduced from: 
-*   Two Indias: The structure of primary health care markets 
-*   in rural Indian villages with implications for policy
-* By Jishnu Das, Benjamin Daniels, Monisha Ashok, Eun-Young Shim, and Karthik Muralidharan
-* https://doi.org/10.1016/j.socscimed.2020.112799
-* https://github.com/bbdaniels/ssm-rhcp-2020
+/* 	
+  Figure: Binned scatter plot
 
-use "https://github.com/worldbank/stata-visual-library/blob/bbd-graphs/Library/data/dot-summary.dta?raw=true" , clear
+	Data Source:
+	---------------------
+	Jishnu Das, Benjamin Daniels, Monisha Ashok, Eun-Young Shim, and Karthik Muralidharan
+	Two Indias: The structure of primary health care markets in rural Indian villages with implications for policy.
+  doi: https://doi.org/10.1016/j.socscimed.2020.112799
+  repo: https://github.com/bbdaniels/ssm-rhcp-2020
+*/
+
+  use "https://github.com/worldbank/stata-visual-library/blob/bbd-graphs/Library/data/dot-summary.dta?raw=true" , clear
 
   egen total = rsum(type_?)
   gen any = (total>0)

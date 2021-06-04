@@ -1,10 +1,9 @@
-*	Figure: Simple event study graph
+/*
+  Figure: Simple event study graph
 
-/*	
 	Data Source:
 	---------------------
 	This is a mock data set.
-
 */
 
 	use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/eventstudy-prepost.dta", clear
@@ -43,20 +42,20 @@
 	drop in `lastobs'			// this is the constant
 	
 
-	twoway  (rspike ul ll time, msize(tiny) color(gs10)) ///
-			(scatter b time, msize(tiny) color(gs8)) ///
-			(scatteri 0 0 0 `tevent', recast(connected) msymbol(none) lcolor(cranberry)) ///
-			(scatteri `postcons' `tevent' `postcons' `tmax', recast(connected) msymbol(none) lcolor(navy)) ///
-			(scatteri `postul' `tevent' `postul' `tmax', recast(connected) lpattern(dash) msymbol(none) lcolor(navy)) ///
-			(scatteri `postll' `tevent' `postll' `tmax', recast(connected) lpattern(dash) msymbol(none) lcolor(navy)) ///
-			, ///
-			graphregion(color(white)) ///
-			legend(off) ///
-			xlabel(none) ///
-			xtitle(Time) ///
-			ytitle(Outcome variable) ///
-			title("Event Study Graph", justification(left) color(black) span pos(17))
-		)
-			
+	twoway                                          ///
+    (rspike ul ll time, msize(tiny) color(gs10))  ///
+    (scatter b time, msize(tiny) color(gs8))      ///
+    (scatteri 0 0 0 `tevent', recast(connected) msymbol(none) lcolor(cranberry)) ///
+    (scatteri `postcons' `tevent' `postcons' `tmax', recast(connected) msymbol(none) lcolor(navy)) ///
+    (scatteri `postul' `tevent' `postul' `tmax', recast(connected) lpattern(dash) msymbol(none) lcolor(navy)) ///
+    (scatteri `postll' `tevent' `postll' `tmax', recast(connected) lpattern(dash) msymbol(none) lcolor(navy)) ///
+    , ///
+    graphregion(color(white)) ///
+    legend(off) ///
+    xlabel(none) ///
+    xtitle(Time) ///
+    ytitle(Outcome variable) ///
+    title("Event Study Graph", justification(left) color(black) span pos(17))
+
 * Have a lovely day!
 		

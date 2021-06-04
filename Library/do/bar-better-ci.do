@@ -1,6 +1,6 @@
-* 	Figure: Horizontal bar plot with grouping of variables, standard error bars, and cross-group comparisons
-
 /* 
+  Figure: Horizontal bar plot with grouping of variables, standard error bars, and cross-group comparisons
+
 	Data Source:
 	---------------------
 	
@@ -13,15 +13,15 @@
 
     qui do 		"https://github.com/worldbank/stata-visual-library/raw/master/Library/ado/betterbar.ado"
 
-    use 		"https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-better-ci.dta", clear
+    use 		  "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-better-ci.dta", clear
 
-    betterbar ///
+    betterbar                     ///
         (dr_3 correct_treatment)  ///
-        (med_b2_any_antibiotic med_b2_any_steroid med_b2_any_antister med_l_any_2 ///
-		med_b2_any_schedule_h med_b2_any_schedule_h1 med_b2_any_schedule_x med_l_any_1), ///
-        over(city) xlab($pct) se bin ///
+        (med_b2_any_antibiotic med_b2_any_steroid med_b2_any_antister med_l_any_2     ///
+		med_b2_any_schedule_h med_b2_any_schedule_h1 med_b2_any_schedule_x med_l_any_1),  ///
+        over(city) xlab($pct) se bin  ///
         legend(pos(5) ring(0) c(1) symxsize(small) symysize(small)) ///
-        ysize(7) n barlab(upper) ///
+        ysize(7) n barlab(upper)      ///
 		title ("Horizontal Cluster Bar Plot" , justification(left) color(black) span pos(17))
 		
 * Have a lovely day!

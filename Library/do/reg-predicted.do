@@ -1,11 +1,11 @@
-* Figure: Adjusted prediction of car price with 95% confidence interval
-			
 /* 
+  Figure: Adjusted prediction of car price with 95% confidence interval
+
 	Data Source:
 	--------------------------
 	Use built-in data: auto
 */
-		
+
 	sysuse auto, clear
 	
 	reg price ibn.foreign

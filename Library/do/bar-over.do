@@ -1,17 +1,17 @@
-* 	Figures: bar plot of two variables
-
 /* 
+  Figures: bar plot of two variables
+
 	Data Source:
 	---------------------
 	Das, Jishnu, Liana Woskie, Ruma Rajbhandari, Kamran Abbasi, and Ashish Jha.
 	“Rethinking assumptions about delivery of healthcare: implications for universal health coverage.” Bmj 361 (2018).
 */
 
-    global graph_opts1 ///
+    global graph_opts1    ///
            bgcolor(white) ///
-           graphregion(color(white)) ///
-           legend(region(lc(none) fc(none))) ///
-           ylab(,angle(0) nogrid) ///
+           graphregion(color(white))          ///
+           legend(region(lc(none) fc(none)))  ///
+           ylab(,angle(0) nogrid)             ///
            title(, justification(center) color(black) span pos(17)) ///
            subtitle(, justification(left) color(black))
 
