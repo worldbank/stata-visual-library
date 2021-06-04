@@ -7,6 +7,12 @@
 	Satyanarayana S, Kwan A, Daniels B, Subbaraman R, McDowell A, Bergkvist S, Das RK, Das V, Das J, Pai M. 
 	Use of standardised patients to assess antibiotic dispensing for tuberculosis by pharmacies in urban India: A cross-sectional study. 
 	The Lancet Infectious Diseases. 2016 Nov 30;16(11):1261-8.
+
+  Workflow explanation: 
+  The code takes the results from a linear regression and a logit regression 
+  and saves the coefficients, and the upper and lower bounds of the confidence 
+  intervals into a matrix (results). The twoway command will take the estimates 
+  and plot a comparison of marginal effects from the two specifications. 
 */
 
   global 	graph_opts title(, justification(left) color(black) span pos(11)) graphregion(color(white)) ylab(,angle(0) nogrid) xtit(,placement(left) justification(left)) yscale(noline) xscale(noline) legend(region(lc(none) fc(none)))
