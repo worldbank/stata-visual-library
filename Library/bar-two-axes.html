@@ -13,7 +13,7 @@
     gen x = int1mo+.5 /// Adjust variable for bar position
     
     foreach foodGroup in animal fruit grain veg starch processed_sugar {
-        /// Create invidual graphs using a loop
+        /// Create individual graphs using a loop
         if "`foodGroup'" == "animal"            local graphTitle Animal Sourced
         if "`foodGroup'" == "fruit"             local graphTitle Fruit
         if "`foodGroup'" == "grain"             local graphTitle Grain
