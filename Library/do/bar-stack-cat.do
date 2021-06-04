@@ -1,6 +1,6 @@
-* Figure: horizontal stack bar plot
-
 /* 
+  Figure: horizontal stack bar plot
+  
 	Data Source:
 	---------------------
 	Kwan, Ada, Benjamin Daniels, Vaibhav Saria, Srinath Satyanarayana, Ramnath Subbaraman, Andrew McDowell, 

@@ -1,6 +1,6 @@
-* 	Figure: Side by side horizontal bar plot (Active ingredients in drugs given for each case) using betterbar
-
 /* 
+  Figure: Side by side horizontal bar plot (Active ingredients in drugs given for each case) using betterbar
+
 	Data Source:
 	---------------------
 	Satyanarayana S, Kwan A, Daniels B, Subbaraman R, McDowell A, Bergkvist S, Das RK, Das V, Das J, Pai M. 
@@ -16,20 +16,19 @@
 	* ssc install betterbar
 	* net install grc1leg, from(http://www.stata.com/users/vwiggins)
    
-    global  graph_opts ///
-            note(, justification(left) color(black) span pos(7)) ///
-            title(, justification(center) color(black) span pos(17)) ///
+    global  graph_opts                                                ///
+            note(, justification(left) color(black) span pos(7))      ///
+            title(, justification(center) color(black) span pos(17))  ///
             subtitle(, justification(left) color(black) span pos(11)) ///
-            graphregion(color(white))                               ///
-            ylab(,angle(0) nogrid)                                  ///
-            ytit("")                                                ///
-            xtit(,placement(left) justification(left))              ///
-            yscale(noline) xscale(noline) xsize(7)                  ///
+            graphregion(color(white))                                 ///
+            ylab(,angle(0) nogrid)                                    ///
+            ytit("")                                                  ///
+            xtit(,placement(left) justification(left))                ///
+            yscale(noline) xscale(noline) xsize(7)                    ///
             legend(region(lc(none) fc(none)))
         
-    qui do "https://github.com/worldbank/stata-visual-library/raw/master/Library/ado/custombar.ado"
-    qui do "https://github.com/worldbank/stata-visual-library/raw/master/Library/ado/labelcollapse.ado"
-    qui net install grc1leg,from( http://www.stata.com/users/vwiggins/) 
+    qui do "https://raw.githubusercontent.com/worldbank/stata-visual-library/develop/Library/ado/custombar.ado"
+    qui do "https://raw.githubusercontent.com/worldbank/stata-visual-library/develop/Library/ado/labelcollapse.ado"
 
     local n_5 = 599
     local n_6 = 601
@@ -41,7 +40,7 @@
     
         local case = `i' - 4
 
-        use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-custombar.dta" , clear
+        use "https://github.com/worldbank/stata-visual-library/blob/develop/Library/data/bar-custombar.dta?raw=true" , clear
             
         gen n = 1
         bys med_generic: egen med_class_typ = mode(med_class), minmode // Label with most typical medicine code
@@ -71,7 +70,6 @@
         }
                     
         foreach var of varlist n?* {
-            
             replace `var' = . if `var' < 5 // Exclude low volumes
             replace `var' = `var'/`n_`i'' // Number of interactions
             qui sum `var'
@@ -81,7 +79,7 @@
         drop if med_generic == "Sodium Chloride" // not an active ingredient
             
         custombar (n?*) , ///
-                stat(sum) over(med_class_typ) by(med_class_typ) nobylabel nobycolor d(1)  ///
+                stat(sum) over(med_class_typ) by(med_class_typ) nobylabel nobycolor d(1)      ///
                 legend(span c(1) pos(3) ring(1) symxsize(small) symysize(small) size(small))  ///
                 dropzero ///
                 xlab(0 "0%" .2 "20%" .4 "40%" .6 "60%") ///
@@ -90,19 +88,12 @@
                 title("Case `case' (N=`n_`i'')") subtitle("`title_`i''") ///
                 name(figure_4_`case')
             
-        }
-        
-<<<<<<< HEAD:Library/do/bar-custombar.do
-    grc1leg figure_4_1 figure_4_2,      ///
-            pos(3)                      ///
-            graphregion(color(white))   ///
-=======
-    grc1leg figure_4_1 figure_4_2 ///
-            , ///
+    }
+
+    grc1leg figure_4_1 figure_4_2, ///
 			title("Side by Side Bar Plot", justification(center) color(black) span pos(17)) ///
             pos(3) ///
             graphregion(color(white)) ///
->>>>>>> 3f7b018b8d6ed26b909dc3b61d2c609c534af9e7:Library/do/bar-betterbar.do
             xsize(7) 
 	
 * Have a lovely day!

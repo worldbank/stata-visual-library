@@ -1,6 +1,6 @@
-*	Figure: Shaded k-density functions
-
 /* 	
+  Figure: Shaded k-density functions
+
 	Data Source:
 	---------------------
 	Data Replicated file from:
@@ -10,9 +10,8 @@
 	-----------------------------
 	We need one packages to run this file:  akdensity
 	Please remove "*" from below lines if you have not installed them and would like to install.
-	
 */ 
-   *  ssc install akdensity
+  * ssc install akdensity
 
     use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/density-shaded.dta", replace
 	

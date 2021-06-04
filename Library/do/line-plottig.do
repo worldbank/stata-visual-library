@@ -1,6 +1,6 @@
-* Figure: Line graph with plottig scheme
-
 /* 
+  Figure: Line graph with plottig scheme
+
 	Data Source:
 	------------------
 	sp500 from default Stata directory
@@ -26,4 +26,4 @@
 			(line open date) , ///
 			title("Line graph with plottig scheme",justification(left) color(black) span pos(11))
 
-******************************* End of do-file *********************************
+* Have a lovely day!

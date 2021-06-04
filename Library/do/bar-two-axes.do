@@ -1,14 +1,13 @@
-* 	Figure: combined bar plots with two axes
-
 /* 
-	Source:
+  Figure: combined bar plots with two axex
+  
+	Data Source:
 	---------------------
-        Mock data and code were based in 
+  Mock data and code were based in 
 	Christian, Paul, and Brian Dillon. 2018. “Growing and Learning When Consumption Is Seasonal:
 	Long-Term Evidence From Tanzania.” Demography 55 (3): 1091–1118. doi:10.1007/s13524-018-0669-4.
 */
 
-  
     use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-two-axes.dta", clear
     
     gen x = int1mo+.5 /// Adjust variable for bar position
@@ -39,8 +38,8 @@
     }
 
     graph combine    starch animal fruit grain processed_sugar veg, ///
-					 title("Combined Bar Plot with Dual Axes", justification(center) color(black) span pos(17)) ///
-                     graphregion( color(white)) plotregion(color(white)) 
+          title("Combined Bar Plot with Dual Axes", justification(center) color(black) span pos(17)) ///
+                graphregion( color(white)) plotregion(color(white)) 
 					
 
 * Have a lovely day!

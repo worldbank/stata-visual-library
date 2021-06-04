@@ -1,6 +1,6 @@
-* 	Figure: Line graph with uncluttered scheme
-
 /* 
+  Figure: Line graph with uncluttered scheme
+
 	Data Source:
 	---------------------
 	Stata built-in dataset: uslifeexp
@@ -18,19 +18,18 @@
 
 */
 
-    sysuse uslifeexp
-
+  sysuse uslifeexp, clear
 	set scheme uncluttered
-	
-    line le le_male le_female year       ///
-        ,                                ///
-         ytitle(Life expectancy (years)) ///
-         legend(on                       /// Scheme supresses the legend by default
-                order(1 "Overall"        /// Set label to show up in legend
-                      2 "Male"           ///
-                      3 "Female")        ///
-                cols(3)                  /// Show all legends in one line (3 columns)
-                pos(12))                 ///  Show legend on top of graph
+
+  line le le_male le_female year       ///
+      ,                                ///
+       ytitle(Life expectancy (years)) ///
+       legend(on                       /// Scheme supresses the legend by default
+              order(1 "Overall"        /// Set label to show up in legend
+                    2 "Male"           ///
+                    3 "Female")        ///
+              cols(3)                  /// Show all legends in one line (3 columns)
+              pos(12))                 ///  Show legend on top of graph
 		title("Line graph with uncluttered scheme",  justification(left) color(black) span pos(11))
 				
 * Have a lovely Day!

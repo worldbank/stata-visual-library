@@ -1,11 +1,10 @@
-* Figure: Marginal effects by heterogeneity groups
-			
 /* 
+  Figure: Marginal effects by heterogeneity groups
+
 	Data Source:
 	--------------------------
 	Use built-in data: auto
 */
-			
 	sysuse auto, clear
 
 	/// prepare option
@@ -46,14 +45,13 @@
 				name(f`foreign') ///
 				graphregion(color(white)) ///
 				`yopts`foreign''
-
-		
 	}
+
 	/// Combine graph				
-	gr combine 	f0 f1, ///
-				ycommon ///
-				graphregion(color(white)) ///
-				title("Marginal effects by heterogeneity groups", justification(left) color(black) span pos(11))
+	gr  combine 	f0 f1,  ///
+      ycommon           ///
+      graphregion(color(white)) ///
+      title("Marginal effects by heterogeneity groups", justification(left) color(black) span pos(11))
 		
 	
 * Have a lovely day!

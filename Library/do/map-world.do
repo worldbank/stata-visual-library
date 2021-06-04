@@ -1,7 +1,7 @@
-* 	Figure: This is a map
-
 /* 
-	Source:
+  Figure: Map
+
+	Data Source:
 	--------------------------
 	Below codes are replicated from 
 	
