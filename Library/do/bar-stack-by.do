@@ -22,7 +22,7 @@
       title(, justification(center) color(black) span pos(17))
   global pct `" 0 "0%" .25 "25%" .5 "50%" .75 "75%" 1 "100%" "'
 
-  use "https: //github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-stack-by.dta", clear
+  use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-stack-by.dta", clear
 
   graph bar med_b2_antister_cat?? ///
       if dr_3 == 1 ///

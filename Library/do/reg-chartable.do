@@ -22,9 +22,9 @@
   * These files are created by the authors for the purposes of this study and are not publicly available for general use.
   * These files are not guaranteed to produce appropriate statistics other than those contained in this replication file.
 
-  qui do "https: //github.com/worldbank/stata-visual-library/raw/master/Library/ado/chartablesheet.ado"
+  qui do "https://github.com/worldbank/stata-visual-library/raw/master/Library/ado/chartablesheet.ado"
 
-  use "https: //github.com/worldbank/stata-visual-library/raw/master/Library/data/reg-chartable.dta", clear
+  use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/reg-chartable.dta", clear
   
   /// Sample Restriction Logic
   global cxr "& sp_case <3"

@@ -6,7 +6,7 @@
 	This is a mock data set.
 */
 
-    use "https: //github.com/worldbank/stata-visual-library/raw/master/Library/data/eventstudy-prepost.dta", clear
+    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/eventstudy-prepost.dta", clear
     
     /// Get time point of reference
     sum t

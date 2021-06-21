@@ -11,9 +11,9 @@
 
     global pct `" 0 "0%" .25 "25%" .5 "50%" .75 "75%" 1 "100%" "'
 
-    qui do         "https: //github.com/worldbank/stata-visual-library/raw/master/Library/ado/betterbar.ado"
+    qui do         "https://github.com/worldbank/stata-visual-library/raw/master/Library/ado/betterbar.ado"
 
-    use           "https: //github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-better-ci.dta", clear
+    use           "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-better-ci.dta", clear
 
     betterbar                     ///
         (dr_3 correct_treatment)  ///

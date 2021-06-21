@@ -8,7 +8,7 @@
 	Long-Term Evidence From Tanzania.” Demography 55 (3): 1091–1118. doi:10.1007/s13524-018-0669-4.
 */
 
-    use "https: //github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-two-axes.dta", clear
+    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-two-axes.dta", clear
     
     gen x = int1mo+.5 /// Adjust variable for bar position
     

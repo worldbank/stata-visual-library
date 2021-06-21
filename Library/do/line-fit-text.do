@@ -10,7 +10,7 @@
 	http://documents.worldbank.org/curated/en/206391519136157728/Water-when-it-counts-reducing-scarcity-through-irrigation-monitoring-in-Central-Mozambique
 */
    
-  use "https: //github.com/worldbank/stata-visual-library/raw/master/Library/data/line-fit-text.dta", clear
+  use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/line-fit-text.dta", clear
 
     ///  Treament effect
   reg     y_var x_var post x_var_post control 

@@ -12,7 +12,7 @@
           ylab(,angle(0) nogrid) title(, justification(left) color(black) span pos(17)) ///
           subtitle(, justification(left) color(black))
 
-  use     "https: //github.com/worldbank/stata-visual-library/raw/master/Library/data/boxplot-pctile.dta" , clear
+  use     "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/boxplot-pctile.dta" , clear
 
   collapse (p10) p10=competence_mle (p25) p25=competence_mle (p50) p50=competence_mle ///
            (p75) p75=competence_mle (p90) p90=competence_mle ///
