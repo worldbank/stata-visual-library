@@ -46,12 +46,12 @@
         mat theResult = nullmat(theResult) , [`theR23']
 
         reg `var' i.city i.case i.type_formal i.sp_city_id  [pweight ///
-            = weight_city]
+        = weight_city]
         local theR24 = `e(r2)' - `theR21' - `theR22' - `theR23'
         mat theResult = nullmat(theResult) , [`theR24']
 
         reg `var' i.city i.case i.type_formal i.sp_city_id i.sp_city_mbbs ///
-            [pweight = weight_city]
+        [pweight = weight_city]
         local theR25 = `e(r2)' - `theR21' - `theR22' - `theR23' - `theR24'
         mat theResult = nullmat(theResult) , [`theR25']
 
