@@ -22,7 +22,7 @@
     * net install grc1leg
     
     /// Load data
-  use "https: //github.com/worldbank/stata-visual-library/raw/master/Library/data/scatter-poly-ci.dta", clear
+  use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/scatter-poly-ci.dta", clear
 
     /// Create First Graph
   sum cons_pae_m_sine, det
