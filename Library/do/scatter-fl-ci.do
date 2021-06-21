@@ -8,7 +8,7 @@
 	World Development Indicator
  */
 
-  use "https: //github.com/worldbank/stata-visual-library/raw/develop/Library/data/scatter-fl-ci.dta", clear
+  use "https://github.com/worldbank/stata-visual-library/raw/develop/Library/data/scatter-fl-ci.dta", clear
 
   twoway     (lfitci gdp_per_cap_growth morality_rate) ///
     (scatter gdp_per_cap_growth morality_rate if continent == "Europe & Central Asia", mcolor(cranberry) m(O) )  ///
