@@ -7,27 +7,27 @@
 	“Rethinking assumptions about delivery of healthcare: implications for universal health coverage.” Bmj 361 (2018).
 */
 
-  global 	graph_opts title(, justification(left) color(black) span pos(17)) ///
+  global     graph_opts title(, justification(left) color(black) span pos(17)) ///
     graphregion(color(white)) ylab(,angle(0) nogrid notick) xscale(noline) yscale(noline) yline(0 , lc(black)) ///
     xtit(,placement(left) justification(left)) legend(region(lc(none) fc(none)))
 
-  global 	hist_opts ylab(, angle(0) axis(2)) yscale(noline alt axis(2)) ///
+  global     hist_opts ylab(, angle(0) axis(2)) yscale(noline alt axis(2)) ///
     ytit(, axis(2)) ytit(, axis(1)) yscale(off axis(2)) yscale(alt)
 
-  use 	"https://github.com/worldbank/stata-visual-library/raw/master/Library/data/density-data.dta"  , clear
+  use     "https: //github.com/worldbank/stata-visual-library/raw/master/Library/data/density-data.dta"  , clear
 
-  qui su 	theta_mle
+  qui su     theta_mle
 
-  gen 	score = theta_mle - `r(min)'
-  gen 	bach = roster_6a8 > 4
+  gen     score = theta_mle - `r(min)'
+  gen     bach = roster_6a8 > 4
 
-  twoway	(kdensity score if bach == 0 , lp(dash) lc(maroon) yaxis(2)) ///
+  twoway    (kdensity score if bach == 0 , lp(dash) lc(maroon) yaxis(2)) ///
     (kdensity score if bach == 1 , lp(dash) lc(navy) yaxis(2)) ///
     (histogram score if bach == 0 , freq w(.1) recast(scatter) msize(small) mc(maroon)) ///
     (histogram score if bach == 1 , freq w(.1) recast(scatter) msize(small) mc(navy)) ///
     , ///
     legend(symxsize(small) ///
-          order(0 "" 0 "" 0 "{bf: Degree:}" ///
+          order(0 "" 0 "" 0 " {bf: Degree:}" ///
           3 "Intermediate, Undergrad, or Bachelors (N=575)" ///
           4 "Specialist or Masters (N=431)") ///
           c(1) pos(11) ring(0)) ///
@@ -36,3 +36,4 @@
     title("Density Graph with data points")
 
 * Have a lovely day!
+

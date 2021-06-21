@@ -10,23 +10,22 @@
 	http://documents.worldbank.org/curated/en/206391519136157728/Water-when-it-counts-reducing-scarcity-through-irrigation-monitoring-in-Central-Mozambique
 */
    
-  use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/line-fit-text.dta", clear
+  use "https: //github.com/worldbank/stata-visual-library/raw/master/Library/data/line-fit-text.dta", clear
 
-	///  Treament effect
+    ///  Treament effect
   reg     y_var x_var post x_var_post control 
    
-	/// Saving coefficient
+    /// Saving coefficient
   local   beta_pre  = round(_b[x_var],0.001) 
-  local	  beta_post = round(_b[x_var] + _b[x_var_post],0.001)
+  local      beta_post = round(_b[x_var] + _b[x_var_post],0.001)
     
-	/// Saving F Test  test    _b[x_var_post] = 1
+    /// Saving F Test  test    _b[x_var_post] = 1
   local   f_pre = round(r(p),0.001) 
-  if		`f_pre' == 0 local f_pre = "0.000"
+  if        `f_pre' == 0 local f_pre = "0.000"
   
   test    _b[x_var_post] + _b[x_var_post] = 1
   local   f_post = round(r(p),0.001)
   
-
   twoway  (lfitci y_hat x_var if post == 1, color("222 235 247") lwidth(.05))     ///
           (lfitci y_hat x_var if post == 0, color(gs15))                          /// 
           (lfit   x_var x_var if post == 1, color(red) lwidth(.5) lpattern(dash)) ///
@@ -42,3 +41,4 @@
     title("Line plots witthed line with confidence interval", justification(left) color(black) span pos(11))
 
 * Have a lovely day!
+

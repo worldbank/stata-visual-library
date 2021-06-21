@@ -47,7 +47,7 @@ line is too long (over 80 characters)"
 reg-chartable,,Regression coefficients,"Replication files for: Das, Jishnu, Liana Woskie, Ruma Rajbhandari, Kamran Abbasi, and Ashish Jha. ""Rethinking assumptions about delivery of healthcare: implications for universal health coverage."" BMJ 361 (2018): k1716.",,"firthlogit, estadd, xml_tab",,,,"""""""Use 4 white spaces instead of tabs. 
 This line is too long (over 80 characters)
 whitespaces around math symbols"""
-reg-het,,Regression coefficients,sysuse auto,Does not apply,None,,,,"Use 4 white spaces instead of tabs. 
+reg-het,,Regression coefficients,sysuse auto,Does not apply,None,,,lint corrrection command did not work,"Use 4 white spaces instead of tabs. 
 This line is too long (over 80 characters)"
 reg-models,,Regression coefficients,"Replication files for Satyanarayana S, Kwan A, Daniels B, Subbaraman R, McDowell A, Bergkvist S, Das RK, Das V, Das J, Pai M. Use of standardised patients to assess antibiotic dispensing for tuberculosis by pharmacies in urban India: a cross-sectional study. The Lancet Infectious Diseases. 2016 Nov 30;16(11):1261-8",,None,,,,"Use 4 white spaces instead of tabs. 
 This line is too long (over 80 characters)

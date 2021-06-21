@@ -15,7 +15,7 @@
            title(, justification(center) color(black) span pos(17)) ///
            subtitle(, justification(left) color(black))
 
-    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-over.dta" , clear
+    use "https: //github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-over.dta" , clear
 
     graph bar treat_correct ///
         , ///
@@ -35,6 +35,7 @@
                placement(bottom) ///
                justification(left)) ///
           ylab(${pct}) ///
-		  title("Bar Plot of Two Variables")
+          title("Bar Plot of Two Variables")
 
 * Have a lovely day!
+

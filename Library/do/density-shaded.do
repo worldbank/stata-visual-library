@@ -13,15 +13,15 @@
 */ 
   * ssc install akdensity
 
-    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/density-shaded.dta", replace
-	
-    sort 	beta_
-    gen 	rank 	= _n 
-    egen 	p98		= pctile(beta_), p(98) 
+    use "https: //github.com/worldbank/stata-visual-library/raw/master/Library/data/density-shaded.dta", replace
+    
+    sort     beta_
+    gen     rank     = _n 
+    egen     p98        = pctile(beta_), p(98) 
 
-    sum 	beta_, det
-    local 	mean 	= round(`r(mean)', .00001)
-    local 	median 	= round(`r(p50)', .00001)
+    sum     beta_, det
+    local     mean     = round(`r(mean)', .00001)
+    local     median     = round(`r(p50)', .00001)
 
     /// Graph: DISTRIBUTION OF 2SLS COEFFICIENT ESTIMATES USING RANDOMIZED FOOD AID ALLOCATIONS
     akdensity0 beta_, gen(x) at(beta_) bwidth(.0005) //akdensity0 comes from the user-written package "akdensity"
@@ -41,6 +41,7 @@
             xmlabel(`r(p50)' "Median=`median'" `r(mean)' "Mean=`mean'" , angle(45)) ///
             ylabel(none) ///
             bgcolor(white) graphregion(color(white)) ///
-			title("Shaded k-density functions", justification(left) color(black) span pos(17))
+            title("Shaded k-density functions", justification(left) color(black) span pos(17))
 
 * Have a lovely day!
+

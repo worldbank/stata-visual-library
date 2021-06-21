@@ -12,18 +12,19 @@
 */
 
     * ssc install blindschemes, replace
-	
+    
     /// Select graph scheme (similar to R's ggplot2)
     set scheme plottig
 
     /// Load built-in data
     sysuse sp500, clear
-	
+    
     /// Create graph: show time series for 4 variables
     twoway  (line high date) ///
-			(line low date) ///
-			(line close date) ///
-			(line open date) , ///
-			title("Line graph with plottig scheme",justification(left) color(black) span pos(11))
+            (line low date) ///
+            (line close date) ///
+            (line open date) , ///
+            title("Line graph with plottig scheme",justification(left) color(black) span pos(11))
 
 * Have a lovely day!
+

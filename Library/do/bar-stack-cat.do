@@ -15,7 +15,7 @@
 
     global pct `" 0 "0%" .25 "25%" .5 "50%" .75 "75%" 1 "100%" "'
 
-    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-stack-cat.dta" , clear
+    use "https: //github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-stack-cat.dta" , clear
 
     local x = 0
     qui foreach var of varlist ///
@@ -45,11 +45,13 @@
         local theR23 = `e(r2)' - `theR21' - `theR22'
         mat theResult = nullmat(theResult) , [`theR23']
 
-        reg `var' i.city i.case i.type_formal i.sp_city_id  [pweight = weight_city]
+        reg `var' i.city i.case i.type_formal i.sp_city_id  [pweight ///
+            = weight_city]
         local theR24 = `e(r2)' - `theR21' - `theR22' - `theR23'
         mat theResult = nullmat(theResult) , [`theR24']
 
-        reg `var' i.city i.case i.type_formal i.sp_city_id i.sp_city_mbbs [pweight = weight_city]
+        reg `var' i.city i.case i.type_formal i.sp_city_id i.sp_city_mbbs ///
+            [pweight = weight_city]
         local theR25 = `e(r2)' - `theR21' - `theR22' - `theR23' - `theR24'
         mat theResult = nullmat(theResult) , [`theR25']
 
@@ -60,7 +62,6 @@
 
         mat theResults = nullmat(theResults) \ theResult
         matlist theResults
-
     }
 
     clear
@@ -73,7 +74,7 @@
         , ///
         ylab($pct) ///
         ${graph_opts1} ///
-		title("Horizontal Stack Bar Chart", justification(left) color(black) span pos(17)) ///
+        title("Horizontal Stack Bar Chart", justification(left) color(black) span pos(17)) ///
         hor stack over(n) xsize(6) ///
         bar(1, lc(black) lw(thin)) ///
         bar(2, lc(black) lw(thin)) ///
@@ -89,3 +90,4 @@
               5 "Full Interaction Model"))
 
 * Have a lovely day!
+
