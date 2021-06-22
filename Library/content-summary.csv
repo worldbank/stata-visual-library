@@ -1,77 +1,77 @@
-Graph name,Link,Graph type,Data source,Data citation included,User-written packages,does the code run?,SSC install,Commenting,Follows Stata style guide
-bar-better-ci,,Bar plot,"Replication files for Satyanarayana S, Kwan A, Daniels B, Subbaraman R, McDowell A, Bergkvist S, Das RK, Das V, Das J, Pai M. Use of standardised patients to assess antibiotic dispensing for tuberculosis by pharmacies in urban India: a cross-sectional study. The Lancet Infectious Diseases. 2016 Nov 30;16(11):1261-8",Yes,None,,.,,"Use 4 white spaces instead of tabs. 
-line is too long (over 80 characters)"
-bar-better,,Bar plot,"Replication files for Daniels B, Dolinger A, Bedoya G, Rogo K, Goicoechea A, Coarasa J, Wafula F, Mwaura N, Kimeu R, Das J. Use of standardised patients to assess quality of healthcare in Nairobi, Kenya: a pilot, cross-sectional study with international comparisons. BMJ Global Health. 2017 Jun 1;2(2):e000333.",,None,,.,,"Use 4 white spaces instead of tabs. 
-line is too long (over 80 characters)"
+Graph name,Link,Graph type,Data source,Data citation included,User-written packages,does the code run?,SSC install,Commenting,Follows Stata style guide,
+bar-better-ci,,Bar plot,"Replication files for Satyanarayana S, Kwan A, Daniels B, Subbaraman R, McDowell A, Bergkvist S, Das RK, Das V, Das J, Pai M. Use of standardised patients to assess antibiotic dispensing for tuberculosis by pharmacies in urban India: a cross-sectional study. The Lancet Infectious Diseases. 2016 Nov 30;16(11):1261-8",Yes,None,,.,comma and whitetab,"Use 4 white spaces instead of tabs. 
+line is too long (over 80 characters)",x
+bar-better,,Bar plot,"Replication files for Daniels B, Dolinger A, Bedoya G, Rogo K, Goicoechea A, Coarasa J, Wafula F, Mwaura N, Kimeu R, Das J. Use of standardised patients to assess quality of healthcare in Nairobi, Kenya: a pilot, cross-sectional study with international comparisons. BMJ Global Health. 2017 Jun 1;2(2):e000333.",,None,,.,newline,"Use 4 white spaces instead of tabs. 
+line is too long (over 80 characters)",x
 bar-betterbar,,Bar plot,"Replication files for Satyanarayana S, Kwan A, Daniels B, Subbaraman R, McDowell A, Bergkvist S, Das RK, Das V, Das J, Pai M. Use of standardised patients to assess antibiotic dispensing for tuberculosis by pharmacies in urban India: a cross-sectional study. The Lancet Infectious Diseases. 2016 Nov 30;16(11):1261-8",Yes,grc1leg,,.,,"line is too long (over 80 characters)
 Abstract index names in loop line
 indentation after declaring for loop statement or if-else statement
 Indentation after the new line statement (///)
-whitespaces around math symbols"
+whitespaces around math symbols",x
 bar-over,,Bar plot,"Replication files for: Das, Jishnu, Liana Woskie, Ruma Rajbhandari, Kamran Abbasi, and Ashish Jha. ""Rethinking assumptions about delivery of healthcare: implications for universal health coverage."" BMJ 361 (2018): k1716.",,None,,.,,"Use 4 white spaces instead of tabs. 
-line is too long (over 80 characters)"
+line is too long (over 80 characters)",x
 bar-stack-by,,Bar plot,"Replication files for Satyanarayana S, Kwan A, Daniels B, Subbaraman R, McDowell A, Bergkvist S, Das RK, Das V, Das J, Pai M. Use of standardised patients to assess antibiotic dispensing for tuberculosis by pharmacies in urban India: a cross-sectional study. The Lancet Infectious Diseases. 2016 Nov 30;16(11):1261-8",Yes,grc1leg,,.,,"Use 4 white spaces instead of tabs. 
-line is too long (over 80 characters)"
-bar-stack-cat,,Bar plot,"Replication materials for: Ada Kwan, Benjamin Daniels, Vaibhav Saria, Srinath Satyanarayana, Ramnath Subbaraman, Andrew McDowell, Sofi Bergkvist, Ranendra Das, Veena Das, Jishnu Das, and Madhukar Pai. ""Variations in the quality of tuberculosis care in urban india: A cross-sectional, standardized patient study in two cities."" PLOS Medicine",,None,,.,,"Use 4 white spaces instead of tabs. 
+line is too long (over 80 characters)",
+bar-stack-cat,,Bar plot,"Replication materials for: Ada Kwan, Benjamin Daniels, Vaibhav Saria, Srinath Satyanarayana, Ramnath Subbaraman, Andrew McDowell, Sofi Bergkvist, Ranendra Das, Veena Das, Jishnu Das, and Madhukar Pai. ""Variations in the quality of tuberculosis care in urban india: A cross-sectional, standardized patient study in two cities."" PLOS Medicine",,None,,.,line 29. +1 or + 1,"Use 4 white spaces instead of tabs. 
 line is too long (over 80 characters)
-whitespaces around math symbols"
+whitespaces around math symbols",
 bar-two-axes,,Bar plot,"Mock data and code based on Christian, Paul, and Brian Dillon. 2018. ""Growing and Learning When Consumption Is Seasonal: Long-Term Evidence From Tanzania."" Demography 55 (3): 1091–1118. doi:10.1007/s13524-018-0669-4.",,None,,.,,"Use 4 white spaces instead of tabs. 
 line is too long (over 80 characters)
-whitespaces around math symbols"
-bar-weightab,,Bar plot,"Replication materials for: Ada Kwan, Benjamin Daniels, Vaibhav Saria, Srinath Satyanarayana, Ramnath Subbaraman, Andrew McDowell, Sofi Bergkvist, Ranendra Das, Veena Das, Jishnu Das, and Madhukar Pai. ""Variations in the quality of tuberculosis care in urban india: A cross-sectional, standardized patient study in two cities."" PLOS Medicine",,None,"error ""variable overgroup contains missing values""",.,,
+whitespaces around math symbols",
+bar-weightab,,Bar plot,"Replication materials for: Ada Kwan, Benjamin Daniels, Vaibhav Saria, Srinath Satyanarayana, Ramnath Subbaraman, Andrew McDowell, Sofi Bergkvist, Ranendra Das, Veena Das, Jishnu Das, and Madhukar Pai. ""Variations in the quality of tuberculosis care in urban india: A cross-sectional, standardized patient study in two cities."" PLOS Medicine",,None,"error ""variable overgroup contains missing values""",.,,,
 boxplot-pctile,,Box plots,"Replication files for: Das, Jishnu, Liana Woskie, Ruma Rajbhandari, Kamran Abbasi, and Ashish Jha. ""Rethinking assumptions about delivery of healthcare: implications for universal health coverage."" BMJ 361 (2018): k1716.",,None,,.,,"Use 4 white spaces instead of tabs. 
 line is too long (over 80 characters)
-whitespaces around math symbols"
-density-av,,Density plots,Mock data created for the graph,,None,,.,,line is too long (over 80 characters)
+whitespaces around math symbols",
+density-av,,Density plots,Mock data created for the graph,,None,,.,,line is too long (over 80 characters),
 density-data,,Density plots,"Replication files for: Das, Jishnu, Liana Woskie, Ruma Rajbhandari, Kamran Abbasi, and Ashish Jha. ""Rethinking assumptions about delivery of healthcare: implications for universal health coverage."" BMJ 361 (2018): k1716.",,None,,.,,"Use 4 white spaces instead of tabs. 
 line is too long (over 80 characters)
 Indentation after the new line statement (///)
-whitespaces around math symbols"
-density-shaded,,Density plots,"Mock data and code based on Christian, Paul and Barrett, Christopher B., Revisiting the Effect of Food Aid on Conflict: A Methodological Caution (August 23, 2017). World Bank Policy Research Working Paper No. 8171",,None,,ssc install akdensity,,"""Use 4 white spaces instead of tabs. 
+whitespaces around math symbols",x
+density-shaded,,Density plots,"Mock data and code based on Christian, Paul and Barrett, Christopher B., Revisiting the Effect of Food Aid on Conflict: A Methodological Caution (August 23, 2017). World Bank Policy Research Working Paper No. 8171",,None,,ssc install akdensity,|| -> ()  WIP,"""Use 4 white spaces instead of tabs. 
 This line is too long (over 80 characters)
-whitespaces around math symbols"
+whitespaces around math symbols",
 eventstudy-prepost,,Event study,Mock data,,None,,,,"Use 4 white spaces instead of tabs. 
 line is too long (over 80 characters)
-Indentation after the new line statement (///)"
+Indentation after the new line statement (///)",
 line-fit-text,,Line plots,"Mock data and code based on Water when it counts : reducing scarcity through irrigation monitoring in Central Mozambique (English). Policy Research working paper;no. WPS 8345;Impact Evaluation series Washington, D.C. : World Bank Group. http://documents.worldbank.org/curated/en/206391519136157728/Water-when-it-counts-reducing-scarcity-through-irrigation-monitoring-in-Central-Mozambique",,None,,,,"Use 4 white spaces instead of tabs. 
-line is too long (over 80 characters)"
-line-plottig,,Line plots,sysuse sp500,Does not apply,blindschemes,Need to install package,ssc install blindschemes,,"Use 4 white spaces instead of tabs. 
-line is too long (over 80 characters)"
-line-uncluttered,,Line plots,uslifeexp,Does not apply,None,Download files,* Download .shceme file,,"Use 4 white spaces instead of tabs. 
-line is too long (over 80 characters)"
+line is too long (over 80 characters)",
+line-plottig,,Line plots,sysuse sp500,Does not apply,blindschemes,Need to install package,ssc install blindschemes,newline ,"Use 4 white spaces instead of tabs. 
+line is too long (over 80 characters)",x
+line-uncluttered,,Line plots,uslifeexp,Does not apply,None,Download files,* Download .shceme file,newline,"Use 4 white spaces instead of tabs. 
+line is too long (over 80 characters)",x
 map-world,,Maps,,,,command wbopendata is unrecognized,"ssc install spmap
 ssc install shp2dta
 
 ssc install wbopendata, replace",map-world in two braches are totally different,"Use 4 white spaces instead of tabs. 
-line is too long (over 80 characters)"
+line is too long (over 80 characters)",
 reg-chartable,,Regression coefficients,"Replication files for: Das, Jishnu, Liana Woskie, Ruma Rajbhandari, Kamran Abbasi, and Ashish Jha. ""Rethinking assumptions about delivery of healthcare: implications for universal health coverage."" BMJ 361 (2018): k1716.",,"firthlogit, estadd, xml_tab",,,,"""""""Use 4 white spaces instead of tabs. 
 This line is too long (over 80 characters)
-whitespaces around math symbols"""
-reg-het,,Regression coefficients,sysuse auto,Does not apply,None,,,lint corrrection command did not work,"Use 4 white spaces instead of tabs. 
-This line is too long (over 80 characters)"
+whitespaces around math symbols""",
+reg-het,,Regression coefficients,sysuse auto,Does not apply,None,,,lint corrrection command did not work  / newline symbol is correct?,"Use 4 white spaces instead of tabs. 
+This line is too long (over 80 characters)",x
 reg-models,,Regression coefficients,"Replication files for Satyanarayana S, Kwan A, Daniels B, Subbaraman R, McDowell A, Bergkvist S, Das RK, Das V, Das J, Pai M. Use of standardised patients to assess antibiotic dispensing for tuberculosis by pharmacies in urban India: a cross-sectional study. The Lancet Infectious Diseases. 2016 Nov 30;16(11):1261-8",,None,,,,"Use 4 white spaces instead of tabs. 
 This line is too long (over 80 characters)
 indentation after declaring for loop statement or if-else statement
 whitespaces around math symbols
-backslashes (""\"") for a file path to forward slashes (""/"")"
-reg-predicted,,Regression coefficients,sysuse auto,Does not apply,None,,,,"Use 4 white spaces instead of tabs. 
+backslashes (""\"") for a file path to forward slashes (""/"")",x
+reg-predicted,,Regression coefficients,sysuse auto,Does not apply,None,,,Q. how to deal with Note,"Use 4 white spaces instead of tabs. 
 This line is too long (over 80 characters)
-whitespaces around math symbols"
+whitespaces around math symbols",x
 scatter-fl-ci,,Scatter plots,WDI data,,None,,,,"Use 4 white spaces instead of tabs. 
 This line is too long (over 80 characters)
-Indentation after the new line statement (///"
+Indentation after the new line statement (///",x
 scatter-fi,,Scatter plots,auto,Does not apply,None,,"grc1leg
 * need to modify install instruction",,"Use 4 white spaces instead of tabs. 
 This line is too long (over 80 characters)
-Indentation after the new line statement (///"
+Indentation after the new line statement (///",
 scatter-poly-ci,,Scatter plots,"Mock data and code based on Christian, Paul, and Brian Dillon. 2018. ""Growing and Learning When Consumption Is Seasonal: Long-Term Evidence From Tanzania."" Demography 55 (3): 1091–1118. doi:10.1007/s13524-018-0669-4.",,grc1leg,,`,,"Use 4 white spaces instead of tabs. 
 This line is too long (over 80 characters)
 whitespaces around math symbols
 backslashes (""\"") for a file path to forward slashes (""/"")
-"
-scatter-strata,,Scatter plots,"Replication files for: Das, Jishnu, Liana Woskie, Ruma Rajbhandari, Kamran Abbasi, and Ashish Jha. ""Rethinking assumptions about delivery of healthcare: implications for universal health coverage."" BMJ 361 (2018): k1716.",,"firthlogit, estadd, xml_tab",,,,"Use 4 white spaces instead of tabs. 
+",x
+scatter-strata,,Scatter plots,"Replication files for: Das, Jishnu, Liana Woskie, Ruma Rajbhandari, Kamran Abbasi, and Ashish Jha. ""Rethinking assumptions about delivery of healthcare: implications for universal health coverage."" BMJ 361 (2018): k1716.",,"firthlogit, estadd, xml_tab",,,Qui and whitetabs,"Use 4 white spaces instead of tabs. 
 line is too long (over 80 characters)
-whitespaces around math symbols"
-scatter-transparent,,Scatter plots,auto,Does not apply,None,,,,"Use 4 white spaces instead of tabs. 
+whitespaces around math symbols",x
+scatter-transparent,,Scatter plots,auto,Does not apply,None,,,newline,"Use 4 white spaces instead of tabs. 
 Indentation after the new line statement (///)
- line is too long (over 80 characters)"
+ line is too long (over 80 characters)",x
