@@ -51,7 +51,8 @@
     gr  combine     f0 f1,  ///
       ycommon           ///
       graphregion(color(white)) ///
-      title("Marginal effects by heterogeneity groups", justification(left) color(black) span pos(11))
+      title("Marginal effects by heterogeneity groups", ///
+	      justification(left) color(black) span pos(11))
         
     
 * Have a lovely day!

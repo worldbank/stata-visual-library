@@ -63,7 +63,7 @@
   svmat theResults , names(col)
   
   gen n = _n
-  replace n = 17-n
+  replace n = 17 - n
   tw ///
       (rcap ll ul n if type == 1 , hor lc(navy)) ///
       (scatter n b if type == 1 , mc(black)) ///
@@ -73,10 +73,13 @@
       ${graph_opts} ///
       ylab(`theLabels') ///
       ytit(" ") ///
-      xlab(-1 "-100p.p." -.5 `""-50p.p." " {&larr} Favors Public""' 0 "No Effect" .5 `""+50p.p." "Favors Private {&rarr}""' 1 "+100p.p.") ///
+      xlab(-1 "-100p.p." -.5 `""-50p.p." " {&larr} Favors Public""' 0 ///
+	      "No Effect" .5 `""+50p.p." "Favors Private {&rarr}""' 1 "+100p.p.") ///
       xline(0 , lc(gs12) lp(dash)) ///
-      legend(order(2 "Marginal Effect" 1 "Linear Model" 3 "Logistic Model") r(1)) ///
-  title("Comparison of marginal effects", justification(left) color(black) span pos(11))
+      legend(order(2 "Marginal Effect" 1 "Linear Model" 3 "Logistic Model") ///
+	      r(1)) ///
+      title("Comparison of marginal effects", ///
+	      justification(left) color(black) span pos(11))
 
 * Have a lovely day!
 

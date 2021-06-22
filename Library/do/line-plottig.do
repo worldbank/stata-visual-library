@@ -24,7 +24,8 @@
             (line low date) ///
             (line close date) ///
             (line open date) , ///
-            title("Line graph with plottig scheme",justification(left) color(black) span pos(11))
+            title("Line graph with plottig scheme", ///
+			    justification(left) color(black) span pos(11))
 
 * Have a lovely day!
 
