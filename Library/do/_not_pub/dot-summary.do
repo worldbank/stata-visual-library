@@ -9,7 +9,7 @@
   repo: https://github.com/bbdaniels/ssm-rhcp-2020
 */
 
-  use "https://github.com/worldbank/stata-visual-library/blob/bbd-graphs/Library/data/dot-summary.dta?raw=true" , clear
+  use "https://github.com/worldbank/stata-visual-library/blob/develop/Library/data/dot-summary.dta?raw=true" , clear
 
   egen total = rsum(type_?)
   gen any = (total>0)
