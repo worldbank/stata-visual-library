@@ -13,7 +13,7 @@
 	
 	*load data
 	
-	sysuse lifeexp
+	sysuse lifeexp, clear
 	
 	qui su lexp, de //calculate summary statistics to get 75th percentile
 	
