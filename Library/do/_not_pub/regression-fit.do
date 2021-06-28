@@ -10,7 +10,7 @@
   
 */
   
-  use "https://github.com/worldbank/stata-visual-library/blob/bbd-graphs/Library/data/regression-fit.dta?raw=true" , clear
+  use "https://github.com/worldbank/stata-visual-library/blob/develop/Library/data/regression-fit.dta?raw=true" , clear
 
 	keep uvillid private state_code type_1 type_2 type_3 type_4 smses weight_psu u5mr
 	

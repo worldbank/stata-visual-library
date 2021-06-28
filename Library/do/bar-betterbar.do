@@ -33,56 +33,56 @@
 
   qui forvalues i = 5/6 {
   
-    local case = `i' - 4
+      local case = `i' - 4
 
-    use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-betterbar.dta" , clear
+      use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-betterbar.dta" , clear
         
-    gen n = 1
-    bys med_generic: egen med_class_typ = mode(med_class), minmode // Label with most typical medicine code
-    label val med_class_typ med_k
+      gen n = 1
+      bys med_generic: egen med_class_typ = mode(med_class), minmode // Label with most typical medicine code
+      label val med_class_typ med_k
             
-    keep if case == `i'
+      keep if case == `i'
         
-    labelcollapse  (firstnm) n med_class_typ med_generic_encoded sp_location, ///
-                    by(med_generic facilitycode) ///
-                    vallab(med_class_typ med_generic_encoded sp_location)
+      labelcollapse  (firstnm) n med_class_typ med_generic_encoded sp_location, ///
+                     by(med_generic facilitycode) ///
+                     vallab(med_class_typ med_generic_encoded sp_location)
         
-    labelcollapse   (sum) n (firstnm) med_generic_encoded med_class_typ, ///
-                    by(med_generic) ///
-                    vallab(med_class_typ med_generic_encoded) 
+      labelcollapse   (sum) n (firstnm) med_generic_encoded med_class_typ, ///
+                      by(med_generic) ///
+                      vallab(med_class_typ med_generic_encoded) 
         
-    cap separate n, by(med_generic_encoded) shortlabel
+      cap separate n, by(med_generic_encoded) shortlabel
             
-    foreach var of varlist n?* {
+      foreach var of varlist n?* {
         
-        local theLabel : var label `var'
-        local theLabel = regexr("`theLabel'","med_generic_encoded == ","")
+          local theLabel : var label `var'
+          local theLabel = regexr("`theLabel'","med_generic_encoded == ","")
                 
-        cap su n if med_generic == "`theLabel'"
-        cap local theN = `r(mean)'
+          cap su n if med_generic == "`theLabel'"
+          cap local theN = `r(mean)'
                 
-        label var `var' "`theLabel' [`theN']"
-    }
+          label var `var' "`theLabel' [`theN']"
+      }
                 
-    foreach var of varlist n?* {
+      foreach var of varlist n?* {
         
-        replace `var' = . if `var' < 5 // Exclude low volumes
-        replace `var' = `var'/`n_`i'' // Number of interactions
-        qui sum `var'
-        if `r(N)' == 0 drop `var' 
-    }
+          replace `var' = . if `var' < 5 // Exclude low volumes
+          replace `var' = `var'/`n_`i'' // Number of interactions
+          qui sum `var'
+          if `r(N)' == 0 drop `var' 
+      }
             
-    drop if med_generic == "Sodium Chloride" // not an active ingredient
+      drop if med_generic == "Sodium Chloride" // not an active ingredient
         
-    betterbar (n?*) , ///
-      stat(sum) over(med_class_typ) by(med_class_typ) nobylabel nobycolor d(1)  ///
-      legend(span c(1) pos(3) ring(1) symxsize(small) symysize(small) size(small))  ///
-      dropzero ///
-      xlab(0 "0%" .2 "20%" .4 "40%" .6 "60%") ///
-      ysize(6) labsize(2) ///
-      ${graph_opts} ///
-      title("Case `case' (N=`n_`i'')") subtitle("`title_`i''") ///
-      name(figure_4_`case')
+      betterbar (n?*) , ///
+        stat(sum) over(med_class_typ) by(med_class_typ) nobylabel nobycolor d(1)  ///
+        legend(span c(1) pos(3) ring(1) symxsize(small) symysize(small) size(small))  ///
+        dropzero ///
+        xlab(0 "0%" .2 "20%" .4 "40%" .6 "60%") ///
+        ysize(6) labsize(2) ///
+        ${graph_opts} ///
+        title("Case `case' (N=`n_`i'')") subtitle("`title_`i''") ///
+        name(figure_4_`case')
           
   }
         

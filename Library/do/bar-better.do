@@ -14,12 +14,13 @@
             xtit(,placement(left) justification(left))              ///
             yscale(noline) xscale(noline)                           ///
             legend(region(lc(none) fc(none)))
-			
+            
     global  pct `" 0 "0%" .25 "25%" .5 "50%" .75 "75%" 1 "100%" "'
     
-    qui do 	"https://github.com/worldbank/stata-visual-library/raw/master/Library/ado/betterbar.ado"	
+    qui do  "https://github.com/worldbank/stata-visual-library/raw/master/Library/ado/betterbar.ado"    
 
-    use 	"https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-better.dta" , clear
+    use     "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/bar-better.dta", ///
+	    clear
 
     betterbar ///
         ??_correct  checklist  refer med_any  med_class_any_6 med_class_any_16 ///
@@ -29,7 +30,7 @@
         xlab(${pct}) ///
         barlab(mean) ///
         legend(r(1) symxsize(small) symysize(small)) ///
-		title("Horizontal Cluster Bar Plot")
-		
-				
+        title("Horizontal Cluster Bar Plot")
+        
 * Have a lovely day!
+

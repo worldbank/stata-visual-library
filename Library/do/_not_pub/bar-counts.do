@@ -9,7 +9,7 @@
 	Social Science & Medicine. Doi: https://doi.org/10.1016/j.socscimed.2020.112799
 */
 
-use "https://github.com/worldbank/stata-visual-library/blob/bbd-graphs/Library/data/bar-counts.dta?raw=true", clear
+use "https://github.com/worldbank/stata-visual-library/blob/develop/Library/data/bar-counts.dta?raw=true", clear
 
   // Create all-India category
   expand 2 , gen(false)

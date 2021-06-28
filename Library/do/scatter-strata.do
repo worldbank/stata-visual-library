@@ -15,32 +15,35 @@
  	Please remove "*" from below lines if you have not installed it and would like to install.
 */
 
-	* ssc inst firthlogit
-	* net from http://www.stata-journal.com/software/sj14-2
-	* net install st0085_2
-	* net from  http://www.stata-journal.com/software/sj8-3
-	* net install dm0037 
+    * ssc inst firthlogit
+    * net from http://www.stata-journal.com/software/sj14-2
+    * net install st0085_2
+    * net from  http://www.stata-journal.com/software/sj8-3
+    * net install dm0037 
 
   run "https://raw.githubusercontent.com/worldbank/stata-visual-library/master/Library/ado/freeshape.ado"
   run "https://raw.githubusercontent.com/worldbank/stata-visual-library/master/Library/ado/labelcollapse.ado"
 
-  /// Load data
+  * Load data
   use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/scatter-strata.dta", clear
 
-  /// Collapse and reshape data
-  labelcollapse    essential correct cxr sputum dstgx s5_referral sp_drugs_tb sp_drugs_antibio sp_drugs_quin, by(sp_case)
-  freeshape        essential correct cxr sputum dstgx s5_referral sp_drugs_tb sp_drugs_antibio sp_drugs_quin, i(sp_case) j(var)
+  * Collapse and reshape data
+  labelcollapse    essential correct cxr sputum dstgx s5_referral ///
+      sp_drugs_tb sp_drugs_antibio sp_drugs_quin, by(sp_case)
+  freeshape        essential correct cxr sputum dstgx s5_referral ///
+      sp_drugs_tb sp_drugs_antibio sp_drugs_quin, i(sp_case) j(var)
 
-  /// Assign ordered number
+  * Assign ordered number
   local x = 1
   gen order = 0
 
-  qui foreach name in essential correct cxr sputum dstgx s5_referral sp_drugs_tb sp_drugs_antibio sp_drugs_quin {
-      replace order = `x' if var_name == "`name'"
-      local ++x
+  qui foreach name in essential correct cxr sputum dstgx s5_referral ///
+          sp_drugs_tb sp_drugs_antibio sp_drugs_quin {
+          replace order = `x' if var_name == "`name'"
+          local ++x
   }
 
-	/// Create graph
+ * Create graph
   graph dot var_value     ///
       ,                   ///
       asy over(sp_case) over(var_label, sort(order)) ///
@@ -55,6 +58,7 @@
       marker(2, m(O) mlcolor(black)) ///
       marker(3, m(O) mlcolor(black)) ///
       marker(4, m(O) mlcolor(black)) ///
-  title("Regression Coefficient plot", justification(center) color(black) span pos(17))
+  title("Regression Coefficient plot", ///
+      justification(center) color(black) span pos(17))
 
 * Have a good day!
