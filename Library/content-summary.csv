@@ -1,8 +1,8 @@
 Graph name,Link,Graph type,Data source,Data citation included,User-written packages,does the code run?,SSC install,Commenting,Follows Stata style guide,tag
-bar-better-ci,,Bar plot,"Replication files for Satyanarayana S, Kwan A, Daniels B, Subbaraman R, McDowell A, Bergkvist S, Das RK, Das V, Das J, Pai M. Use of standardised patients to assess antibiotic dispensing for tuberculosis by pharmacies in urban India: a cross-sectional study. The Lancet Infectious Diseases. 2016 Nov 30;16(11):1261-8",Yes,None,,.,comma and whitetab,"Use 4 white spaces instead of tabs. 
-line is too long (over 80 characters)","#CI, #bar_plot, #confidence_interval"
+bar-better-ci,,Bar plot,"Replication files for Satyanarayana S, Kwan A, Daniels B, Subbaraman R, McDowell A, Bergkvist S, Das RK, Das V, Das J, Pai M. Use of standardised patients to assess antibiotic dispensing for tuberculosis by pharmacies in urban India: a cross-sectional study. The Lancet Infectious Diseases. 2016 Nov 30;16(11):1261-8",Yes,None,,.,legend is not shown,"Use 4 white spaces instead of tabs. 
+line is too long (over 80 characters)","#bar_plot, #confidence_interval, #cross_group_comparison, #horizontal, #standard_error"
 bar-better,,Bar plot,"Replication files for Daniels B, Dolinger A, Bedoya G, Rogo K, Goicoechea A, Coarasa J, Wafula F, Mwaura N, Kimeu R, Das J. Use of standardised patients to assess quality of healthcare in Nairobi, Kenya: a pilot, cross-sectional study with international comparisons. BMJ Global Health. 2017 Jun 1;2(2):e000333.",,None,,.,newline,"Use 4 white spaces instead of tabs. 
-line is too long (over 80 characters)",#bar_plot
+line is too long (over 80 characters)","#bar_plot, #cross_group_comparison, #horizontal"
 bar-betterbar,,Bar plot,"Replication files for Satyanarayana S, Kwan A, Daniels B, Subbaraman R, McDowell A, Bergkvist S, Das RK, Das V, Das J, Pai M. Use of standardised patients to assess antibiotic dispensing for tuberculosis by pharmacies in urban India: a cross-sectional study. The Lancet Infectious Diseases. 2016 Nov 30;16(11):1261-8",Yes,grc1leg,,.,,"line is too long (over 80 characters)
 Abstract index names in loop line
 indentation after declaring for loop statement or if-else statement
