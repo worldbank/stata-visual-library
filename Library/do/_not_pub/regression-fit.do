@@ -51,12 +51,12 @@
 
   // Graph
 	tw                                                                          ///
-    (lfitci  nonmbbs norm  , lc(black) lp(dash) acolor(gs14) alp(none) )        ///
-    (lpoly   nonmbbs norm  , lw(thick) lc(maroon) )                             ///
+    (lfitci  nonmbbs norm  , lc(black) lp(dash) acolor(gs14) alp(none) )      ///
+    (lpoly   nonmbbs norm  , lw(thick) lc(maroon) )                           ///
 		(scatter nonmbbs norm  , m(.) mc(black) mlab(state_code) mlabangle(20) mlabc(black) mlabpos(9) mlabsize(vsmall))    ///
-    (scatteri 0.10 -2 "Regression Coefficient: `b1' (p=`p1', R{superscript:2}=`r1')" , m(none) mlabc(black))                ///
-    (scatteri 0.05 -2 "Regression Ex. Kerala: `b2' (p=`p2', R{superscript:2}=`r2')" , m(none) mlabc(black))                 ///
-	   , title("") note("") legend(off)                                                                                     ///
+    (scatteri 0.10 -2 "Regression Coefficient: `b1' (p=`p1', R{superscript:2}=`r1')" , m(none) mlabc(black))            ///
+    (scatteri 0.05 -2 "Regression Ex. Kerala: `b2' (p=`p2', R{superscript:2}=`r2')" , m(none) mlabc(black))             ///
+	   , title("") note("") legend(off)                                                                                   ///
 		ylab($pct) ytit("Share of Private Non-MBBS Providers" , placement(left) justification(left))                        ///
 		xlab(-2 "-2 SD" -1 "-1 SD" 0 `""Average" "{&larr} State SES {&rarr}""' 1 "+1 SD" 2 "+2 SD") xtit("")
 

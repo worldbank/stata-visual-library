@@ -40,10 +40,10 @@
       marker(4, m(D) msize(*3) mlc(white) mlw(vthin) mla(center)) ///
     linetype(line) line(lw(thin) lc(gs14)) ///
     legend(on span c(1) size(small) order( ///
-        1 "Villages with any providers" ///
-        2 "Villages with MBBS providers" ///
-        3 "Villages with providers better than state average MBBS" ///
-        4 "Villages with providers better than national average MBBS")) ///
+        1 "Villages with any providers"    ///
+        2 "Villages with MBBS providers"   ///
+        3 "Villages with providers better than state average MBBS"          ///
+        4 "Villages with providers better than national average MBBS"))     ///
     ylab(${pct}) ytit("Proportion of villages {&rarr}") yscale(r(0) noline) ///
     legend(region(lc(none) fc(none))) noextendline ysize(6) ///
     ytit(,placement(left) justification(left))
