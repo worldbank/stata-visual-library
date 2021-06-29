@@ -3,8 +3,9 @@
 
 	Data Source:
 	---------------------
-	Data Replicated file from:
-	
+	Data Replicated file from:  Christian, Paul and Barrett, Christopher B., 
+  Revisiting the Effect of Food Aid on Conflict: A Methodological Caution (August 23, 2017). 
+  World Bank Policy Research Working
 		
 	Install Packages (if needed)
 	-----------------------------
