@@ -1,5 +1,5 @@
 /* 	
-  Figure: Binned scatter plot
+  Figure: Dot Summary plot
 
 	Data Source:
 	---------------------
@@ -34,10 +34,10 @@
 
   graph dot any regsim_1 regsim_2 regsim_3 ///
   , over(state, sort(4) descending axis(noline) label(labsize(small))) ///
-      marker(1, m(T) msize(*3) mlc(white) mlw(vthin) mla(center)) ///
-      marker(2, m(O) msize(*3) mlc(white) mlw(vthin) mla(center)) ///
-      marker(3, m(S) msize(*3) mlc(white) mlw(vthin) mla(center)) ///
-      marker(4, m(D) msize(*3) mlc(white) mlw(vthin) mla(center)) ///
+      marker(1, m(T) msize(*1) mlc(white) mlw(vthin) mla(center)) ///
+      marker(2, m(O) msize(*1) mlc(white) mlw(vthin) mla(center)) ///
+      marker(3, m(S) msize(*1) mlc(white) mlw(vthin) mla(center)) ///
+      marker(4, m(D) msize(*1) mlc(white) mlw(vthin) mla(center)) ///
     linetype(line) line(lw(thin) lc(gs14)) ///
     legend(on span c(1) size(small) order( ///
         1 "Villages with any providers"    ///
