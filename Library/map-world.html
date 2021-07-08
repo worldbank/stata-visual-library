@@ -1,55 +1,45 @@
-* Maps displaying levels of a variable
+/* 
+  Figure: Map
 
-* ------------------------------------------------------------------------------
-*    Packages
-* ------------------------------------------------------------------------------
+	Data Source:
+	--------------------------
+	Below codes are replicated from 
+	
+	Joao Pedro Azevedo, 2011. "WBOPENDATA: Stata module to access World Bank databases," 
+	Statistical Software Components S457234, Boston College Department of Economics, revised 09 Jul 2020.
 
-    ssc install spmap
-    ssc install shp2dta
+	The author Joao Pedro Azevedo also made available more examples using wbopendata available at  https://github.com/jpazvd/wbopendata
 
-* ------------------------------------------------------------------------------
-*     Data
-* ------------------------------------------------------------------------------
+	Install Packages (if needed):
+	----------------------------
+	We need one package to run this file: wbopendata
+	Please remove "*" from below lines if you have not installed them and would like to install.
 
-    foreach format in shp dbf prj shx {
-        copy "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/map-world.`format'" "map-world.`format'"
-    }
+*/
+	* ssc install wbopendata, replace
 
-    *Shapefiles 
-    shp2dta using "map-world.shp", ///
-        database(world_shape) /// Source: http://www.naturalearthdata.com/downloads/110m-cultural-vectors/
-        coordinates(world_shape_coord) ///
-        genid(id)
+	/// create a tempfile to store data mined from WDI using wbopendata
+	qui tempfile WDIdata 
+	wbopendata, language(en - English) indicator(it.cel.sets.p2) long clear latest
+	local labelvar "`r(varlabel1)'"
+	sort countrycode
+	save `WDIdata', replace
 
-    *Correct iso_a2
-    use  world_shape, clear
-    drop if iso_a2=="-99"
+	/// create another tempfile from the  world-c.dta which include X and Y coordinate of the country
+	qui tempfile worldc 
+	qui sysuse world-c.dta, clear
+	save `worldc'.dta, replace
 
-    merge 1:1 iso_a2 using "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/map-world.dta" ///
-        , ///
-        keep(1 3) nogen
+	/// merge with world-d.dta which include areas of the country
+	qui sysuse world-d.dta, clear
+	qui merge countrycode using `WDIdata'
+	qui sum year
+	local avg = string(`r(mean)',"%16.1f")
 
-* ------------------------------------------------------------------------------
-*     Map
-* ------------------------------------------------------------------------------
-
-    spmap jobs_scarce_code using world_shape_coord if admin! = "Antarctica" ///
-        , ///
-        id(id) ///
-        fcolor(Reds) osize(.1) ocolor(black) ///
-        clmethod(custom)  clbreaks(0 .2 .40 .6 .8 1)  ///
-        legend(position(8) ///
-               region(lcolor(black)) ///
-               label(1 "No data") ///
-               label(2 "0% to 20%") ///
-               label(3 "20% to 40%") ///
-               label(4 "40% to 60%") ///
-               label(5 "60% to 80%") /// 
-               label(6 "80% to 100%")) ///
-        legend(region(color(white))) ///
-        plotregion(icolor(bluishgray)) ///
-        title("When jobs are scarce, men should have more of a right to a job than women.") ///
-        subtitle("Agreement with the statement above by country") ///
-        note("Source: World Values Survey (2014 or last available year)")
+	///map out
+	spmap it_cel_sets_p2 using `worldc' ///
+	, id(_ID) clnumber(20) fcolor(Reds2) ocolor(none ..) ///
+	title("`labelvar'", size(*1.2)) legstyle(3) legend(ring(1) position(3)) ///
+	note("Source: World Development Indicator")
 
 * Have a lovely day!
