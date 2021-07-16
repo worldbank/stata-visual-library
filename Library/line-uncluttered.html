@@ -19,7 +19,7 @@
 */
 
   sysuse uslifeexp, clear
-	set scheme uncluttered
+    set scheme uncluttered
 
   line le le_male le_female year       ///
       ,                                ///
@@ -30,6 +30,8 @@
                     3 "Female")        ///
               cols(3)                  /// Show all legends in one line (3 columns)
               pos(12))                 ///  Show legend on top of graph
-		title("Line graph with uncluttered scheme",  justification(left) color(black) span pos(11))
-				
+        title("Line graph with uncluttered scheme",  ///
+		    justification(left) color(black) span pos(11))
+
 * Have a lovely Day!
+

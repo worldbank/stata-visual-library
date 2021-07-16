@@ -43,38 +43,34 @@
   import delimited "${GH}/Library/content-summary.csv", varnames(1) clear
   levelsof graphtype, local(levels)
 
-
 	foreach category in `levels' {
 		
 		do 		    "${GH}/Library/template-category-page.do" "`category'"
-		tokenize `"${`category'}"'
-		
-		local n : word count "${`category'}"
-	
-		forvalues graph = 1(2)`n' {
-		
-      noi di "``graph''"
-		
-		* copy tags
-/* 		  if Graphname = "``graph''" {
-		  	tag
-		  }
- */
+	}
+
+  levelsof graphname, local(graphs)
+  foreach graph in `graphs' {
+  	di "`graph'"
+    levelsof tag if graphname == "`graph'", local(tags)
+    di " ``tags''"
+
 			mat drop _all
 			gr drop _all
 			
 			set scheme s2color
 	
-			do 			    "${GH}/Library/do/``graph''.do"
-			gr export 	"${GH}/docs/figure/``graph''.png", height(600) replace
-			copy 		    "${GH}/Library/do/``graph''.do" 	 "${GH}/Library/``graph''.html", replace
-			do 			    "${GH}/Library/template-plot-page.do" "``graph''"    // should add macro2 as "`tags'"
-		
-		}
-	}	
-	
+			do 			    "${GH}/Library/do/`graph'.do"
+			gr export 	"${GH}/docs/figure/`graph'.png", height(600) replace
+			copy 		    "${GH}/Library/do/`graph'.do" 	 "${GH}/Library/`graph'.html", replace
+			do 			    "${GH}/Library/template-plot-page.do" "`graph'" "`tags'"
+   import delimited "${GH}/Library/content-summary.csv", varnames(1) clear
+  }
+
+/*
+
 	foreach file in "map-world.prj" "map-world.dbf" "map-world.shx" "map-world.shp" "world_shape.dta" "world_shape_coord.dta" {
     erase "${GH}/Library/`file'"
 	}
 
+*/
 *============================== THE END =======================================*

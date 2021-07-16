@@ -16,15 +16,15 @@
  	Please remove "*" from below lines if you have not installed it and would like to install.
 */
 
-	* net from http://www.stata.com
-	* net cd users
-	* net cd vwiggins
-	* net install grc1leg
-	
-	/// Load data
+    * net from http://www.stata.com
+    * net cd users
+    * net cd vwiggins
+    * net install grc1leg
+    
+    /// Load data
   use "https://github.com/worldbank/stata-visual-library/raw/master/Library/data/scatter-poly-ci.dta", clear
 
-	/// Create First Graph
+    /// Create First Graph
   sum cons_pae_m_sine, det
 
   twoway  (scatter cons_pae_sd_sine cons_pae_m_sine if cons_pae_m_sine < `r(p99)') ///
@@ -37,10 +37,10 @@
       graphregion(color(white)) bgcolor(white) ///
       name(s_by_mhat)
 
-	/// Create Second Graph
+    /// Create Second Graph
   sum cons_pae_m_sine, det
-  twoway  (scatter cv cons_pae_m_sine if cons_pae_m_sine<`r(p99)' & cons_pae_m_sine>`r(p1)') ///
-          (lpolyci cv cons_pae_m_sine if cons_pae_m_sine<`r(p99)' & cons_pae_m_sine>`r(p1)') ///
+  twoway  (scatter cv cons_pae_m_sine if cons_pae_m_sine < `r(p99)' & cons_pae_m_sine > `r(p1)') ///
+          (lpolyci cv cons_pae_m_sine if cons_pae_m_sine < `r(p99)' & cons_pae_m_sine > `r(p1)') ///
     , ///
           ytitle("`=ustrunescape("\u0073\u0302/\u006D\u0302")'" " ", size(large)) ///  s-hat/m-hat
           xtitle(" " "`=ustrunescape("\u006D\u0302")'", size(large)) ///    m-hat
@@ -48,13 +48,14 @@
           graphregion(color(white)) bgcolor(white) ///
           name(cv_by_mhat)
 
-	/// Combine graphs
+    /// Combine graphs
   grc1leg s_by_mhat cv_by_mhat    ///
     ,                             ///
     row(1) legendfrom(cv_by_mhat) ///
-    imargin(0 0 0 0) graphregion(margin(t=0 b=0)) ///
+    imargin(0 0 0 0) graphregion(margin(t = 0  b = 0)) ///
     position(6) fysize(75) fxsize(150) ///
     graphregion(color(white)) plotregion(color(white)) ///
     title("Scatter plot with polynomial smoothing" "and confidence interval", justification(center) color(black) span pos(17))
-          
+
 * Have a lovely day!
+

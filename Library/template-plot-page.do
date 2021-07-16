@@ -3,6 +3,7 @@
 	*Create a temporary textfile
 	tempname 	webpage
 	tempfile	htmlfile
+	*args graph `tags'
 
 	*Write the title rows defined above
 	cap file close 	`webpage'
@@ -18,6 +19,7 @@
 		`"  <meta charset="utf-8" />"' _n ///
 		`"  <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />"' _n ///
 		`"  <meta name="viewport" content="width=device-width, initial-scale=1" />"' _n ///
+		`"  <meta name="keywords" content="`2'" />"' _n ///
 		`""' _n ///
 		`"  <title>Stata Visual Library</title>"' _n ///
 		`""' _n ///
