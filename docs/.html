@@ -8,9 +8,13 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="keywords" content="STATA, bar plot, combine graphs, cross group comparison, graph, grc1leg, stack bar, vertical" />
 
   <title>Stata Visual Library</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous">
+  </script>
 
   <link rel="stylesheet"
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -33,54 +37,22 @@
     });
   </script>
 
+  <script type="text/javascript">
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
 
   <script type="text/javascript">
   if (window.hljs) {
     hljs.configure({languages: []});
     hljs.initHighlightingOnLoad();
-    if (document.readyState && document.readyState === "complete") {
-        window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-       }
-  }
-</script>
-
-<script type="text/javascript">
-  jQuery(document).ready(function(){
-        jQuery("#stata").load("https://raw.githubusercontent.com/worldbank/stata-visual-library/develop/Library/bar-stack-by.html");
-  });
-</script>
-
-
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
+    if (document.readyState && document.readyState ==="complete") {
       window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+    }
   }
-}
-</script>
+  </script>
 
-<style>
-
-.em {font-weight:bold;}
-pre, code {font-family: "lucida console", monospace;}
-pre.stata {font-size:13px; line-height:13px;}
-pre {padding:8px; border:1px solid #c0c0c0; border-radius:8px; background-color:#fdfdfd;}
-code {color:#3366cc; background-color:#fafafa;}
-pre code { color:black; background-color:white}
-</style>
-
-  <title>bar-stack-by</title>
-  <style>
-        code{white-space: pre-wrap;}
-        span.smallcaps{font-variant: small-caps;}
-        span.underline{text-decoration: underline;}
-        div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-  <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 
 <!-- BODY -->
@@ -91,14 +63,22 @@ pre code { color:black; background-color:white}
 
   <!-- Content -->
   <div class="container-fluid main-container">
+  <div class="card-columns">
+    <script type="text/javascript">
 
-    <pre class="stata"> 
-      <div id="stata"></div>
-    </pre>
-  </div> 
-<img src="figure/bar-stack-by.png">
+      var plots = [];
 
- </div>
+       for(var i = 0; i < plots.length; i++) {
+         document.write('<div class="col-sm-12">');
+         document.write('<div class="card" data-toggle="tooltip" data-placement="bottom" title="Click on image to see the code">');
+         document.write('<a href="' + plots[i] + '.html"class="stretched-link"></a>');
+         document.write('<div class="card-body">');
+         document.write('<img class="card-img"src="figure/' + plots[i] +'.png">');
+         document.write('</div></div></div>');
+       }
+    </script>
+  </div>
+  </div>
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script
   src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
