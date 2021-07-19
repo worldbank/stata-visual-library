@@ -21,13 +21,19 @@
 * Simple type
     sysuse census, clear
 
-    preserve
+  * preserve
         collapse (min) min_pop = pop   (max) max_pop = pop  (mean) mean_pop = pop  ///
           , ///
             by(region)
-                               
+        
+
+          sort max_pop
+          decode region, gen(region_)
+          drop region
+          rename region_ region
+
         twoway ///
-            (pcspike  region min_pop region max_pop , color(gs12)) ///
+            (rspike  min_pop max_pop region, horizontal color(gs12)) ///
             (scatter region min_pop, color(blue))                ///
             (scatter region max_pop, color(gold))                ///
             (scatter region mean_pop, color(green) m(D) msize(*0.7))                ///
@@ -40,7 +46,7 @@
                 label(4 "Average Population size of state"))     ///                                         ///
             title("Population distribution by region in the US")                                              ////
             note()
-    restore
+   * restore
 
 
 
@@ -76,16 +82,21 @@
                  by(region)
         
         drop if region == 3 | region == 4 
-
+/*       decode region, gen(region_)
+        drop region
+        rename region_ region
+ */
         twoway ///
-            (pcspike region min_`varname' region max_`varname' , color(gs12))     ///
+            (rspike min_`varname' max_`varname' region, horizontal color(gs12))     ///
             (scatter region min_`varname' , color(blue))                          ///
             (scatter region max_`varname' , color(gold))                          ///
             (scatter region mean_`varname', color(green) m(D) msize(*0.7))       ///
           , ///
-            xlabel(, labsize(vsmall))                                  ///
+            xlabel(, labsize(vsmall))                                   ///
             xtitle("`l`varname''")                                                      ///
-            ylabel( ,  labsize(vsmall)  valuelabel angle(horizontal))                        ///
+            xscale (r(0 1)) ///
+            yscale()                                                                    ///
+            ylabel(,  labsize(vsmall)  valuelabel angle(horizontal))                        ///
             ytitle("Region",)                                               ///
             legend(order(2 3 4)  label (2 "Minimum") label(3 "Maximum") ///
                 label(4 "Average"))                                          ///                                    
