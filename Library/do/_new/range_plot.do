@@ -1,6 +1,6 @@
 
 /* 
-  Figure: 
+  Figure: Range plot combined with max-min scatters
 
     Data Source:
     ------------------
