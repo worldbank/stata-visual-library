@@ -67,6 +67,17 @@
 		"  }" _n ///
 		`"  </script>"' _n ///
 		`""' _n ///
+		`"<!-- Global site tag (gtag.js) - Google Analytics -->"' _n ///
+        `"<script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHJY1ZEKF">"' _n ///
+		`"</script>"' _n ///
+		`""' _n ///
+		`"<script>"' _n ///
+        " window.dataLayer = window.dataLayer || [];" _n ///
+        `"  function gtag(){dataLayer.push(arguments);}"' _n ///
+        "  gtag('js', new Date());" _n ///
+        "  gtag('config', 'G-KRHJY1ZEKF');" _n ///
+        `"</script>"' _n ///
+		`""' _n ///
 		`"</head>"' _n ///
 		`""' _n ///
 		`"<!-- BODY -->"' _n ///

@@ -97,6 +97,17 @@
 		`"  <!--[if lt IE 9]>"' _n ///
 		`"	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>"' _n ///
 		`"  <![endif]-->"' _n ///
+				`"<!-- Global site tag (gtag.js) - Google Analytics -->"' _n ///
+        `"<script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHJY1ZEKF">"' _n ///
+		`"</script>"' _n ///
+		`""' _n ///
+		`"<script>"' _n ///
+        " window.dataLayer = window.dataLayer || [];" _n ///
+        `"  function gtag(){dataLayer.push(arguments);}"' _n ///
+        "  gtag('js', new Date());" _n ///
+        "  gtag('config', 'G-KRHJY1ZEKF');" _n ///
+        `"</script>"' _n ///
+		`""' _n ///
 		`"</head>"' _n ///
 		`""' _n ///
 		`"<!-- BODY -->"' _n ///
