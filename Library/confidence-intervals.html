@@ -10,7 +10,7 @@
   
 */
 
-  use "https://github.com/worldbank/stata-visual-library/blob/bbd-graphs/Library/data/confidence-intervals.dta?raw=true" , clear
+  use "https://github.com/worldbank/stata-visual-library/blob/develop/Library/data/confidence-intervals.dta?raw=true" , clear
 
   // Get graphing points
   gen count = 1

@@ -35,6 +35,7 @@
                placement(bottom) ///
                justification(left)) ///
           ylab(${pct}) ///
-		  title("Bar Plot of Two Variables")
+          title("Bar Plot of Two Variables")
 
 * Have a lovely day!
+

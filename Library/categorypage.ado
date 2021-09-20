@@ -1,5 +1,9 @@
 *Writing titles to textfile
 
+    capture program drop categorypage
+    program categorypage
+	    syntax, category(string) graphlists(string) 
+
 	*Create a temporary textfile
 	tempname 	webpage
 	tempfile	htmlfile
@@ -20,6 +24,11 @@
 		`"  <meta name="viewport" content="width=device-width, initial-scale=1" />"' _n ///
 		`""' _n ///
 		`"  <title>Stata Visual Library</title>"' _n ///
+		`""' _n ///
+		`"  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js""' _n ///
+		`"    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q""' _n ///
+		`"    crossorigin="anonymous">"' _n ///
+		`"  </script>"' _n ///
 		`""' _n ///
 		`"  <link rel="stylesheet""' _n ///
 		`"    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css""' _n ///
@@ -42,54 +51,33 @@
 		"    });" _n ///
 		`"  </script>"' _n ///
 		`""' _n ///
+		`"  <script type="text/javascript">"' _n ///
+		"    $(function () {" _n ///
+		`"      $("' "'" `"[data-toggle="tooltip"]"' "'" `").tooltip()"' _n ///
+		"    })" _n ///
+		`"  </script>"' _n ///
 		`""' _n ///
 		`"  <script type="text/javascript">"' _n ///
 		"  if (window.hljs) {" _n ///
 		"    hljs.configure({languages: []});" _n ///
 		`"    hljs.initHighlightingOnLoad();"' _n ///
-		"    if (document.readyState && document.readyState === "`""complete""'") {" _n ///
-		`"	  window.setTimeout(function() { hljs.initHighlighting(); }, 0);"' _n ///
-		"	}" _n ///
+		"    if (document.readyState && document.readyState ===" `""complete""' ") {" _n ///
+		"      window.setTimeout(function() { hljs.initHighlighting(); }, 0);" _n ///
+		"    }" _n ///
 		"  }" _n ///
+		`"  </script>"' _n ///
+		`""' _n ///
+		`"<!-- Global site tag (gtag.js) - Google Analytics -->"' _n ///
+        `"<script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHJY1ZEKF">"' _n ///
 		`"</script>"' _n ///
 		`""' _n ///
-		`"<script type="text/javascript">"' _n ///
-		"  jQuery(document).ready(function(){" _n ///
-		`"	  jQuery("#stata").load("https://raw.githubusercontent.com/worldbank/stata-visual-library/develop/Library/`1'.html");"' _n ///
-		"  });" _n ///
-		`"</script>"' _n ///
+		`"<script>"' _n ///
+        " window.dataLayer = window.dataLayer || [];" _n ///
+        `"  function gtag(){dataLayer.push(arguments);}"' _n ///
+        "  gtag('js', new Date());" _n ///
+        "  gtag('config', 'G-KRHJY1ZEKF');" _n ///
+        `"</script>"' _n ///
 		`""' _n ///
-		`""' _n ///
-		`"<script type="text/javascript">"' _n ///
-		"if (window.hljs) {" _n ///
-		`"  hljs.configure({languages: []});"' _n ///
-		`"  hljs.initHighlightingOnLoad();"' _n ///
-		"  if (document.readyState && document.readyState === "`""complete""' ") {" _n ///
-		`"	window.setTimeout(function() { hljs.initHighlighting(); }, 0);"' _n ///
-		"  }" _n ///
-		"}" _n ///
-		`"</script>"' _n ///
-		`""' _n ///
-		`"<style>"' _n ///
-		`""' _n ///
-		`".em {font-weight:bold;}"' _n ///
-		`"pre, code {font-family: "lucida console", monospace;}"' _n ///
-		`"pre.stata {font-size:13px; line-height:13px;}"' _n ///
-		`"pre {padding:8px; border:1px solid #c0c0c0; border-radius:8px; background-color:#fdfdfd;}"' _n ///
-		`"code {color:#3366cc; background-color:#fafafa;}"' _n ///
-		`"pre code { color:black; background-color:white}"' _n ///
-		`"</style>"' _n ///
-		`""' _n ///
-		`"  <title>`1'</title>"' _n ///
-		`"  <style>"' _n ///
-		`"	  code{white-space: pre-wrap;}"' _n ///
-		`"	  span.smallcaps{font-variant: small-caps;}"' _n ///
-		`"	  span.underline{text-decoration: underline;}"' _n ///
-		`"	  div.column{display: inline-block; vertical-align: top; width: 50%;}"' _n ///
-		`"  </style>"' _n ///
-		`"  <!--[if lt IE 9]>"' _n ///
-		`"	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>"' _n ///
-		`"  <![endif]-->"' _n ///
 		`"</head>"' _n ///
 		`""' _n ///
 		`"<!-- BODY -->"' _n ///
@@ -100,14 +88,22 @@
 		`""' _n ///
 		`"  <!-- Content -->"' _n ///
 		`"  <div class="container-fluid main-container">"' _n ///
+		`"  <div class="card-columns">"' _n ///
+		`"    <script type="text/javascript">"' _n ///
 		`""' _n ///
-		`"    <pre class="stata"> "' _n ///
-		`"      <div id="stata"></div>"' _n ///
-		`"    </pre>"' _n ///
-		`"  </div> "' _n ///
-		`"<img src="figure/`1'.png">"' _n ///
-		`""' _n ///
-		`" </div>"' _n ///
+		"      var plots = ["`"`graphlists'"'"];" _n ///
+		"" _n ///
+		"       for(var i = 0; i < plots.length; i++) {" _n ///
+		"         document.write('<div class=" `""col-sm-12""' ">');" _n ///
+		"         document.write('<div class=" `""card""' " data-toggle=" `""tooltip""' " data-placement=" `""bottom""' " title=" `""Click on image to see the code""' ">');" _n ///
+		"         document.write('<a href=" `"""' "' + plots[i] + '.html" `"""' "class=" `""stretched-link""' "></a>');" _n ///
+		"         document.write('<div class=" `""card-body""' ">');" _n ///
+		"         document.write('<img class=" `""card-img""' "src=" `""figure/"' "' + plots[i] +'.png" `"""' ">');" _n ///
+		"         document.write('</div></div></div>');" _n ///
+		"       }" _n ///
+		`"    </script>"' _n ///
+		`"  </div>"' _n ///
+		`"  </div>"' _n ///
 		`"<!-- dynamically load mathjax for compatibility with self-contained -->"' _n ///
 		`"<script"' _n ///
 		`"  src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js""' _n ///
@@ -121,8 +117,9 @@
 		`"</script>"' _n ///
 		`""' _n ///
 		`"</body>"' _n ///
-		`"</html>"'
-
+		`"</html>"' _n
+			
 	file close 		`webpage'
-	
-	copy "`htmlfile'" "${GH}/docs/`1'.html", replace
+		
+	copy "`htmlfile'" "${GH}/docs/`category'.html", replace
+	end

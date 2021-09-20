@@ -53,6 +53,17 @@
   }
   </script>
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHJY1ZEKF">
+</script>
+
+<script>
+ window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KRHJY1ZEKF');
+</script>
+
 </head>
 
 <!-- BODY -->
@@ -66,7 +77,7 @@
   <div class="card-columns">
     <script type="text/javascript">
 
-      var plots = ["binned-scatter","scatter-fl", "scatter-fl-ci", "scatter-poly-ci", "scatter-strata", "scatter-transparent", "dot-summary"];
+      var plots = ["binned-scatter", "scatter-fl", "scatter-fl-ci", "scatter-poly-ci", "scatter-strata", "scatter-transparent"];
 
        for(var i = 0; i < plots.length; i++) {
          document.write('<div class="col-sm-12">');
