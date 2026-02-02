@@ -1,8 +1,8 @@
-# stata-visual-library
+# Stata Visual Library
 
-This is a repository maintained by DIME Analytics and containing example graphs on how to explore data sets and display results of Impact Evaluations using Stata. 
+This is a repository maintained by DIME Analytics and containing example graphs on how to explore data sets and display results of Impact Evaluations using Stata.
 
-To see the library got to: https://worldbank.github.io/stata-visual-library/
+To see the library got to: <https://worldbank.github.io/stata-visual-library/>
 
 ## Contributing
 
@@ -15,3 +15,7 @@ This project is licensed under the MIT License together with the [World Bank IGO
 ## Citation
 
 Please use the citation suggested in [CITATION.cff](CITATION.cff). Find the `APA` and `BIBTeX` formats in the right hand side menu of the [landing page](https://github.com/worldbank/stata-visual-library) of this project's repository.
+
+### Contact
+
+DIME Analytics ([dimeanalytics@worldbank.org](mailto:dimeanalytics@worldbank.org))
