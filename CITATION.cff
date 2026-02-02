@@ -1,0 +1,23 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: stata-visual-library
+message: Library of visualizations for Stata users.
+type: software
+authors:
+  - name: 'DIME Analytics, The World Bank'
+    address: 1818 H St NW
+    city: 'Washington, DC'
+    country: US
+    post-code: '20433'
+    email: dimeanalytics@worldbank.org
+repository-code: 'https://github.com/worldbank/stata-visual-library'
+url: 'https://worldbank.github.io/stata-visual-library/'
+keywords:
+  - plots
+  - graphs
+  - impact-evaluations
+  - stata
+  - data-visualization
+license: MIT
